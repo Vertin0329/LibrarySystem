@@ -104,7 +104,8 @@ private slots:
     void on_pushButton_NextPage_clicked();
 
     void on_pushButton_Reload_clicked();
-    void on_tableWidget_Status_cellClicked(int row, int column);
+
+    void on_tableWidget_Status_cellClicked(int row);
 };
 
 inline int bookRow;

@@ -674,7 +674,7 @@ void BookWindow_Student::on_pushButton_Reload_clicked()
 }
 
 
-void BookWindow_Student::on_tableWidget_Status_cellClicked(int row, int column)
+void BookWindow_Student::on_tableWidget_Status_cellClicked(int row)
 {
     saveCurrentIndex();
     ui->stackedWidget->setCurrentIndex(3);

@@ -227,7 +227,7 @@ public:
 
     void retranslateUi(QDialog *FilterBookForLibrarianDialog)
     {
-        FilterBookForLibrarianDialog->setWindowTitle(QCoreApplication::translate("FilterBookForLibrarianDialog", "Dialog", nullptr));
+        FilterBookForLibrarianDialog->setWindowTitle(QCoreApplication::translate("FilterBookForLibrarianDialog", "Filter", nullptr));
         groupBox_Status->setTitle(QCoreApplication::translate("FilterBookForLibrarianDialog", "Status", nullptr));
         radioButton_InDisplay->setText(QCoreApplication::translate("FilterBookForLibrarianDialog", "In Display", nullptr));
         radioButton_Missing->setText(QCoreApplication::translate("FilterBookForLibrarianDialog", "Missing", nullptr));

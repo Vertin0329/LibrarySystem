@@ -48,7 +48,7 @@ public:
             LoginWindow->setObjectName("LoginWindow");
         LoginWindow->setEnabled(true);
         LoginWindow->resize(640, 400);
-        QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Preferred);
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(LoginWindow->sizePolicy().hasHeightForWidth());
@@ -57,8 +57,10 @@ public:
         LoginWindow->setMaximumSize(QSize(16777215, 16777215));
         LoginWindow->setFocusPolicy(Qt::FocusPolicy::NoFocus);
         LoginWindow->setAutoFillBackground(false);
+        LoginWindow->setStyleSheet(QString::fromUtf8("color:rgb(31, 31, 31)"));
         centralwidget = new QWidget(LoginWindow);
         centralwidget->setObjectName("centralwidget");
+        centralwidget->setStyleSheet(QString::fromUtf8("color:rgb(255, 255, 255)"));
         verticalLayout_2 = new QVBoxLayout(centralwidget);
         verticalLayout_2->setObjectName("verticalLayout_2");
         verticalLayout = new QVBoxLayout();
@@ -181,7 +183,7 @@ public:
     void retranslateUi(QMainWindow *LoginWindow)
     {
         LoginWindow->setWindowTitle(QCoreApplication::translate("LoginWindow", "Login", nullptr));
-        label_Username->setText(QCoreApplication::translate("LoginWindow", " Username", nullptr));
+        label_Username->setText(QCoreApplication::translate("LoginWindow", " UserID     ", nullptr));
         label_Password->setText(QCoreApplication::translate("LoginWindow", " Password", nullptr));
         pushButton->setText(QString());
         pushButton_Login->setText(QCoreApplication::translate("LoginWindow", "Login", nullptr));

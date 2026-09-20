@@ -231,7 +231,7 @@ public:
 
     void retranslateUi(QDialog *BookRenewDialog)
     {
-        BookRenewDialog->setWindowTitle(QCoreApplication::translate("BookRenewDialog", "Dialog", nullptr));
+        BookRenewDialog->setWindowTitle(QCoreApplication::translate("BookRenewDialog", "Renew", nullptr));
         label_Renew->setText(QCoreApplication::translate("BookRenewDialog", "Are you sure you want to renew this book?", nullptr));
         pushButton_Accept->setText(QCoreApplication::translate("BookRenewDialog", "Yes, I want to", nullptr));
         pushButton_Cancel->setText(QCoreApplication::translate("BookRenewDialog", "No, leave me alone", nullptr));

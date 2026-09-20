@@ -338,7 +338,7 @@ public:
 
     void retranslateUi(QDialog *AddNewDialog)
     {
-        AddNewDialog->setWindowTitle(QCoreApplication::translate("AddNewDialog", "Dialog", nullptr));
+        AddNewDialog->setWindowTitle(QCoreApplication::translate("AddNewDialog", "Add New", nullptr));
         radioButton_AddBook->setText(QCoreApplication::translate("AddNewDialog", "Add Book", nullptr));
         radioButton_AddUser->setText(QCoreApplication::translate("AddNewDialog", "Add User", nullptr));
         label_Title->setText(QCoreApplication::translate("AddNewDialog", "Title:", nullptr));

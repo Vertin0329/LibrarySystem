@@ -17,6 +17,7 @@
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -33,6 +34,9 @@ public:
     QHBoxLayout *horizontalLayout;
     QLabel *label_WarningIcon;
     QLabel *label_WarningText;
+    QHBoxLayout *horizontalLayout_2;
+    QPushButton *pushButton_Confirm_2;
+    QPushButton *pushButton_Cancel;
     QDialogButtonBox *buttonBox;
     QWidget *page_2;
     QVBoxLayout *verticalLayout_3;
@@ -42,7 +46,12 @@ public:
     {
         if (DeleteBookDialog->objectName().isEmpty())
             DeleteBookDialog->setObjectName("DeleteBookDialog");
-        DeleteBookDialog->resize(400, 300);
+        DeleteBookDialog->resize(407, 128);
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(DeleteBookDialog->sizePolicy().hasHeightForWidth());
+        DeleteBookDialog->setSizePolicy(sizePolicy);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/img/img/png-clipart-symbol-computer-icons-unicode-notice-miscellaneous-angle.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         DeleteBookDialog->setWindowIcon(icon);
@@ -72,10 +81,25 @@ public:
 
         verticalLayout_2->addLayout(horizontalLayout);
 
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName("horizontalLayout_2");
+        pushButton_Confirm_2 = new QPushButton(page);
+        pushButton_Confirm_2->setObjectName("pushButton_Confirm_2");
+
+        horizontalLayout_2->addWidget(pushButton_Confirm_2);
+
+        pushButton_Cancel = new QPushButton(page);
+        pushButton_Cancel->setObjectName("pushButton_Cancel");
+
+        horizontalLayout_2->addWidget(pushButton_Cancel);
+
+
+        verticalLayout_2->addLayout(horizontalLayout_2);
+
         buttonBox = new QDialogButtonBox(page);
         buttonBox->setObjectName("buttonBox");
         buttonBox->setOrientation(Qt::Orientation::Horizontal);
-        buttonBox->setStandardButtons(QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok);
+        buttonBox->setStandardButtons(QDialogButtonBox::StandardButton::NoButton);
 
         verticalLayout_2->addWidget(buttonBox);
 
@@ -99,7 +123,7 @@ public:
         QObject::connect(buttonBox, &QDialogButtonBox::accepted, DeleteBookDialog, qOverload<>(&QDialog::accept));
         QObject::connect(buttonBox, &QDialogButtonBox::rejected, DeleteBookDialog, qOverload<>(&QDialog::reject));
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(DeleteBookDialog);
@@ -107,9 +131,11 @@ public:
 
     void retranslateUi(QDialog *DeleteBookDialog)
     {
-        DeleteBookDialog->setWindowTitle(QCoreApplication::translate("DeleteBookDialog", "Dialog", nullptr));
+        DeleteBookDialog->setWindowTitle(QCoreApplication::translate("DeleteBookDialog", "Delete Book", nullptr));
         label_WarningIcon->setText(QString());
         label_WarningText->setText(QCoreApplication::translate("DeleteBookDialog", "Are you sure you want to delete this book?", nullptr));
+        pushButton_Confirm_2->setText(QCoreApplication::translate("DeleteBookDialog", "Confirm", nullptr));
+        pushButton_Cancel->setText(QCoreApplication::translate("DeleteBookDialog", "Cancel", nullptr));
         label_Deleted->setText(QCoreApplication::translate("DeleteBookDialog", "Book Deleted!", nullptr));
     } // retranslateUi
 

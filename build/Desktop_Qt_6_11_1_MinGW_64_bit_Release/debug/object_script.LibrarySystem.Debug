@@ -159,6 +159,7 @@ debug/deletebookdialog.o
 debug/filterbookforlibrariandialog.o
 debug/filterdialog.o
 debug/filteruserforlibrariandialog.o
+debug/logoutconfirmdialog.o
 debug/main.o
 debug/loginwindow.o
 debug/qrcodegenerator.o
@@ -177,3 +178,4 @@ debug/moc_filterbookforlibrariandialog.o
 debug/moc_filterdialog.o
 debug/moc_filteruserforlibrariandialog.o
 debug/moc_loginwindow.o
+debug/moc_logoutconfirmdialog.o

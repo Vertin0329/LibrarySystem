@@ -57,7 +57,12 @@ template <> constexpr inline auto BookWindow_Student::qt_create_metaobjectdata<q
         "on_comboBox_searchby_currentIndexChanged",
         "index",
         "on_pushButton_EditProfile_clicked",
-        "on_pushButton_ChangeConfig_clicked"
+        "on_pushButton_ChangeConfig_clicked",
+        "on_pushButton_LogOut_clicked",
+        "on_pushButton_PreviousPage_clicked",
+        "on_pushButton_NextPage_clicked",
+        "on_pushButton_Reload_clicked",
+        "on_tableWidget_Status_cellClicked"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -95,6 +100,18 @@ template <> constexpr inline auto BookWindow_Student::qt_create_metaobjectdata<q
         QtMocHelpers::SlotData<void()>(17, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_pushButton_ChangeConfig_clicked'
         QtMocHelpers::SlotData<void()>(18, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_pushButton_LogOut_clicked'
+        QtMocHelpers::SlotData<void()>(19, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_pushButton_PreviousPage_clicked'
+        QtMocHelpers::SlotData<void()>(20, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_pushButton_NextPage_clicked'
+        QtMocHelpers::SlotData<void()>(21, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_pushButton_Reload_clicked'
+        QtMocHelpers::SlotData<void()>(22, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_tableWidget_Status_cellClicked'
+        QtMocHelpers::SlotData<void(int)>(23, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 6 },
+        }}),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -133,6 +150,11 @@ void BookWindow_Student::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         case 12: _t->on_comboBox_searchby_currentIndexChanged((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
         case 13: _t->on_pushButton_EditProfile_clicked(); break;
         case 14: _t->on_pushButton_ChangeConfig_clicked(); break;
+        case 15: _t->on_pushButton_LogOut_clicked(); break;
+        case 16: _t->on_pushButton_PreviousPage_clicked(); break;
+        case 17: _t->on_pushButton_NextPage_clicked(); break;
+        case 18: _t->on_pushButton_Reload_clicked(); break;
+        case 19: _t->on_tableWidget_Status_cellClicked((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     }
@@ -157,14 +179,14 @@ int BookWindow_Student::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 15)
+        if (_id < 20)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 15;
+        _id -= 20;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 15)
+        if (_id < 20)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 15;
+        _id -= 20;
     }
     return _id;
 }

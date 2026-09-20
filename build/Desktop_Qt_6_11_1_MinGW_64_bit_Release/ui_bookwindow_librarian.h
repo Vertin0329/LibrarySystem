@@ -33,6 +33,14 @@ class Ui_BookWindow_Librarian
 public:
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
+    QWidget *titleBarWidget;
+    QVBoxLayout *verticalLayout_11;
+    QHBoxLayout *horizontalLayout_3;
+    QPushButton *pushButton_PreviousPage;
+    QPushButton *pushButton_NextPage;
+    QPushButton *pushButton_Reload;
+    QLabel *label_Space;
+    QPushButton *pushButton_LogOut;
     QGroupBox *groupBox_navigationbar;
     QVBoxLayout *verticalLayout_4;
     QHBoxLayout *horizontalLayout;
@@ -53,7 +61,7 @@ public:
     QLineEdit *lineEdit_searchinput_book;
     QVBoxLayout *verticalLayout_7;
     QTableWidget *tableWidget_BookList;
-    QWidget *page_2;
+    QWidget *page_BookDetail;
     QVBoxLayout *verticalLayout_9;
     QGroupBox *groupBox_2;
     QVBoxLayout *verticalLayout_8;
@@ -74,6 +82,9 @@ public:
     QLineEdit *lineEdit_searchinput_user;
     QTableWidget *tableWidget_UserList;
     QTableWidget *tableWidget_RankBoard;
+    QWidget *page_BorrowLog;
+    QVBoxLayout *verticalLayout_10;
+    QTableWidget *tableWidget_BorrowLog;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -82,10 +93,105 @@ public:
         if (BookWindow_Librarian->objectName().isEmpty())
             BookWindow_Librarian->setObjectName("BookWindow_Librarian");
         BookWindow_Librarian->resize(1539, 855);
+        BookWindow_Librarian->setStyleSheet(QString::fromUtf8(""));
         centralwidget = new QWidget(BookWindow_Librarian);
         centralwidget->setObjectName("centralwidget");
         verticalLayout = new QVBoxLayout(centralwidget);
         verticalLayout->setObjectName("verticalLayout");
+        titleBarWidget = new QWidget(centralwidget);
+        titleBarWidget->setObjectName("titleBarWidget");
+        verticalLayout_11 = new QVBoxLayout(titleBarWidget);
+        verticalLayout_11->setObjectName("verticalLayout_11");
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName("horizontalLayout_3");
+        pushButton_PreviousPage = new QPushButton(titleBarWidget);
+        pushButton_PreviousPage->setObjectName("pushButton_PreviousPage");
+        pushButton_PreviousPage->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"    border-radius: 4px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgba(255, 255, 255, 30);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgba(255, 255, 255, 50);\n"
+"}"));
+
+        horizontalLayout_3->addWidget(pushButton_PreviousPage);
+
+        pushButton_NextPage = new QPushButton(titleBarWidget);
+        pushButton_NextPage->setObjectName("pushButton_NextPage");
+        pushButton_NextPage->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"    border-radius: 4px; \n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgba(255, 255, 255, 30); \n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgba(255, 255, 255, 50); \n"
+"}"));
+
+        horizontalLayout_3->addWidget(pushButton_NextPage);
+
+        pushButton_Reload = new QPushButton(titleBarWidget);
+        pushButton_Reload->setObjectName("pushButton_Reload");
+        pushButton_Reload->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"    border-radius: 4px; \n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgba(255, 255, 255, 30); \n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgba(255, 255, 255, 50); \n"
+"}"));
+
+        horizontalLayout_3->addWidget(pushButton_Reload);
+
+        label_Space = new QLabel(titleBarWidget);
+        label_Space->setObjectName("label_Space");
+
+        horizontalLayout_3->addWidget(label_Space);
+
+        pushButton_LogOut = new QPushButton(titleBarWidget);
+        pushButton_LogOut->setObjectName("pushButton_LogOut");
+        pushButton_LogOut->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"    border-radius: 4px; \n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgba(255, 255, 255, 30); \n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgba(255, 255, 255, 50); \n"
+"}"));
+
+        horizontalLayout_3->addWidget(pushButton_LogOut);
+
+        horizontalLayout_3->setStretch(0, 1);
+        horizontalLayout_3->setStretch(1, 1);
+        horizontalLayout_3->setStretch(2, 1);
+        horizontalLayout_3->setStretch(3, 40);
+        horizontalLayout_3->setStretch(4, 2);
+
+        verticalLayout_11->addLayout(horizontalLayout_3);
+
+
+        verticalLayout->addWidget(titleBarWidget);
+
         groupBox_navigationbar = new QGroupBox(centralwidget);
         groupBox_navigationbar->setObjectName("groupBox_navigationbar");
         groupBox_navigationbar->setStyleSheet(QString::fromUtf8("border:2px solid #702963;\n"
@@ -210,6 +316,7 @@ public:
         comboBox_searchby_book->setAcceptDrops(true);
         comboBox_searchby_book->setStyleSheet(QString::fromUtf8("QComboBox\n"
 "{\n"
+"color:rgb(255, 255, 255);\n"
 "border:2px solid #ca5cdd;\n"
 " border-radius:8px;\n"
 " padding:5px;\n"
@@ -233,6 +340,7 @@ public:
         lineEdit_searchinput_book->setObjectName("lineEdit_searchinput_book");
         lineEdit_searchinput_book->setStyleSheet(QString::fromUtf8(" QLineEdit\n"
 "{\n"
+"color:rgb(255, 255, 255);\n"
 "border:2px solid #ca5cdd;\n"
 "border-radius:8px;\n"
 "padding:5px;\n"
@@ -252,6 +360,7 @@ public:
         tableWidget_BookList->setObjectName("tableWidget_BookList");
         tableWidget_BookList->setMouseTracking(true);
         tableWidget_BookList->setStyleSheet(QString::fromUtf8("QTableWidget{\n"
+"color:rgb(255, 255, 255);\n"
 "alternate-background-color: #606060;\n"
 "selection-background-color: #282828;\n"
 "border:2px solid #ca5cdd;\n"
@@ -273,11 +382,11 @@ public:
         verticalLayout_2->addWidget(groupBox_searchpage);
 
         stackedWidget->addWidget(page_BookList);
-        page_2 = new QWidget();
-        page_2->setObjectName("page_2");
-        verticalLayout_9 = new QVBoxLayout(page_2);
+        page_BookDetail = new QWidget();
+        page_BookDetail->setObjectName("page_BookDetail");
+        verticalLayout_9 = new QVBoxLayout(page_BookDetail);
         verticalLayout_9->setObjectName("verticalLayout_9");
-        groupBox_2 = new QGroupBox(page_2);
+        groupBox_2 = new QGroupBox(page_BookDetail);
         groupBox_2->setObjectName("groupBox_2");
         verticalLayout_8 = new QVBoxLayout(groupBox_2);
         verticalLayout_8->setObjectName("verticalLayout_8");
@@ -301,6 +410,7 @@ public:
         label_discription->setObjectName("label_discription");
         label_discription->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
+"color:rgb(255, 255, 255);\n"
 " border:2px solid #ca5cdd;\n"
 " border-radius:8px;\n"
 " padding:5px;\n"
@@ -319,6 +429,7 @@ public:
         pushButton_EditBook = new QPushButton(groupBox_2);
         pushButton_EditBook->setObjectName("pushButton_EditBook");
         pushButton_EditBook->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"color:rgb(255, 255, 255);\n"
 "    text-decoration: none;\n"
 "}\n"
 "QPushButton:hover {\n"
@@ -330,6 +441,7 @@ public:
         pushButton_DeleteBook = new QPushButton(groupBox_2);
         pushButton_DeleteBook->setObjectName("pushButton_DeleteBook");
         pushButton_DeleteBook->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"color:rgb(255, 255, 255);\n"
 "    text-decoration: none;\n"
 "}\n"
 "QPushButton:hover {\n"
@@ -341,6 +453,7 @@ public:
         pushButton_toWeb = new QPushButton(groupBox_2);
         pushButton_toWeb->setObjectName("pushButton_toWeb");
         pushButton_toWeb->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"color:rgb(255, 255, 255);\n"
 "    text-decoration: none;\n"
 "}\n"
 "QPushButton:hover {\n"
@@ -356,7 +469,7 @@ public:
 
         verticalLayout_9->addWidget(groupBox_2);
 
-        stackedWidget->addWidget(page_2);
+        stackedWidget->addWidget(page_BookDetail);
         page_UserList = new QWidget();
         page_UserList->setObjectName("page_UserList");
         verticalLayout_3 = new QVBoxLayout(page_UserList);
@@ -392,6 +505,7 @@ public:
         comboBox_searchby_user->setAcceptDrops(true);
         comboBox_searchby_user->setStyleSheet(QString::fromUtf8("QComboBox\n"
 "{\n"
+"color:rgb(255, 255, 255);\n"
 " border:2px solid #ca5cdd;\n"
 " border-radius:8px;\n"
 " padding:5px;\n"
@@ -415,6 +529,7 @@ public:
         lineEdit_searchinput_user->setObjectName("lineEdit_searchinput_user");
         lineEdit_searchinput_user->setStyleSheet(QString::fromUtf8(" QLineEdit\n"
 "{\n"
+"color:rgb(255, 255, 255);\n"
 " border:2px solid #ca5cdd;\n"
 "border-radius:8px;\n"
 "padding:5px;\n"
@@ -432,6 +547,7 @@ public:
         tableWidget_UserList->setObjectName("tableWidget_UserList");
         tableWidget_UserList->setMouseTracking(true);
         tableWidget_UserList->setStyleSheet(QString::fromUtf8("QTableWidget{\n"
+"color:rgb(255, 255, 255);\n"
 "alternate-background-color: #606060;\n"
 "selection-background-color: #282828;\n"
 " border:2px solid #ca5cdd;\n"
@@ -449,6 +565,7 @@ public:
         tableWidget_RankBoard = new QTableWidget(groupBox);
         tableWidget_RankBoard->setObjectName("tableWidget_RankBoard");
         tableWidget_RankBoard->setStyleSheet(QString::fromUtf8("QTableWidget{\n"
+"color:rgb(255, 255, 255);\n"
 "alternate-background-color: #606060;\n"
 "selection-background-color: #282828;\n"
 " border:2px solid #ca5cdd;\n"
@@ -465,6 +582,26 @@ public:
         verticalLayout_3->addWidget(groupBox);
 
         stackedWidget->addWidget(page_UserList);
+        page_BorrowLog = new QWidget();
+        page_BorrowLog->setObjectName("page_BorrowLog");
+        verticalLayout_10 = new QVBoxLayout(page_BorrowLog);
+        verticalLayout_10->setObjectName("verticalLayout_10");
+        tableWidget_BorrowLog = new QTableWidget(page_BorrowLog);
+        tableWidget_BorrowLog->setObjectName("tableWidget_BorrowLog");
+        tableWidget_BorrowLog->setStyleSheet(QString::fromUtf8("QTableWidget{\n"
+"alternate-background-color: #606060;\n"
+"selection-background-color: #282828;\n"
+"border:2px solid #ca5cdd;\n"
+"border-radius: 8px;\n"
+"padding:1px;\n"
+"}"));
+        tableWidget_BorrowLog->setEditTriggers(QAbstractItemView::EditTrigger::NoEditTriggers);
+        tableWidget_BorrowLog->setDragDropOverwriteMode(false);
+        tableWidget_BorrowLog->setAlternatingRowColors(true);
+
+        verticalLayout_10->addWidget(tableWidget_BorrowLog);
+
+        stackedWidget->addWidget(page_BorrowLog);
 
         verticalLayout->addWidget(stackedWidget);
 
@@ -479,7 +616,7 @@ public:
 
         retranslateUi(BookWindow_Librarian);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(2);
         comboBox_searchby_book->setCurrentIndex(0);
         comboBox_searchby_user->setCurrentIndex(0);
 
@@ -490,6 +627,11 @@ public:
     void retranslateUi(QMainWindow *BookWindow_Librarian)
     {
         BookWindow_Librarian->setWindowTitle(QCoreApplication::translate("BookWindow_Librarian", "MainWindow", nullptr));
+        pushButton_PreviousPage->setText(QCoreApplication::translate("BookWindow_Librarian", "\342\206\220", nullptr));
+        pushButton_NextPage->setText(QCoreApplication::translate("BookWindow_Librarian", "\342\206\222", nullptr));
+        pushButton_Reload->setText(QCoreApplication::translate("BookWindow_Librarian", "\342\237\263", nullptr));
+        label_Space->setText(QString());
+        pushButton_LogOut->setText(QCoreApplication::translate("BookWindow_Librarian", "Log Out", nullptr));
         groupBox_navigationbar->setTitle(QString());
         label_date->setText(QString());
         label_time->setText(QString());

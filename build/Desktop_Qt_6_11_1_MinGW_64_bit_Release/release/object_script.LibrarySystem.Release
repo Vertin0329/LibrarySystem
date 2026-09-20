@@ -159,6 +159,7 @@ release/deletebookdialog.o
 release/filterbookforlibrariandialog.o
 release/filterdialog.o
 release/filteruserforlibrariandialog.o
+release/logoutconfirmdialog.o
 release/main.o
 release/loginwindow.o
 release/qrcodegenerator.o
@@ -177,3 +178,4 @@ release/moc_filterbookforlibrariandialog.o
 release/moc_filterdialog.o
 release/moc_filteruserforlibrariandialog.o
 release/moc_loginwindow.o
+release/moc_logoutconfirmdialog.o

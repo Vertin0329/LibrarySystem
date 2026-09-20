@@ -111,7 +111,7 @@ public:
 
     void retranslateUi(QDialog *BookBorrowConfirmDialog)
     {
-        BookBorrowConfirmDialog->setWindowTitle(QCoreApplication::translate("BookBorrowConfirmDialog", "Dialog", nullptr));
+        BookBorrowConfirmDialog->setWindowTitle(QCoreApplication::translate("BookBorrowConfirmDialog", "Borrow", nullptr));
         label->setText(QString());
         pushButton->setText(QCoreApplication::translate("BookBorrowConfirmDialog", "Yes, I want to", nullptr));
         pushButton_2->setText(QCoreApplication::translate("BookBorrowConfirmDialog", "No, leave me alone", nullptr));

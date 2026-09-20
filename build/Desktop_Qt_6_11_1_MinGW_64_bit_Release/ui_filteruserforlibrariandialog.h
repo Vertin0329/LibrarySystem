@@ -84,7 +84,7 @@ public:
 
     void retranslateUi(QDialog *FilterUserForLibrarianDialog)
     {
-        FilterUserForLibrarianDialog->setWindowTitle(QCoreApplication::translate("FilterUserForLibrarianDialog", "Dialog", nullptr));
+        FilterUserForLibrarianDialog->setWindowTitle(QCoreApplication::translate("FilterUserForLibrarianDialog", "Filter", nullptr));
         groupBox_AccType->setTitle(QCoreApplication::translate("FilterUserForLibrarianDialog", "Account Type", nullptr));
         radioButton_Admin->setText(QCoreApplication::translate("FilterUserForLibrarianDialog", "Admin", nullptr));
         radioButton_User->setText(QCoreApplication::translate("FilterUserForLibrarianDialog", "User", nullptr));

@@ -40,6 +40,14 @@ public:
     QAction *actionPaste;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout_3;
+    QWidget *widget;
+    QVBoxLayout *verticalLayout_15;
+    QHBoxLayout *horizontalLayout_9;
+    QPushButton *pushButton_PreviousPage;
+    QPushButton *pushButton_NextPage;
+    QPushButton *pushButton_Reload;
+    QLabel *label_Space;
+    QPushButton *pushButton_LogOut;
     QGroupBox *groupBox_navigationbar;
     QVBoxLayout *verticalLayout_4;
     QHBoxLayout *horizontalLayout;
@@ -59,7 +67,7 @@ public:
     QVBoxLayout *verticalLayout_9;
     QLabel *label_greeting;
     QLabel *label_profiePic;
-    QLabel *label_userState;
+    QTableWidget *tableWidget_Status;
     QTableWidget *tableWidget_RankBoard;
     QWidget *page_search;
     QVBoxLayout *verticalLayout_2;
@@ -128,6 +136,7 @@ public:
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/img/img/flat-design-library-logo-design_23-2149324476.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         BookWindow_Student->setWindowIcon(icon);
+        BookWindow_Student->setStyleSheet(QString::fromUtf8(""));
         actionRedo = new QAction(BookWindow_Student);
         actionRedo->setObjectName("actionRedo");
         actionUndo = new QAction(BookWindow_Student);
@@ -142,6 +151,99 @@ public:
         centralwidget->setObjectName("centralwidget");
         verticalLayout_3 = new QVBoxLayout(centralwidget);
         verticalLayout_3->setObjectName("verticalLayout_3");
+        widget = new QWidget(centralwidget);
+        widget->setObjectName("widget");
+        verticalLayout_15 = new QVBoxLayout(widget);
+        verticalLayout_15->setObjectName("verticalLayout_15");
+        horizontalLayout_9 = new QHBoxLayout();
+        horizontalLayout_9->setObjectName("horizontalLayout_9");
+        pushButton_PreviousPage = new QPushButton(widget);
+        pushButton_PreviousPage->setObjectName("pushButton_PreviousPage");
+        pushButton_PreviousPage->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"    border-radius: 4px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgba(255, 255, 255, 30);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgba(255, 255, 255, 50);\n"
+"}"));
+
+        horizontalLayout_9->addWidget(pushButton_PreviousPage);
+
+        pushButton_NextPage = new QPushButton(widget);
+        pushButton_NextPage->setObjectName("pushButton_NextPage");
+        pushButton_NextPage->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"    border-radius: 4px; \n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgba(255, 255, 255, 30); \n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgba(255, 255, 255, 50); \n"
+"}"));
+
+        horizontalLayout_9->addWidget(pushButton_NextPage);
+
+        pushButton_Reload = new QPushButton(widget);
+        pushButton_Reload->setObjectName("pushButton_Reload");
+        pushButton_Reload->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"    border-radius: 4px; \n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgba(255, 255, 255, 30); \n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgba(255, 255, 255, 50); \n"
+"}"));
+
+        horizontalLayout_9->addWidget(pushButton_Reload);
+
+        label_Space = new QLabel(widget);
+        label_Space->setObjectName("label_Space");
+
+        horizontalLayout_9->addWidget(label_Space);
+
+        pushButton_LogOut = new QPushButton(widget);
+        pushButton_LogOut->setObjectName("pushButton_LogOut");
+        pushButton_LogOut->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"    border-radius: 4px; \n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgba(255, 255, 255, 30); \n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgba(255, 255, 255, 50); \n"
+"}"));
+
+        horizontalLayout_9->addWidget(pushButton_LogOut);
+
+        horizontalLayout_9->setStretch(0, 1);
+        horizontalLayout_9->setStretch(1, 1);
+        horizontalLayout_9->setStretch(2, 1);
+        horizontalLayout_9->setStretch(3, 40);
+
+        verticalLayout_15->addLayout(horizontalLayout_9);
+
+
+        verticalLayout_3->addWidget(widget);
+
         groupBox_navigationbar = new QGroupBox(centralwidget);
         groupBox_navigationbar->setObjectName("groupBox_navigationbar");
         groupBox_navigationbar->setStyleSheet(QString::fromUtf8("border:2px solid #702963;\n"
@@ -227,6 +329,7 @@ public:
 
         stackedWidget = new QStackedWidget(centralwidget);
         stackedWidget->setObjectName("stackedWidget");
+        stackedWidget->setStyleSheet(QString::fromUtf8("color:rgb(255, 255, 255);"));
         page_home = new QWidget();
         page_home->setObjectName("page_home");
         verticalLayout = new QVBoxLayout(page_home);
@@ -254,18 +357,27 @@ public:
 
         verticalLayout_9->addWidget(label_profiePic);
 
-        verticalLayout_9->setStretch(0, 2);
-        verticalLayout_9->setStretch(1, 10);
+        verticalLayout_9->setStretch(0, 1);
+        verticalLayout_9->setStretch(1, 5);
 
         horizontalLayout_3->addLayout(verticalLayout_9);
 
-        label_userState = new QLabel(groupBox_2);
-        label_userState->setObjectName("label_userState");
+        tableWidget_Status = new QTableWidget(groupBox_2);
+        tableWidget_Status->setObjectName("tableWidget_Status");
+        tableWidget_Status->setStyleSheet(QString::fromUtf8("QTableWidget{\n"
+"alternate-background-color: #606060;\n"
+"selection-background-color: #282828;\n"
+"border:2px solid #ca5cdd;\n"
+"border-radius: 8px;\n"
+"padding:1px;\n"
+"}"));
+        tableWidget_Status->setEditTriggers(QAbstractItemView::EditTrigger::NoEditTriggers);
+        tableWidget_Status->setAlternatingRowColors(true);
 
-        horizontalLayout_3->addWidget(label_userState);
+        horizontalLayout_3->addWidget(tableWidget_Status);
 
         horizontalLayout_3->setStretch(0, 2);
-        horizontalLayout_3->setStretch(1, 5);
+        horizontalLayout_3->setStretch(1, 6);
 
         verticalLayout_10->addLayout(horizontalLayout_3);
 
@@ -494,11 +606,13 @@ public:
         verticalLayout_11->setObjectName("verticalLayout_11");
         label_UserID = new QLabel(groupBox_3);
         label_UserID->setObjectName("label_UserID");
+        label_UserID->setStyleSheet(QString::fromUtf8("color:rgb(255, 255, 255);"));
 
         verticalLayout_11->addWidget(label_UserID);
 
         label_Name = new QLabel(groupBox_3);
         label_Name->setObjectName("label_Name");
+        label_Name->setStyleSheet(QString::fromUtf8("color:rgb(255, 255, 255);"));
 
         verticalLayout_11->addWidget(label_Name);
 
@@ -654,7 +768,7 @@ public:
 
         retranslateUi(BookWindow_Student);
 
-        stackedWidget->setCurrentIndex(4);
+        stackedWidget->setCurrentIndex(0);
         comboBox_searchby->setCurrentIndex(0);
 
 
@@ -663,7 +777,7 @@ public:
 
     void retranslateUi(QMainWindow *BookWindow_Student)
     {
-        BookWindow_Student->setWindowTitle(QString());
+        BookWindow_Student->setWindowTitle(QCoreApplication::translate("BookWindow_Student", "Main Window", nullptr));
         actionRedo->setText(QCoreApplication::translate("BookWindow_Student", "Redo", nullptr));
 #if QT_CONFIG(shortcut)
         actionRedo->setShortcut(QCoreApplication::translate("BookWindow_Student", "Ctrl+Z", nullptr));
@@ -684,6 +798,11 @@ public:
 #if QT_CONFIG(shortcut)
         actionPaste->setShortcut(QCoreApplication::translate("BookWindow_Student", "Ctrl+V", nullptr));
 #endif // QT_CONFIG(shortcut)
+        pushButton_PreviousPage->setText(QCoreApplication::translate("BookWindow_Student", "\342\206\220", nullptr));
+        pushButton_NextPage->setText(QCoreApplication::translate("BookWindow_Student", "\342\206\222", nullptr));
+        pushButton_Reload->setText(QCoreApplication::translate("BookWindow_Student", "\342\237\263", nullptr));
+        label_Space->setText(QString());
+        pushButton_LogOut->setText(QCoreApplication::translate("BookWindow_Student", "Log out", nullptr));
         groupBox_navigationbar->setTitle(QString());
         label_date->setText(QString());
         label_time->setText(QString());
@@ -694,7 +813,6 @@ public:
         groupBox_2->setTitle(QString());
         label_greeting->setText(QCoreApplication::translate("BookWindow_Student", "TextLabel", nullptr));
         label_profiePic->setText(QCoreApplication::translate("BookWindow_Student", "No Image", nullptr));
-        label_userState->setText(QCoreApplication::translate("BookWindow_Student", "TextLabel", nullptr));
         groupBox_searchpage->setTitle(QString());
         pushButton_filter->setText(QCoreApplication::translate("BookWindow_Student", "Filter", nullptr));
         comboBox_searchby->setItemText(0, QCoreApplication::translate("BookWindow_Student", "Search by", nullptr));

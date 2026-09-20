@@ -185,7 +185,7 @@ public:
 
     void retranslateUi(QDialog *BookReturnDialog)
     {
-        BookReturnDialog->setWindowTitle(QCoreApplication::translate("BookReturnDialog", "Dialog", nullptr));
+        BookReturnDialog->setWindowTitle(QCoreApplication::translate("BookReturnDialog", "Return", nullptr));
         label_return->setText(QCoreApplication::translate("BookReturnDialog", "Are you sure you want to return this book?", nullptr));
         pushButton_Accept->setText(QCoreApplication::translate("BookReturnDialog", "Yes, I want to", nullptr));
         pushButton_Cancel->setText(QCoreApplication::translate("BookReturnDialog", "No, leave me alone", nullptr));

@@ -48,6 +48,8 @@ public:
 
     void saveCurrentIndex();
 
+    void readFileAndDisplayStatus();
+
 private:
     Ui::BookWindow_Student *ui;
 
@@ -102,6 +104,7 @@ private slots:
     void on_pushButton_NextPage_clicked();
 
     void on_pushButton_Reload_clicked();
+    void on_tableWidget_Status_cellClicked(int row, int column);
 };
 
 inline int bookRow;

@@ -512,6 +512,7 @@ void BookWindow_Librarian::readFileAndDisplayBorrowLog()
     int rowCount = 0;
     while (queryLog.next()){
         ui->tableWidget_BorrowLog->insertRow(rowCount);
+
         QTableWidgetItem *log_id = new QTableWidgetItem;
         QTableWidgetItem *user_id = new QTableWidgetItem;
         QTableWidgetItem *bookcode = new QTableWidgetItem;

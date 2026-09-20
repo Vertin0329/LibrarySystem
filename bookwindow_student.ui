@@ -241,7 +241,7 @@ QPushButton:hover {
        <string notr="true">color:rgb(255, 255, 255);</string>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_home">
        <layout class="QVBoxLayout" name="verticalLayout">
@@ -254,9 +254,9 @@ QPushButton:hover {
            <item>
             <layout class="QVBoxLayout" name="verticalLayout_10" stretch="2,1">
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="2,5">
+              <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="2,6">
                <item>
-                <layout class="QVBoxLayout" name="verticalLayout_9" stretch="2,10">
+                <layout class="QVBoxLayout" name="verticalLayout_9" stretch="1,5">
                  <item>
                   <widget class="QLabel" name="label_greeting">
                    <property name="styleSheet">
@@ -281,9 +281,21 @@ font: 700 28pt &quot;Microsoft JhengHei UI&quot;;</string>
                 </layout>
                </item>
                <item>
-                <widget class="QLabel" name="label_userState">
-                 <property name="text">
-                  <string>TextLabel</string>
+                <widget class="QTableWidget" name="tableWidget_Status">
+                 <property name="styleSheet">
+                  <string notr="true">QTableWidget{
+alternate-background-color: #606060;
+selection-background-color: #282828;
+border:2px solid #ca5cdd;
+border-radius: 8px;
+padding:1px;
+}</string>
+                 </property>
+                 <property name="editTriggers">
+                  <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                 </property>
+                 <property name="alternatingRowColors">
+                  <bool>true</bool>
                  </property>
                 </widget>
                </item>

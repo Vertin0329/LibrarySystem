@@ -67,7 +67,7 @@ public:
     QVBoxLayout *verticalLayout_9;
     QLabel *label_greeting;
     QLabel *label_profiePic;
-    QLabel *label_userState;
+    QTableWidget *tableWidget_Status;
     QTableWidget *tableWidget_RankBoard;
     QWidget *page_search;
     QVBoxLayout *verticalLayout_2;
@@ -357,18 +357,27 @@ public:
 
         verticalLayout_9->addWidget(label_profiePic);
 
-        verticalLayout_9->setStretch(0, 2);
-        verticalLayout_9->setStretch(1, 10);
+        verticalLayout_9->setStretch(0, 1);
+        verticalLayout_9->setStretch(1, 5);
 
         horizontalLayout_3->addLayout(verticalLayout_9);
 
-        label_userState = new QLabel(groupBox_2);
-        label_userState->setObjectName("label_userState");
+        tableWidget_Status = new QTableWidget(groupBox_2);
+        tableWidget_Status->setObjectName("tableWidget_Status");
+        tableWidget_Status->setStyleSheet(QString::fromUtf8("QTableWidget{\n"
+"alternate-background-color: #606060;\n"
+"selection-background-color: #282828;\n"
+"border:2px solid #ca5cdd;\n"
+"border-radius: 8px;\n"
+"padding:1px;\n"
+"}"));
+        tableWidget_Status->setEditTriggers(QAbstractItemView::EditTrigger::NoEditTriggers);
+        tableWidget_Status->setAlternatingRowColors(true);
 
-        horizontalLayout_3->addWidget(label_userState);
+        horizontalLayout_3->addWidget(tableWidget_Status);
 
         horizontalLayout_3->setStretch(0, 2);
-        horizontalLayout_3->setStretch(1, 5);
+        horizontalLayout_3->setStretch(1, 6);
 
         verticalLayout_10->addLayout(horizontalLayout_3);
 
@@ -759,7 +768,7 @@ public:
 
         retranslateUi(BookWindow_Student);
 
-        stackedWidget->setCurrentIndex(4);
+        stackedWidget->setCurrentIndex(0);
         comboBox_searchby->setCurrentIndex(0);
 
 
@@ -804,7 +813,6 @@ public:
         groupBox_2->setTitle(QString());
         label_greeting->setText(QCoreApplication::translate("BookWindow_Student", "TextLabel", nullptr));
         label_profiePic->setText(QCoreApplication::translate("BookWindow_Student", "No Image", nullptr));
-        label_userState->setText(QCoreApplication::translate("BookWindow_Student", "TextLabel", nullptr));
         groupBox_searchpage->setTitle(QString());
         pushButton_filter->setText(QCoreApplication::translate("BookWindow_Student", "Filter", nullptr));
         comboBox_searchby->setItemText(0, QCoreApplication::translate("BookWindow_Student", "Search by", nullptr));

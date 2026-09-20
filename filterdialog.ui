@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>filterDialog</class>
+ <widget class="QDialog" name="filterDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>502</width>
+    <height>371</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Filter</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,2,2,0,0">
+     <item>
+      <widget class="QGroupBox" name="groupBox_Status">
+       <property name="title">
+        <string>Status</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QRadioButton" name="radioButton_Available">
+          <property name="text">
+           <string>Available</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="radioButton_Unavailable">
+          <property name="text">
+           <string>Unavailable</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="radioButton_Borrowed">
+          <property name="text">
+           <string>Borrowed</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox_Language">
+       <property name="title">
+        <string>Langauge</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QComboBox" name="comboBox_Language">
+          <item>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>English</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>German</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>French</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Dutch</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Italian</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Spanish</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Finnish</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Hangarian</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Portuguese</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Esperanto</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Latin</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Norwegian</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Afrikaans</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="title">
+        <string>Genre</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_7">
+        <item>
+         <widget class="QComboBox" name="comboBox_Genre">
+          <item>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Mystery</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Thriller and Suspense</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Horror</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Science Fiction</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Fantasy</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>High Fantasy</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Urban Fantasy</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Grimdark Fantasy</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Dystopian Fiction</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Romance</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Romantasy</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Historical Fiction</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Comtemporary Fiction</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Literary Fiction</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Young Adult</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>New Adult</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Xenofiction</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Children's Fiction</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Graphic Novel</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Manga</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Short Story</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Novella</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Autobiography</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Memoir</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Biography</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Self-help</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Parenting</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Food and Drink</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Photography</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>History</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Business</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Humor</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>True Crime</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Religion and Spirituality</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Philosophy</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Health and Fitness</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Science</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Technology</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Crafts and DIY</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Learning and Education</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Essays</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Gardening and Homesteading</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Music</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Children's</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Other Non-Fiction</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Leave blank to show full list</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDialogButtonBox" name="buttonBox">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="standardButtons">
+        <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>filterDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>filterDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

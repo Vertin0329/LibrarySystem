@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AddNewDialog</class>
+ <widget class="QDialog" name="AddNewDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>857</width>
+    <height>566</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Add New</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QRadioButton" name="radioButton_AddBook">
+       <property name="acceptDrops">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Add Book</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="radioButton_AddUser">
+       <property name="text">
+        <string>Add User</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QStackedWidget" name="stackedWidget_AddNew">
+     <property name="currentIndex">
+      <number>2</number>
+     </property>
+     <widget class="QWidget" name="page_AddBook">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QLabel" name="label_Title">
+           <property name="text">
+            <string>Title:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_Author">
+           <property name="text">
+            <string>Author:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_Language">
+           <property name="text">
+            <string>Language:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_IssuedDate">
+           <property name="text">
+            <string>Issued Date:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_PrimarySubject">
+           <property name="text">
+            <string>Primary Subject:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_LoccClassification">
+           <property name="text">
+            <string>Locc Classification:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_LoccArea">
+           <property name="text">
+            <string>Locc Area:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_Genre">
+           <property name="text">
+            <string>Genre:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_Bookshelf">
+           <property name="text">
+            <string>Bookshelf:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_URL">
+           <property name="text">
+            <string>URL:</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <property name="spacing">
+          <number>20</number>
+         </property>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_Title"/>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_Author"/>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox_Language">
+           <item>
+            <property name="text">
+             <string>English</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>German</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>French</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Dutch</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Italian</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Spanish</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Finnish</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Hangarian</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Portuguese</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Esperanto</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Latin</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Norwegian</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Afrikaans</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_IssueDate">
+           <property name="placeholderText">
+            <string>YYYY/MM/DD</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_PrimartSubject"/>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_LoccClassification"/>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_LoccArea"/>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox_Genre">
+           <item>
+            <property name="text">
+             <string>Mystery</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Thriller and Suspense</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Horror</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Science Fiction</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Fantasy</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>High Fantasy</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Urban Fantasy</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Grimdark Fantasy</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Dystopian Fiction</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Romance</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Romantasy</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Historical Fiction</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Comtemporary Fiction</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Literary Fiction</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Young Adult</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>New Adult</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Xenofiction</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Children's Fiction</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Graphic Novel</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Manga</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Short Story</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Novella</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Autobiography</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Memoir</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Biography</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Self-help</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Parenting</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Food and Drink</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Photography</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>History</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Business</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Humor</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>True Crime</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Religion and Spirituality</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Philosophy</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Health and Fitness</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Science</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Technology</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Crafts and DIY</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Learning and Education</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Essays</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Gardening and Homesteading</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Music</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Children's</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Other Non-Fiction</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_Bookshelf"/>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_URL"/>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_AddUser">
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0">
+         <item>
+          <widget class="QLabel" name="label_UserID">
+           <property name="text">
+            <string>Account Type:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_UserName">
+           <property name="text">
+            <string>User Name:</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_5" stretch="0,0">
+         <property name="spacing">
+          <number>110</number>
+         </property>
+         <item>
+          <widget class="QComboBox" name="comboBox_AccType">
+           <item>
+            <property name="text">
+             <string>user</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>admin</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_UserName"/>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_AccData">
+      <layout class="QVBoxLayout" name="verticalLayout_6">
+       <item>
+        <widget class="QLabel" name="label_AccData">
+         <property name="styleSheet">
+          <string notr="true">font: 18pt &quot;Microsoft JhengHei UI&quot;;</string>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="pushButton">
+     <property name="text">
+      <string>Confirm</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

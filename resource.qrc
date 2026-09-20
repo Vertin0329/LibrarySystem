@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>img/hidepw.png</file>
+        <file>img/showpw.png</file>
+        <file>img/flat-design-library-logo-design_23-2149324476.png</file>
+        <file>img/samplephoto_personal.png</file>
+        <file>img/png-clipart-symbol-computer-icons-unicode-notice-miscellaneous-angle.png</file>
+    </qresource>
+</RCC>

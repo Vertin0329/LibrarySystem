@@ -1,5 +1,6 @@
 #include "loginwindow.h"
 #include "ui_loginwindow.h"
+#include "accountverifydialog.h"
 
 #include <QFile>
 #include <string>
@@ -11,14 +12,17 @@ LoginWindow::LoginWindow(QWidget *parent)
     ui->setupUi(this);
 
     connect(ui->pushButton, &QPushButton::pressed, this, &LoginWindow::on_pushButton_pressed);
-
     connect(ui->pushButton, &QPushButton::released, this, &LoginWindow::on_pushButton_released);
 
     QPixmap defaultPixmap(":/img/img/hidepw.png");
     ui->pushButton->setIcon(QIcon(defaultPixmap));
     ui->pushButton->setIconSize(QSize(56,27));
-    ui->lineEdit_Username->setStyleSheet("border:2px solid #ca5cdd; border-radius:8px; padding:5px;");
-    ui->lineEdit_Password->setStyleSheet("border:2px solid #ca5cdd; border-radius:8px; padding:5px;");
+    ui->lineEdit_Username->setStyleSheet("border:2px solid #ca5cdd; "
+                                         "border-radius:8px; "
+                                         "padding:5px;");
+    ui->lineEdit_Password->setStyleSheet("border:2px solid #ca5cdd; "
+                                         "border-radius:8px; "
+                                         "padding:5px;");
 }
 
 LoginWindow::~LoginWindow()
@@ -28,7 +32,8 @@ LoginWindow::~LoginWindow()
 
 void LoginWindow::on_pushButton_Forgotpw_clicked()
 {
-
+    AccountVerifyDialog accountVerifyDialog(this);
+    accountVerifyDialog.exec();
 }
 
 void LoginWindow::on_pushButton_Login_clicked()
@@ -47,13 +52,9 @@ void LoginWindow::on_pushButton_Login_clicked()
         dataBase = QSqlDatabase::addDatabase("QSQLITE", "DBConnection");
         dataBase.setDatabaseName(dbPath);
     }
+    dataBase.open();
 
-    if(!dataBase.open()){
-        qDebug() << "Database open Error" << dataBase.lastError().text();
-        return;
-    }
-
-    // build index for userFile for easier access
+    // check if empty or not
 
     if (username == ""){
         ui->label_LoginStatus->setStyleSheet("color: red;");
@@ -79,10 +80,11 @@ void LoginWindow::on_pushButton_Login_clicked()
         // User have input both lineEdit
 
         QSqlQuery query(dataBase);
-        query.prepare("SELECT userid, password, name, current_br, acc_type FROM users WHERE userid = :u LIMIT 1");
+        query.prepare("SELECT userid, password, name, current_br, acc_type "
+                      "FROM users "
+                      "WHERE userid = :u LIMIT 1");
         query.bindValue(":u", q_username);
-
-        if(query.exec() && query.next()){
+        if (query.exec() && query.next()){
             QString pwInDb = query.value(1).toString();
 
             if (pwInDb == q_password) {

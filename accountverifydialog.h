@@ -2,6 +2,8 @@
 #define ACCOUNTVERIFYDIALOG_H
 
 #include <QDialog>
+#include <QSqlDatabase>
+#include <QSqlQuery>
 
 namespace Ui {
 class AccountVerifyDialog;
@@ -14,6 +16,9 @@ class AccountVerifyDialog : public QDialog
 public:
     explicit AccountVerifyDialog(QWidget *parent = nullptr);
     ~AccountVerifyDialog();
+
+private slots:
+    void on_pushButton_Verify_clicked();
 
 private:
     Ui::AccountVerifyDialog *ui;

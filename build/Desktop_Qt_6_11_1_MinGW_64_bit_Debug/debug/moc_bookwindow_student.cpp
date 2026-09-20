@@ -62,8 +62,7 @@ template <> constexpr inline auto BookWindow_Student::qt_create_metaobjectdata<q
         "on_pushButton_PreviousPage_clicked",
         "on_pushButton_NextPage_clicked",
         "on_pushButton_Reload_clicked",
-        "on_tableWidget_Status_cellClicked",
-        "column"
+        "on_tableWidget_Status_cellClicked"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -110,8 +109,8 @@ template <> constexpr inline auto BookWindow_Student::qt_create_metaobjectdata<q
         // Slot 'on_pushButton_Reload_clicked'
         QtMocHelpers::SlotData<void()>(22, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_tableWidget_Status_cellClicked'
-        QtMocHelpers::SlotData<void(int, int)>(23, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::Int, 6 }, { QMetaType::Int, 24 },
+        QtMocHelpers::SlotData<void(int)>(23, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 6 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -155,7 +154,7 @@ void BookWindow_Student::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         case 16: _t->on_pushButton_PreviousPage_clicked(); break;
         case 17: _t->on_pushButton_NextPage_clicked(); break;
         case 18: _t->on_pushButton_Reload_clicked(); break;
-        case 19: _t->on_tableWidget_Status_cellClicked((*reinterpret_cast<std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<int>>(_a[2]))); break;
+        case 19: _t->on_tableWidget_Status_cellClicked((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     }

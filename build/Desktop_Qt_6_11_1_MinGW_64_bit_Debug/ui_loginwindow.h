@@ -48,7 +48,7 @@ public:
             LoginWindow->setObjectName("LoginWindow");
         LoginWindow->setEnabled(true);
         LoginWindow->resize(640, 400);
-        QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Preferred);
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(LoginWindow->sizePolicy().hasHeightForWidth());
@@ -183,7 +183,7 @@ public:
     void retranslateUi(QMainWindow *LoginWindow)
     {
         LoginWindow->setWindowTitle(QCoreApplication::translate("LoginWindow", "Login", nullptr));
-        label_Username->setText(QCoreApplication::translate("LoginWindow", " Username", nullptr));
+        label_Username->setText(QCoreApplication::translate("LoginWindow", " UserID     ", nullptr));
         label_Password->setText(QCoreApplication::translate("LoginWindow", " Password", nullptr));
         pushButton->setText(QString());
         pushButton_Login->setText(QCoreApplication::translate("LoginWindow", "Login", nullptr));

@@ -79,12 +79,7 @@ public:
 
         lineEdit_Username = new QLineEdit(centralwidget);
         lineEdit_Username->setObjectName("lineEdit_Username");
-        lineEdit_Username->setStyleSheet(QString::fromUtf8("QLabel\n"
-"{\n"
-" border:2px solid #3498db;\n"
-" border-radius:8px;\n"
-" padding:5px;\n"
-"}"));
+        lineEdit_Username->setStyleSheet(QString::fromUtf8(""));
 
         horizontalLayout->addWidget(lineEdit_Username);
 
@@ -102,18 +97,14 @@ public:
 
         lineEdit_Password = new QLineEdit(centralwidget);
         lineEdit_Password->setObjectName("lineEdit_Password");
-        lineEdit_Password->setStyleSheet(QString::fromUtf8("QLabel\n"
-"{\n"
-" border:2px solid #3498db;\n"
-" border-radius:8px;\n"
-" padding:5px;\n"
-"}"));
+        lineEdit_Password->setStyleSheet(QString::fromUtf8(""));
         lineEdit_Password->setEchoMode(QLineEdit::EchoMode::Password);
 
         horizontalLayout_2->addWidget(lineEdit_Password);
 
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName("pushButton");
+        pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(31, 31, 31);"));
 
         horizontalLayout_2->addWidget(pushButton);
 
@@ -128,6 +119,7 @@ public:
         sizePolicy2.setHeightForWidth(pushButton_Login->sizePolicy().hasHeightForWidth());
         pushButton_Login->setSizePolicy(sizePolicy2);
         pushButton_Login->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
+        pushButton_Login->setStyleSheet(QString::fromUtf8("background-color: rgb(40, 40, 40);"));
         pushButton_Login->setAutoDefault(true);
         pushButton_Login->setFlat(false);
 
@@ -144,7 +136,8 @@ public:
         pushButton_Forgotpw->setFont(font);
         pushButton_Forgotpw->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         pushButton_Forgotpw->setFocusPolicy(Qt::FocusPolicy::TabFocus);
-        pushButton_Forgotpw->setAutoFillBackground(true);
+        pushButton_Forgotpw->setAutoFillBackground(false);
+        pushButton_Forgotpw->setStyleSheet(QString::fromUtf8("background-color: rgb(31, 31, 31);"));
         pushButton_Forgotpw->setCheckable(false);
         pushButton_Forgotpw->setFlat(true);
 

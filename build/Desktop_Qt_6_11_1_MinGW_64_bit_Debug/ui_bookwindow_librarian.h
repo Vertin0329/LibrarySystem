@@ -362,7 +362,8 @@ public:
         tableWidget_BookList->setStyleSheet(QString::fromUtf8("QTableWidget{\n"
 "color:rgb(255, 255, 255);\n"
 "alternate-background-color: #606060;\n"
-"selection-background-color: #282828;\n"
+"selection-background-color: rgb(63, 63, 63);\n"
+"selection-color: rgb(255, 255, 255);\n"
 "border:2px solid #ca5cdd;\n"
 "border-radius: 8px;\n"
 "padding:1px;\n"
@@ -549,8 +550,9 @@ public:
         tableWidget_UserList->setStyleSheet(QString::fromUtf8("QTableWidget{\n"
 "color:rgb(255, 255, 255);\n"
 "alternate-background-color: #606060;\n"
-"selection-background-color: #282828;\n"
-" border:2px solid #ca5cdd;\n"
+"selection-background-color: rgb(63, 63, 63);\n"
+"selection-color: rgb(255, 255, 255);\n"
+"border:2px solid #ca5cdd;\n"
 "border-radius: 8px;\n"
 "padding:1px;\n"
 "}"));
@@ -567,8 +569,9 @@ public:
         tableWidget_RankBoard->setStyleSheet(QString::fromUtf8("QTableWidget{\n"
 "color:rgb(255, 255, 255);\n"
 "alternate-background-color: #606060;\n"
-"selection-background-color: #282828;\n"
-" border:2px solid #ca5cdd;\n"
+"selection-background-color: rgb(63, 63, 63);\n"
+"selection-color: rgb(255, 255, 255);\n"
+"border:2px solid #ca5cdd;\n"
 "border-radius: 8px;\n"
 "padding:1px;\n"
 "}"));
@@ -589,8 +592,10 @@ public:
         tableWidget_BorrowLog = new QTableWidget(page_BorrowLog);
         tableWidget_BorrowLog->setObjectName("tableWidget_BorrowLog");
         tableWidget_BorrowLog->setStyleSheet(QString::fromUtf8("QTableWidget{\n"
+"color:rgb(255, 255, 255);\n"
 "alternate-background-color: #606060;\n"
-"selection-background-color: #282828;\n"
+"selection-background-color: rgb(63, 63, 63);\n"
+"selection-color: rgb(255, 255, 255);\n"
 "border:2px solid #ca5cdd;\n"
 "border-radius: 8px;\n"
 "padding:1px;\n"
@@ -598,6 +603,8 @@ public:
         tableWidget_BorrowLog->setEditTriggers(QAbstractItemView::EditTrigger::NoEditTriggers);
         tableWidget_BorrowLog->setDragDropOverwriteMode(false);
         tableWidget_BorrowLog->setAlternatingRowColors(true);
+        tableWidget_BorrowLog->setSelectionMode(QAbstractItemView::SelectionMode::NoSelection);
+        tableWidget_BorrowLog->setSelectionBehavior(QAbstractItemView::SelectionBehavior::SelectRows);
 
         verticalLayout_10->addWidget(tableWidget_BorrowLog);
 
@@ -616,7 +623,7 @@ public:
 
         retranslateUi(BookWindow_Librarian);
 
-        stackedWidget->setCurrentIndex(2);
+        stackedWidget->setCurrentIndex(0);
         comboBox_searchby_book->setCurrentIndex(0);
         comboBox_searchby_user->setCurrentIndex(0);
 

@@ -752,3 +752,57 @@ void BookWindow_Student::on_tableWidget_Status_cellClicked(int row)
     ui->pushButton_renew->show();
 }
 
+
+void BookWindow_Student::on_pushButton_ShowHidePW_pressed()
+{
+    QPixmap pixmap(":/img/img/showpw.png");
+    ui->lineEdit_CurrentPW->setEchoMode(QLineEdit::Normal);
+    ui->pushButton_ShowHidePW->setIcon(QIcon(pixmap));
+    ui->pushButton_ShowHidePW->setIconSize(QSize(56,27));
+}
+
+
+void BookWindow_Student::on_pushButton_ShowHidePW_released()
+{
+    QPixmap pixmap(":/img/img/hidepw.png");
+    ui->lineEdit_CurrentPW->setEchoMode(QLineEdit::Password);
+    ui->pushButton_ShowHidePW->setIcon(QIcon(pixmap));
+    ui->pushButton_ShowHidePW->setIconSize(QSize(56,27));
+}
+
+
+void BookWindow_Student::on_pushButton_ShowHidePW2_pressed()
+{
+    QPixmap pixmap(":/img/img/showpw.png");
+    ui->lineEdit_NewPW->setEchoMode(QLineEdit::Normal);
+    ui->pushButton_ShowHidePW2->setIcon(QIcon(pixmap));
+    ui->pushButton_ShowHidePW2->setIconSize(QSize(56,27));
+}
+
+
+void BookWindow_Student::on_pushButton_ShowHidePW2_released()
+{
+    QPixmap pixmap(":/img/img/hidepw.png");
+    ui->lineEdit_NewPW->setEchoMode(QLineEdit::Normal);
+    ui->pushButton_ShowHidePW2->setIcon(QIcon(pixmap));
+    ui->pushButton_ShowHidePW2->setIconSize(QSize(56,27));
+}
+
+
+void BookWindow_Student::on_pushButton_ShowHidePW3_pressed()
+{
+    QPixmap pixmap(":/img/img/showpw.png");
+    ui->lineEdit_ConfirmPW->setEchoMode(QLineEdit::Normal);
+    ui->pushButton_ShowHidePW3->setIcon(QIcon(pixmap));
+    ui->pushButton_ShowHidePW3->setIconSize(QSize(56,27));
+}
+
+
+void BookWindow_Student::on_pushButton_ShowHidePW3_released()
+{
+    QPixmap pixmap(":/img/img/showpw.png");
+    ui->lineEdit_ConfirmPW->setEchoMode(QLineEdit::Normal);
+    ui->pushButton_ShowHidePW3->setIcon(QIcon(pixmap));
+    ui->pushButton_ShowHidePW3->setIconSize(QSize(56,27));
+}
+

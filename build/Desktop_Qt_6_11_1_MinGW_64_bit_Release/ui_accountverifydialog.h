@@ -78,7 +78,10 @@ public:
 
         lineEdit_UserID = new QLineEdit(page);
         lineEdit_UserID->setObjectName("lineEdit_UserID");
-        lineEdit_UserID->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
+        lineEdit_UserID->setStyleSheet(QString::fromUtf8("background-color: rgb(31, 31, 31); \n"
+"border:2px solid #ca5cdd;\n"
+" border-radius:8px;\n"
+" padding:5px;"));
 
         horizontalLayout->addWidget(lineEdit_UserID);
 
@@ -97,7 +100,10 @@ public:
 
         lineEdit_Name = new QLineEdit(page);
         lineEdit_Name->setObjectName("lineEdit_Name");
-        lineEdit_Name->setStyleSheet(QString::fromUtf8("color:rgb(255, 255, 255)"));
+        lineEdit_Name->setStyleSheet(QString::fromUtf8("background-color: rgb(31, 31, 31); \n"
+"border:2px solid #ca5cdd;\n"
+" border-radius:8px;\n"
+" padding:5px;"));
 
         horizontalLayout_3->addWidget(lineEdit_Name);
 

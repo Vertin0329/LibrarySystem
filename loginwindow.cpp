@@ -17,10 +17,12 @@ LoginWindow::LoginWindow(QWidget *parent)
     QPixmap defaultPixmap(":/img/img/hidepw.png");
     ui->pushButton->setIcon(QIcon(defaultPixmap));
     ui->pushButton->setIconSize(QSize(56,27));
-    ui->lineEdit_Username->setStyleSheet("border:2px solid #ca5cdd; "
+    ui->lineEdit_Username->setStyleSheet("background-color: rgb(31, 31, 31); "
+                                         "border:2px solid #ca5cdd; "
                                          "border-radius:8px; "
                                          "padding:5px;");
-    ui->lineEdit_Password->setStyleSheet("border:2px solid #ca5cdd; "
+    ui->lineEdit_Password->setStyleSheet("background-color: rgb(31, 31, 31); "
+                                         "border:2px solid #ca5cdd; "
                                          "border-radius:8px; "
                                          "padding:5px;");
 }
@@ -56,26 +58,29 @@ void LoginWindow::on_pushButton_Login_clicked()
 
     // check if empty or not
 
-    if (username == ""){
+    if (username == "" && password == ""){
         ui->label_LoginStatus->setStyleSheet("color: red;");
-        ui->label_LoginStatus->setText("Please enter your username");
-        ui->lineEdit_Username->setStyleSheet("border:2px solid #ff0f0f; border-radius:8px; padding:5px;");
-        ui->lineEdit_Password->setStyleSheet("border:2px solid #ca5cdd; border-radius:8px; padding:5px;");
+        ui->label_LoginStatus->setText("Please enter your username & password");
+        ui->lineEdit_Username->setStyleSheet("background-color: rgb(31, 31, 31); border:2px solid #ff0f0f; border-radius:8px; padding:5px;");
+        ui->lineEdit_Password->setStyleSheet("background-color: rgb(31, 31, 31); border:2px solid #ff0f0f; border-radius:8px; padding:5px;");
     } else if (password == ""){
         ui->label_LoginStatus->setStyleSheet("color: red;");
         ui->label_LoginStatus->setText("Please enter your password");
-        ui->lineEdit_Username->setStyleSheet("border:2px solid #ca5cdd; border-radius:8px; padding:5px;");
-        ui->lineEdit_Password->setStyleSheet("border:2px solid #ff0f0f; border-radius:8px; padding:5px;");
-    } else if (username == "" && password == "") {
+        ui->lineEdit_Username->setStyleSheet("background-color: rgb(31, 31, 31); border:2px solid #ca5cdd; border-radius:8px; padding:5px;");
+        ui->lineEdit_Password->setStyleSheet("background-color: rgb(31, 31, 31); border:2px solid #ff0f0f; border-radius:8px; padding:5px;");
+    } else if (username == "") {
         ui->label_LoginStatus->setStyleSheet("color: red;");
-        ui->label_LoginStatus->setText("Please enter your username & password");
-        ui->lineEdit_Username->setStyleSheet("border:2px solid #ff0f0f; border-radius:8px; padding:5px;");
-        ui->lineEdit_Password->setStyleSheet("border:2px solid #ff0f0f; border-radius:8px; padding:5px;");
+        ui->label_LoginStatus->setText("Please enter your username");
+        ui->lineEdit_Username->setStyleSheet("background-color: rgb(31, 31, 31); border:2px solid #ff0f0f; border-radius:8px; padding:5px;");
+        ui->lineEdit_Password->setStyleSheet("background-color: rgb(31, 31, 31); border:2px solid #ca5cdd; border-radius:8px; padding:5px;");
     } else if (username == "username" && password == "password"){
         ui->label_LoginStatus->setStyleSheet("color: red;");
         ui->label_LoginStatus->setText("Warning: User or Password incorrect");
         return;
     } else {
+
+        ui->lineEdit_Username->setStyleSheet("background-color: rgb(31, 31, 31); border:2px solid #ca5cdd; border-radius:8px; padding:5px;");
+        ui->lineEdit_Password->setStyleSheet("background-color: rgb(31, 31, 31); border:2px solid #ca5cdd; border-radius:8px; padding:5px;");
 
         // User have input both lineEdit
 

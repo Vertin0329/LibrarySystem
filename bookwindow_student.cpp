@@ -354,6 +354,7 @@ void BookWindow_Student::on_pushButton_borrow_clicked()
     bookBorrConfirm->exec();
 
     ui->pushButton_borrow->setEnabled(false);
+    ui->pushButton_borrow->setStyleSheet("background-color: black; color: grey;");
 }
 
 

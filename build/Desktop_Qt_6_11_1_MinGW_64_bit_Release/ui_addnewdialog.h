@@ -159,11 +159,19 @@ public:
         verticalLayout_3->setObjectName("verticalLayout_3");
         lineEdit_Title = new QLineEdit(page_AddBook);
         lineEdit_Title->setObjectName("lineEdit_Title");
+        lineEdit_Title->setStyleSheet(QString::fromUtf8("border:2px solid #ca5cdd; \n"
+"border-radius:8px; \n"
+"padding:5px;\n"
+"color: rgb(255, 255, 255);"));
 
         verticalLayout_3->addWidget(lineEdit_Title);
 
         lineEdit_Author = new QLineEdit(page_AddBook);
         lineEdit_Author->setObjectName("lineEdit_Author");
+        lineEdit_Author->setStyleSheet(QString::fromUtf8("border:2px solid #ca5cdd; \n"
+"border-radius:8px; \n"
+"padding:5px;\n"
+"color: rgb(255, 255, 255);"));
 
         verticalLayout_3->addWidget(lineEdit_Author);
 
@@ -182,26 +190,46 @@ public:
         comboBox_Language->addItem(QString());
         comboBox_Language->addItem(QString());
         comboBox_Language->setObjectName("comboBox_Language");
+        comboBox_Language->setStyleSheet(QString::fromUtf8("border:2px solid #ca5cdd; \n"
+"border-radius:8px; \n"
+"padding:5px;\n"
+""));
 
         verticalLayout_3->addWidget(comboBox_Language);
 
         lineEdit_IssueDate = new QLineEdit(page_AddBook);
         lineEdit_IssueDate->setObjectName("lineEdit_IssueDate");
+        lineEdit_IssueDate->setStyleSheet(QString::fromUtf8("border:2px solid #ca5cdd; \n"
+"border-radius:8px; \n"
+"padding:5px;\n"
+"color: rgb(255, 255, 255);"));
 
         verticalLayout_3->addWidget(lineEdit_IssueDate);
 
         lineEdit_PrimartSubject = new QLineEdit(page_AddBook);
         lineEdit_PrimartSubject->setObjectName("lineEdit_PrimartSubject");
+        lineEdit_PrimartSubject->setStyleSheet(QString::fromUtf8("border:2px solid #ca5cdd; \n"
+"border-radius:8px; \n"
+"padding:5px;\n"
+"color: rgb(255, 255, 255);"));
 
         verticalLayout_3->addWidget(lineEdit_PrimartSubject);
 
         lineEdit_LoccClassification = new QLineEdit(page_AddBook);
         lineEdit_LoccClassification->setObjectName("lineEdit_LoccClassification");
+        lineEdit_LoccClassification->setStyleSheet(QString::fromUtf8("border:2px solid #ca5cdd; \n"
+"border-radius:8px; \n"
+"padding:5px;\n"
+"color: rgb(255, 255, 255);"));
 
         verticalLayout_3->addWidget(lineEdit_LoccClassification);
 
         lineEdit_LoccArea = new QLineEdit(page_AddBook);
         lineEdit_LoccArea->setObjectName("lineEdit_LoccArea");
+        lineEdit_LoccArea->setStyleSheet(QString::fromUtf8("border:2px solid #ca5cdd; \n"
+"border-radius:8px; \n"
+"padding:5px;\n"
+"color: rgb(255, 255, 255);"));
 
         verticalLayout_3->addWidget(lineEdit_LoccArea);
 
@@ -252,16 +280,28 @@ public:
         comboBox_Genre->addItem(QString());
         comboBox_Genre->addItem(QString());
         comboBox_Genre->setObjectName("comboBox_Genre");
+        comboBox_Genre->setStyleSheet(QString::fromUtf8("border:2px solid #ca5cdd; \n"
+"border-radius:8px; \n"
+"padding:5px;\n"
+""));
 
         verticalLayout_3->addWidget(comboBox_Genre);
 
         lineEdit_Bookshelf = new QLineEdit(page_AddBook);
         lineEdit_Bookshelf->setObjectName("lineEdit_Bookshelf");
+        lineEdit_Bookshelf->setStyleSheet(QString::fromUtf8("border:2px solid #ca5cdd; \n"
+"border-radius:8px; \n"
+"padding:5px;\n"
+"color: rgb(255, 255, 255);"));
 
         verticalLayout_3->addWidget(lineEdit_Bookshelf);
 
         lineEdit_URL = new QLineEdit(page_AddBook);
         lineEdit_URL->setObjectName("lineEdit_URL");
+        lineEdit_URL->setStyleSheet(QString::fromUtf8("border:2px solid #ca5cdd; \n"
+"border-radius:8px; \n"
+"padding:5px;\n"
+"color: rgb(255, 255, 255);"));
 
         verticalLayout_3->addWidget(lineEdit_URL);
 
@@ -330,7 +370,7 @@ public:
 
         retranslateUi(AddNewDialog);
 
-        stackedWidget_AddNew->setCurrentIndex(2);
+        stackedWidget_AddNew->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(AddNewDialog);

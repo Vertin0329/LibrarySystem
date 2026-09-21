@@ -68,12 +68,7 @@
         <item>
          <widget class="QLineEdit" name="lineEdit_Username">
           <property name="styleSheet">
-           <string notr="true">QLabel
-{
- border:2px solid #3498db;
- border-radius:8px;
- padding:5px;
-}</string>
+           <string notr="true"/>
           </property>
          </widget>
         </item>
@@ -97,12 +92,7 @@
         <item>
          <widget class="QLineEdit" name="lineEdit_Password">
           <property name="styleSheet">
-           <string notr="true">QLabel
-{
- border:2px solid #3498db;
- border-radius:8px;
- padding:5px;
-}</string>
+           <string notr="true"/>
           </property>
           <property name="echoMode">
            <enum>QLineEdit::EchoMode::Password</enum>
@@ -111,6 +101,9 @@
         </item>
         <item>
          <widget class="QPushButton" name="pushButton">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(31, 31, 31);</string>
+          </property>
           <property name="text">
            <string/>
           </property>
@@ -128,6 +121,9 @@
         </property>
         <property name="cursor">
          <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(40, 40, 40);</string>
         </property>
         <property name="text">
          <string>Login</string>
@@ -165,7 +161,10 @@
          <enum>Qt::FocusPolicy::TabFocus</enum>
         </property>
         <property name="autoFillBackground">
-         <bool>true</bool>
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(31, 31, 31);</string>
         </property>
         <property name="text">
          <string>Forgot password? Click here</string>

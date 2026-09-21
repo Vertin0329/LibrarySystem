@@ -365,14 +365,18 @@ public:
         tableWidget_Status = new QTableWidget(groupBox_2);
         tableWidget_Status->setObjectName("tableWidget_Status");
         tableWidget_Status->setStyleSheet(QString::fromUtf8("QTableWidget{\n"
+"color:rgb(255, 255, 255);\n"
 "alternate-background-color: #606060;\n"
-"selection-background-color: #282828;\n"
+"selection-background-color: rgb(63, 63, 63);\n"
+"selection-color: rgb(255, 255, 255);\n"
 "border:2px solid #ca5cdd;\n"
 "border-radius: 8px;\n"
 "padding:1px;\n"
 "}"));
         tableWidget_Status->setEditTriggers(QAbstractItemView::EditTrigger::NoEditTriggers);
         tableWidget_Status->setAlternatingRowColors(true);
+        tableWidget_Status->setSelectionMode(QAbstractItemView::SelectionMode::SingleSelection);
+        tableWidget_Status->setSelectionBehavior(QAbstractItemView::SelectionBehavior::SelectRows);
 
         horizontalLayout_3->addWidget(tableWidget_Status);
 
@@ -384,13 +388,16 @@ public:
         tableWidget_RankBoard = new QTableWidget(groupBox_2);
         tableWidget_RankBoard->setObjectName("tableWidget_RankBoard");
         tableWidget_RankBoard->setStyleSheet(QString::fromUtf8("QTableWidget{\n"
+"color:rgb(255, 255, 255);\n"
 "alternate-background-color: #606060;\n"
-"selection-background-color: #282828;\n"
+"selection-background-color: rgb(63, 63, 63);\n"
+"selection-color: rgb(255, 255, 255);\n"
 "border:2px solid #ca5cdd;\n"
 "border-radius: 8px;\n"
 "padding:1px;\n"
 "}"));
         tableWidget_RankBoard->setEditTriggers(QAbstractItemView::EditTrigger::NoEditTriggers);
+        tableWidget_RankBoard->setSelectionMode(QAbstractItemView::SelectionMode::NoSelection);
 
         verticalLayout_10->addWidget(tableWidget_RankBoard);
 
@@ -490,8 +497,10 @@ public:
         tableWidget->setObjectName("tableWidget");
         tableWidget->setMouseTracking(true);
         tableWidget->setStyleSheet(QString::fromUtf8("QTableWidget{\n"
+"color:rgb(255, 255, 255);\n"
 "alternate-background-color: #606060;\n"
-"selection-background-color: #282828;\n"
+"selection-background-color: rgb(63, 63, 63);\n"
+"selection-color: rgb(255, 255, 255);\n"
 "border:2px solid #ca5cdd;\n"
 "border-radius: 8px;\n"
 "padding:1px;\n"
@@ -768,7 +777,7 @@ public:
 
         retranslateUi(BookWindow_Student);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(2);
         comboBox_searchby->setCurrentIndex(0);
 
 

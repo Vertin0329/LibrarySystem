@@ -234,7 +234,7 @@ QPushButton:hover {
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_BookList">
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -369,7 +369,8 @@ padding:5px;
                 <string notr="true">QTableWidget{
 color:rgb(255, 255, 255);
 alternate-background-color: #606060;
-selection-background-color: #282828;
+selection-background-color: rgb(63, 63, 63);
+selection-color: rgb(255, 255, 255);
 border:2px solid #ca5cdd;
 border-radius: 8px;
 padding:1px;
@@ -640,8 +641,9 @@ padding:5px;
               <string notr="true">QTableWidget{
 color:rgb(255, 255, 255);
 alternate-background-color: #606060;
-selection-background-color: #282828;
- border:2px solid #ca5cdd;
+selection-background-color: rgb(63, 63, 63);
+selection-color: rgb(255, 255, 255);
+border:2px solid #ca5cdd;
 border-radius: 8px;
 padding:1px;
 }</string>
@@ -669,8 +671,9 @@ padding:1px;
               <string notr="true">QTableWidget{
 color:rgb(255, 255, 255);
 alternate-background-color: #606060;
-selection-background-color: #282828;
- border:2px solid #ca5cdd;
+selection-background-color: rgb(63, 63, 63);
+selection-color: rgb(255, 255, 255);
+border:2px solid #ca5cdd;
 border-radius: 8px;
 padding:1px;
 }</string>
@@ -688,8 +691,10 @@ padding:1px;
          <widget class="QTableWidget" name="tableWidget_BorrowLog">
           <property name="styleSheet">
            <string notr="true">QTableWidget{
+color:rgb(255, 255, 255);
 alternate-background-color: #606060;
-selection-background-color: #282828;
+selection-background-color: rgb(63, 63, 63);
+selection-color: rgb(255, 255, 255);
 border:2px solid #ca5cdd;
 border-radius: 8px;
 padding:1px;
@@ -703,6 +708,12 @@ padding:1px;
           </property>
           <property name="alternatingRowColors">
            <bool>true</bool>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
           </property>
          </widget>
         </item>

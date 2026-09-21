@@ -241,7 +241,7 @@ QPushButton:hover {
        <string notr="true">color:rgb(255, 255, 255);</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="page_home">
        <layout class="QVBoxLayout" name="verticalLayout">
@@ -284,8 +284,10 @@ font: 700 28pt &quot;Microsoft JhengHei UI&quot;;</string>
                 <widget class="QTableWidget" name="tableWidget_Status">
                  <property name="styleSheet">
                   <string notr="true">QTableWidget{
+color:rgb(255, 255, 255);
 alternate-background-color: #606060;
-selection-background-color: #282828;
+selection-background-color: rgb(63, 63, 63);
+selection-color: rgb(255, 255, 255);
 border:2px solid #ca5cdd;
 border-radius: 8px;
 padding:1px;
@@ -297,6 +299,12 @@ padding:1px;
                  <property name="alternatingRowColors">
                   <bool>true</bool>
                  </property>
+                 <property name="selectionMode">
+                  <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
+                 </property>
+                 <property name="selectionBehavior">
+                  <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+                 </property>
                 </widget>
                </item>
               </layout>
@@ -305,8 +313,10 @@ padding:1px;
               <widget class="QTableWidget" name="tableWidget_RankBoard">
                <property name="styleSheet">
                 <string notr="true">QTableWidget{
+color:rgb(255, 255, 255);
 alternate-background-color: #606060;
-selection-background-color: #282828;
+selection-background-color: rgb(63, 63, 63);
+selection-color: rgb(255, 255, 255);
 border:2px solid #ca5cdd;
 border-radius: 8px;
 padding:1px;
@@ -314,6 +324,9 @@ padding:1px;
                </property>
                <property name="editTriggers">
                 <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+               </property>
+               <property name="selectionMode">
+                <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
                </property>
               </widget>
              </item>
@@ -460,8 +473,10 @@ padding:5px;
                </property>
                <property name="styleSheet">
                 <string notr="true">QTableWidget{
+color:rgb(255, 255, 255);
 alternate-background-color: #606060;
-selection-background-color: #282828;
+selection-background-color: rgb(63, 63, 63);
+selection-color: rgb(255, 255, 255);
 border:2px solid #ca5cdd;
 border-radius: 8px;
 padding:1px;

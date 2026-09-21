@@ -41,7 +41,7 @@
    <item>
     <widget class="QStackedWidget" name="stackedWidget_AddNew">
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="page_AddBook">
       <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -125,13 +125,33 @@
           <number>20</number>
          </property>
          <item>
-          <widget class="QLineEdit" name="lineEdit_Title"/>
+          <widget class="QLineEdit" name="lineEdit_Title">
+           <property name="styleSheet">
+            <string notr="true">border:2px solid #ca5cdd; 
+border-radius:8px; 
+padding:5px;
+color: rgb(255, 255, 255);</string>
+           </property>
+          </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_Author"/>
+          <widget class="QLineEdit" name="lineEdit_Author">
+           <property name="styleSheet">
+            <string notr="true">border:2px solid #ca5cdd; 
+border-radius:8px; 
+padding:5px;
+color: rgb(255, 255, 255);</string>
+           </property>
+          </widget>
          </item>
          <item>
           <widget class="QComboBox" name="comboBox_Language">
+           <property name="styleSheet">
+            <string notr="true">border:2px solid #ca5cdd; 
+border-radius:8px; 
+padding:5px;
+</string>
+           </property>
            <item>
             <property name="text">
              <string>English</string>
@@ -201,22 +221,55 @@
          </item>
          <item>
           <widget class="QLineEdit" name="lineEdit_IssueDate">
+           <property name="styleSheet">
+            <string notr="true">border:2px solid #ca5cdd; 
+border-radius:8px; 
+padding:5px;
+color: rgb(255, 255, 255);</string>
+           </property>
            <property name="placeholderText">
             <string>YYYY/MM/DD</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_PrimartSubject"/>
+          <widget class="QLineEdit" name="lineEdit_PrimartSubject">
+           <property name="styleSheet">
+            <string notr="true">border:2px solid #ca5cdd; 
+border-radius:8px; 
+padding:5px;
+color: rgb(255, 255, 255);</string>
+           </property>
+          </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_LoccClassification"/>
+          <widget class="QLineEdit" name="lineEdit_LoccClassification">
+           <property name="styleSheet">
+            <string notr="true">border:2px solid #ca5cdd; 
+border-radius:8px; 
+padding:5px;
+color: rgb(255, 255, 255);</string>
+           </property>
+          </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_LoccArea"/>
+          <widget class="QLineEdit" name="lineEdit_LoccArea">
+           <property name="styleSheet">
+            <string notr="true">border:2px solid #ca5cdd; 
+border-radius:8px; 
+padding:5px;
+color: rgb(255, 255, 255);</string>
+           </property>
+          </widget>
          </item>
          <item>
           <widget class="QComboBox" name="comboBox_Genre">
+           <property name="styleSheet">
+            <string notr="true">border:2px solid #ca5cdd; 
+border-radius:8px; 
+padding:5px;
+</string>
+           </property>
            <item>
             <property name="text">
              <string>Mystery</string>
@@ -445,10 +498,24 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_Bookshelf"/>
+          <widget class="QLineEdit" name="lineEdit_Bookshelf">
+           <property name="styleSheet">
+            <string notr="true">border:2px solid #ca5cdd; 
+border-radius:8px; 
+padding:5px;
+color: rgb(255, 255, 255);</string>
+           </property>
+          </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_URL"/>
+          <widget class="QLineEdit" name="lineEdit_URL">
+           <property name="styleSheet">
+            <string notr="true">border:2px solid #ca5cdd; 
+border-radius:8px; 
+padding:5px;
+color: rgb(255, 255, 255);</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>

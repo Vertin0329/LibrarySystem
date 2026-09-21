@@ -43,7 +43,7 @@ template <> constexpr inline auto BookWindow_Student::qt_create_metaobjectdata<q
         "on_pushButton_navtosearch_clicked",
         "",
         "on_pushButton_navtomain_clicked",
-        "on_pushButton_navtoaboutus_clicked",
+        "on_pushButton_navtoselfborrowlog_clicked",
         "on_tableWidget_cellClicked",
         "row",
         "on_pushButton_toWeb_clicked",
@@ -68,7 +68,8 @@ template <> constexpr inline auto BookWindow_Student::qt_create_metaobjectdata<q
         "on_pushButton_ShowHidePW2_pressed",
         "on_pushButton_ShowHidePW2_released",
         "on_pushButton_ShowHidePW3_pressed",
-        "on_pushButton_ShowHidePW3_released"
+        "on_pushButton_ShowHidePW3_released",
+        "on_tableWidget_SelfBorrowLog_cellClicked"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -76,7 +77,7 @@ template <> constexpr inline auto BookWindow_Student::qt_create_metaobjectdata<q
         QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_pushButton_navtomain_clicked'
         QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_pushButton_navtoaboutus_clicked'
+        // Slot 'on_pushButton_navtoselfborrowlog_clicked'
         QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_tableWidget_cellClicked'
         QtMocHelpers::SlotData<void(int)>(5, 2, QMC::AccessPrivate, QMetaType::Void, {{
@@ -130,6 +131,10 @@ template <> constexpr inline auto BookWindow_Student::qt_create_metaobjectdata<q
         QtMocHelpers::SlotData<void()>(28, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_pushButton_ShowHidePW3_released'
         QtMocHelpers::SlotData<void()>(29, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_tableWidget_SelfBorrowLog_cellClicked'
+        QtMocHelpers::SlotData<void(int)>(30, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 6 },
+        }}),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -155,7 +160,7 @@ void BookWindow_Student::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         switch (_id) {
         case 0: _t->on_pushButton_navtosearch_clicked(); break;
         case 1: _t->on_pushButton_navtomain_clicked(); break;
-        case 2: _t->on_pushButton_navtoaboutus_clicked(); break;
+        case 2: _t->on_pushButton_navtoselfborrowlog_clicked(); break;
         case 3: _t->on_tableWidget_cellClicked((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
         case 4: _t->on_pushButton_toWeb_clicked(); break;
         case 5: _t->on_pushButton_borrow_clicked(); break;
@@ -179,6 +184,7 @@ void BookWindow_Student::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         case 23: _t->on_pushButton_ShowHidePW2_released(); break;
         case 24: _t->on_pushButton_ShowHidePW3_pressed(); break;
         case 25: _t->on_pushButton_ShowHidePW3_released(); break;
+        case 26: _t->on_tableWidget_SelfBorrowLog_cellClicked((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     }
@@ -203,14 +209,14 @@ int BookWindow_Student::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 26)
+        if (_id < 27)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 26;
+        _id -= 27;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 26)
+        if (_id < 27)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 26;
+        _id -= 27;
     }
     return _id;
 }

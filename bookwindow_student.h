@@ -50,6 +50,8 @@ public:
 
     void readFileAndDisplayStatus();
 
+    void readFileAndDisplaySelfBorrowLog();
+
 private:
     Ui::BookWindow_Student *ui;
 
@@ -71,7 +73,7 @@ private slots:
 
     void on_pushButton_navtomain_clicked();
 
-    void on_pushButton_navtoaboutus_clicked();
+    void on_pushButton_navtoselfborrowlog_clicked();
 
     void on_tableWidget_cellClicked(int row);
 
@@ -106,12 +108,20 @@ private slots:
     void on_pushButton_Reload_clicked();
 
     void on_tableWidget_Status_cellClicked(int row);
+
     void on_pushButton_ShowHidePW_pressed();
+
     void on_pushButton_ShowHidePW_released();
+
     void on_pushButton_ShowHidePW2_pressed();
+
     void on_pushButton_ShowHidePW2_released();
+
     void on_pushButton_ShowHidePW3_pressed();
+
     void on_pushButton_ShowHidePW3_released();
+
+    void on_tableWidget_SelfBorrowLog_cellClicked(int row);
 };
 
 inline int bookRow;

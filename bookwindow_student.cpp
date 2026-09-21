@@ -23,6 +23,7 @@ BookWindow_Student::BookWindow_Student(QWidget *parent)
     readFileAndDisplayTable();
     ui->pushButton_NextPage->setEnabled(false);
     ui->pushButton_PreviousPage->setEnabled(false);
+    readFileAndDisplayStatus();
 
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(timeFunction()));
@@ -41,8 +42,6 @@ BookWindow_Student::BookWindow_Student(QWidget *parent)
     ui->label_greeting->setText(
         QString("Welcome back, %1").arg(QString::fromStdString(currentUserName))
         );
-
-    readFileAndDisplayStatus();
 }
 
 
@@ -236,10 +235,11 @@ void BookWindow_Student::on_pushButton_navtomain_clicked()
 }
 
 
-void BookWindow_Student::on_pushButton_navtoaboutus_clicked()
+void BookWindow_Student::on_pushButton_navtoselfborrowlog_clicked()
 {
     saveCurrentIndex();
     ui->stackedWidget->setCurrentIndex(2);
+    readFileAndDisplaySelfBorrowLog();
 }
 
 
@@ -597,7 +597,7 @@ void BookWindow_Student::readFileAndDisplayStatus()
     int rowCount = 0;
     while (queryLog.next()){
         queryData.prepare("SELECT title FROM metadata "
-                          "WHERE bookcode = :bkcode");
+                          "WHERE bookcode = :bkcode LIMIT 1");
         queryData.bindValue(":bkcode", queryLog.value(2).toString());
         queryData.exec();
         queryData.next();
@@ -619,6 +619,77 @@ void BookWindow_Student::readFileAndDisplayStatus()
         ui->tableWidget_Status->setItem(rowCount, 1, bookname);
         ui->tableWidget_Status->setItem(rowCount, 2, borrow_date);
         ui->tableWidget_Status->setItem(rowCount, 3, return_date);
+
+        rowCount++;
+    }
+}
+
+
+void BookWindow_Student::readFileAndDisplaySelfBorrowLog()
+{
+    ui->tableWidget_SelfBorrowLog->setRowCount(0);
+
+    QSqlDatabase dataBase = QSqlDatabase::database("DBConnection");
+    dataBase.open();
+
+    QSqlQuery queryLog(dataBase);
+    queryLog.prepare("SELECT * FROM borrow_log "
+                     "WHERE userid = :id");
+    queryLog.bindValue(":id", QString::fromStdString(currentUserID));
+    queryLog.exec();
+
+    ui->tableWidget_SelfBorrowLog->setColumnCount(9);
+    QStringList labels;
+    labels << "Book Code" << "Book Name" << "Author" << "Borrow Date" << "System Return Date" << "Actual Return Date" << "Status" << "Fine" << "Renew Times";
+    ui->tableWidget_SelfBorrowLog->setHorizontalHeaderLabels(labels);
+    ui->tableWidget_SelfBorrowLog->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+    QSqlQuery queryData(dataBase);
+    int rowCount = 0;
+    while (queryLog.next()){
+        queryData.prepare("SELECT title, author FROM metadata "
+                          "WHERE bookcode = :bkcode LIMIT 1");
+        queryData.bindValue(":bkcode", queryLog.value(2).toString());
+        queryData.exec();
+        queryData.next();
+        QString bookTitle = queryData.value(0).toString();
+        QString bookAuthor = queryData.value(1).toString();
+
+        ui->tableWidget_SelfBorrowLog->insertRow(rowCount);
+
+        QTableWidgetItem *bookcode = new QTableWidgetItem;
+        QTableWidgetItem *bookname = new QTableWidgetItem;
+        QTableWidgetItem *author = new QTableWidgetItem;
+        QTableWidgetItem *borrowdate = new QTableWidgetItem;
+        QTableWidgetItem *planreturndate = new QTableWidgetItem;
+        QTableWidgetItem *actreturndate = new QTableWidgetItem;
+        QTableWidgetItem *status = new QTableWidgetItem;
+        QTableWidgetItem *fine = new QTableWidgetItem;
+        QTableWidgetItem *renewtime = new QTableWidgetItem;
+
+        bookcode->setText(queryLog.value(2).toString());
+        bookname->setText(bookTitle);
+        author->setText(bookAuthor);
+        borrowdate->setText(queryLog.value(3).toString());
+        planreturndate->setText(queryLog.value(4).toString());
+        actreturndate->setText(queryLog.value(5).toString());
+        status->setText(queryLog.value(6).toString());
+        fine->setText(queryLog.value(7).toString());
+        if (queryLog.value(8).isNull()){
+            renewtime->setText("0");
+        } else {
+            renewtime->setText(queryLog.value(8).toString());
+        }
+
+        ui->tableWidget_SelfBorrowLog->setItem(rowCount, 0, bookcode);
+        ui->tableWidget_SelfBorrowLog->setItem(rowCount, 1, bookname);
+        ui->tableWidget_SelfBorrowLog->setItem(rowCount, 2, author);
+        ui->tableWidget_SelfBorrowLog->setItem(rowCount, 3, borrowdate);
+        ui->tableWidget_SelfBorrowLog->setItem(rowCount, 4, planreturndate);
+        ui->tableWidget_SelfBorrowLog->setItem(rowCount, 5, actreturndate);
+        ui->tableWidget_SelfBorrowLog->setItem(rowCount, 6, status);
+        ui->tableWidget_SelfBorrowLog->setItem(rowCount, 7, fine);
+        ui->tableWidget_SelfBorrowLog->setItem(rowCount, 8, renewtime);
 
         rowCount++;
     }
@@ -804,5 +875,105 @@ void BookWindow_Student::on_pushButton_ShowHidePW3_released()
     ui->lineEdit_ConfirmPW->setEchoMode(QLineEdit::Normal);
     ui->pushButton_ShowHidePW3->setIcon(QIcon(pixmap));
     ui->pushButton_ShowHidePW3->setIconSize(QSize(56,27));
+}
+
+
+void BookWindow_Student::on_tableWidget_SelfBorrowLog_cellClicked(int row)
+{
+    saveCurrentIndex();
+    ui->stackedWidget->setCurrentIndex(3);
+
+    QTableWidgetItem *bk_code_item = ui->tableWidget_SelfBorrowLog->item(row, 0);
+    selectedBookCode = bk_code_item->text();
+    selectedBookRow = row;
+
+    bookRow = selectedBookCode.right(5).toInt();
+
+    QString picUrl = QString("https://www.gutenberg.org/cache/epub/%1/pg%1.cover.medium.jpg").arg(QString::number(bookRow));
+
+    QNetworkAccessManager *manager = new QNetworkAccessManager(this);
+
+    connect(manager, &QNetworkAccessManager::finished, this, [this](QNetworkReply *reply){
+
+        if (reply->error() == QNetworkReply::NoError){
+            QByteArray data = reply->readAll();
+            QPixmap pix;
+            pix.loadFromData(data);
+
+            ui->label_bookImage->setPixmap(
+                pix.scaled(
+                    450,
+                    620,
+                    Qt::KeepAspectRatio,
+                    Qt::FastTransformation
+                    )
+                );
+        } else {
+            ui->label_bookImage->setStyleSheet("colour: red;");
+            ui->label_bookImage->setText("Error: Failed to load image");
+        }
+
+        reply->deleteLater();
+    });
+
+    manager->get(QNetworkRequest(QUrl(picUrl)));
+
+    QSqlDatabase dataBase = QSqlDatabase::database("DBConnection");
+    QSqlQuery queryData(dataBase);
+    queryData.prepare("SELECT * FROM metadata WHERE bookcode = :bkcode LIMIT 1");
+    queryData.bindValue(":bkcode", selectedBookCode);
+    queryData.exec();
+    queryData.next();
+
+    ui->label_discription->setText(QString("Book Code: %1\n\n"
+                                           "Book Title: %2\n\n"
+                                           "Author: %3\n\n"
+                                           "Language: %4\n\n"
+                                           "Issued Date: %5\n\n"
+                                           "Primary Subject: %6\n\n"
+                                           "Locc Classification: %7\n\n"
+                                           "Locc Area: %8\n\n"
+                                           "Genre: %9\n\n"
+                                           "Bookshelf: %10\n\n"
+                                           "Status: %11\n\n")
+                                       .arg(queryData.value(0).toString()) // %1
+                                       .arg(queryData.value(1).toString()) // %2
+                                       .arg(queryData.value(2).toString()) // %3
+                                       .arg(queryData.value(4).toString()) // %4
+                                       .arg(queryData.value(5).toString()) // %5
+                                       .arg(queryData.value(6).toString()) // %6
+                                       .arg(queryData.value(7).toString()) // %7
+                                       .arg(queryData.value(8).toString()) // %8
+                                       .arg(queryData.value(9).toString()) // %9
+                                       .arg(queryData.value(10).toString()) // %10
+                                       .arg(queryData.value(12).toString())); // %11
+
+    QTableWidgetItem *bk_status_item = ui->tableWidget_SelfBorrowLog->item(row, 6);
+    QString bk_status = bk_status_item->text();
+
+    if (bk_status == "Borrowed"){
+        ui->pushButton_borrow->setEnabled(false);
+        ui->pushButton_return->setEnabled(true);
+        ui->pushButton_renew->setEnabled(true);
+        ui->pushButton_borrow->hide();
+        ui->pushButton_return->show();
+        ui->pushButton_renew->show();
+    } else {
+        if (queryData.value(12).toString() == "in display"){
+            ui->pushButton_borrow->setEnabled(true);
+            ui->pushButton_return->setEnabled(false);
+            ui->pushButton_renew->setEnabled(false);
+            ui->pushButton_borrow->show();
+            ui->pushButton_return->hide();
+            ui->pushButton_renew->hide();
+        } else {
+            ui->pushButton_borrow->setEnabled(false);
+            ui->pushButton_return->setEnabled(false);
+            ui->pushButton_renew->setEnabled(false);
+            ui->pushButton_borrow->show();
+            ui->pushButton_return->hide();
+            ui->pushButton_renew->hide();
+        }
+    }
 }
 

@@ -777,7 +777,7 @@ public:
 
         retranslateUi(BookWindow_Student);
 
-        stackedWidget->setCurrentIndex(2);
+        stackedWidget->setCurrentIndex(4);
         comboBox_searchby->setCurrentIndex(0);
 
 

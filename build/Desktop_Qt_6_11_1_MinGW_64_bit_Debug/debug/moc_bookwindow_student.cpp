@@ -62,7 +62,13 @@ template <> constexpr inline auto BookWindow_Student::qt_create_metaobjectdata<q
         "on_pushButton_PreviousPage_clicked",
         "on_pushButton_NextPage_clicked",
         "on_pushButton_Reload_clicked",
-        "on_tableWidget_Status_cellClicked"
+        "on_tableWidget_Status_cellClicked",
+        "on_pushButton_ShowHidePW_pressed",
+        "on_pushButton_ShowHidePW_released",
+        "on_pushButton_ShowHidePW2_pressed",
+        "on_pushButton_ShowHidePW2_released",
+        "on_pushButton_ShowHidePW3_pressed",
+        "on_pushButton_ShowHidePW3_released"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -112,6 +118,18 @@ template <> constexpr inline auto BookWindow_Student::qt_create_metaobjectdata<q
         QtMocHelpers::SlotData<void(int)>(23, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Int, 6 },
         }}),
+        // Slot 'on_pushButton_ShowHidePW_pressed'
+        QtMocHelpers::SlotData<void()>(24, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_pushButton_ShowHidePW_released'
+        QtMocHelpers::SlotData<void()>(25, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_pushButton_ShowHidePW2_pressed'
+        QtMocHelpers::SlotData<void()>(26, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_pushButton_ShowHidePW2_released'
+        QtMocHelpers::SlotData<void()>(27, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_pushButton_ShowHidePW3_pressed'
+        QtMocHelpers::SlotData<void()>(28, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_pushButton_ShowHidePW3_released'
+        QtMocHelpers::SlotData<void()>(29, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -155,6 +173,12 @@ void BookWindow_Student::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         case 17: _t->on_pushButton_NextPage_clicked(); break;
         case 18: _t->on_pushButton_Reload_clicked(); break;
         case 19: _t->on_tableWidget_Status_cellClicked((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
+        case 20: _t->on_pushButton_ShowHidePW_pressed(); break;
+        case 21: _t->on_pushButton_ShowHidePW_released(); break;
+        case 22: _t->on_pushButton_ShowHidePW2_pressed(); break;
+        case 23: _t->on_pushButton_ShowHidePW2_released(); break;
+        case 24: _t->on_pushButton_ShowHidePW3_pressed(); break;
+        case 25: _t->on_pushButton_ShowHidePW3_released(); break;
         default: ;
         }
     }
@@ -179,14 +203,14 @@ int BookWindow_Student::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 20)
+        if (_id < 26)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 20;
+        _id -= 26;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 20)
+        if (_id < 26)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 20;
+        _id -= 26;
     }
     return _id;
 }

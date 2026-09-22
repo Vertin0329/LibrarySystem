@@ -6,6 +6,7 @@
 #include "bookreturndialog.h"
 #include "bookrenewdialog.h"
 #include "logoutconfirmdialog.h"
+#include "filterlogforuserdialog.h"
 
 BookWindow_Student::BookWindow_Student(QWidget *parent)
     : QMainWindow(parent)
@@ -316,6 +317,9 @@ void BookWindow_Student::on_tableWidget_cellClicked(int row)
     QString bk_status = bk_status_item->text();
 
     if (bk_status == "Borrowed"){
+        ui->pushButton_borrow->setStyleSheet("");
+        ui->pushButton_return->setStyleSheet("");
+        ui->pushButton_renew->setStyleSheet("");
         ui->pushButton_borrow->setEnabled(false);
         ui->pushButton_return->setEnabled(true);
         ui->pushButton_renew->setEnabled(true);
@@ -323,6 +327,9 @@ void BookWindow_Student::on_tableWidget_cellClicked(int row)
         ui->pushButton_return->show();
         ui->pushButton_renew->show();
     } else if (bk_status == "Unavailable" or currentBkBorrowed == 10){
+        ui->pushButton_borrow->setStyleSheet("background-color: black; color: grey;");
+        ui->pushButton_return->setStyleSheet("");
+        ui->pushButton_renew->setStyleSheet("");
         ui->pushButton_borrow->setEnabled(false);
         ui->pushButton_return->setEnabled(false);
         ui->pushButton_renew->setEnabled(false);
@@ -330,6 +337,9 @@ void BookWindow_Student::on_tableWidget_cellClicked(int row)
         ui->pushButton_return->hide();
         ui->pushButton_renew->hide();
     } else {
+        ui->pushButton_borrow->setStyleSheet("");
+        ui->pushButton_return->setStyleSheet("");
+        ui->pushButton_renew->setStyleSheet("");
         ui->pushButton_borrow->setEnabled(true);
         ui->pushButton_return->setEnabled(false);
         ui->pushButton_renew->setEnabled(false);
@@ -633,8 +643,7 @@ void BookWindow_Student::readFileAndDisplaySelfBorrowLog()
     dataBase.open();
 
     QSqlQuery queryLog(dataBase);
-    queryLog.prepare("SELECT * FROM borrow_log "
-                     "WHERE userid = :id");
+    queryLog.prepare(filterLogQuery);
     queryLog.bindValue(":id", QString::fromStdString(currentUserID));
     queryLog.exec();
 
@@ -736,6 +745,7 @@ void BookWindow_Student::on_pushButton_Reload_clicked()
         readFileAndDisplayTable();
         break;
     case 2:
+        readFileAndDisplaySelfBorrowLog();
         break;
     case 3:
         on_tableWidget_cellClicked(selectedBookRow);
@@ -815,6 +825,9 @@ void BookWindow_Student::on_tableWidget_Status_cellClicked(int row)
                                        .arg(queryData.value(10).toString()) // %10
                                        .arg(queryData.value(12).toString())); // %11
 
+    ui->pushButton_borrow->setStyleSheet("");
+    ui->pushButton_return->setStyleSheet("");
+    ui->pushButton_renew->setStyleSheet("");
     ui->pushButton_borrow->setEnabled(false);
     ui->pushButton_return->setEnabled(true);
     ui->pushButton_renew->setEnabled(true);
@@ -952,28 +965,42 @@ void BookWindow_Student::on_tableWidget_SelfBorrowLog_cellClicked(int row)
     QString bk_status = bk_status_item->text();
 
     if (bk_status == "Borrowed"){
+        ui->pushButton_borrow->setStyleSheet("");
+        ui->pushButton_return->setStyleSheet("");
+        ui->pushButton_renew->setStyleSheet("");
         ui->pushButton_borrow->setEnabled(false);
         ui->pushButton_return->setEnabled(true);
         ui->pushButton_renew->setEnabled(true);
         ui->pushButton_borrow->hide();
         ui->pushButton_return->show();
         ui->pushButton_renew->show();
+    } else if (queryData.value(12).toString() == "in display") {
+        ui->pushButton_borrow->setStyleSheet("");
+        ui->pushButton_return->setStyleSheet("");
+        ui->pushButton_renew->setStyleSheet("");
+        ui->pushButton_borrow->setEnabled(true);
+        ui->pushButton_return->setEnabled(false);
+        ui->pushButton_renew->setEnabled(false);
+        ui->pushButton_borrow->show();
+        ui->pushButton_return->hide();
+        ui->pushButton_renew->hide();
     } else {
-        if (queryData.value(12).toString() == "in display"){
-            ui->pushButton_borrow->setEnabled(true);
-            ui->pushButton_return->setEnabled(false);
-            ui->pushButton_renew->setEnabled(false);
-            ui->pushButton_borrow->show();
-            ui->pushButton_return->hide();
-            ui->pushButton_renew->hide();
-        } else {
-            ui->pushButton_borrow->setEnabled(false);
-            ui->pushButton_return->setEnabled(false);
-            ui->pushButton_renew->setEnabled(false);
-            ui->pushButton_borrow->show();
-            ui->pushButton_return->hide();
-            ui->pushButton_renew->hide();
-        }
+        ui->pushButton_borrow->setStyleSheet("background-color: black; color: grey;");
+        ui->pushButton_return->setStyleSheet("");
+        ui->pushButton_renew->setStyleSheet("");
+        ui->pushButton_borrow->setEnabled(false);
+        ui->pushButton_return->setEnabled(false);
+        ui->pushButton_renew->setEnabled(false);
+        ui->pushButton_borrow->show();
+        ui->pushButton_return->hide();
+        ui->pushButton_renew->hide();
     }
+}
+
+
+void BookWindow_Student::on_pushButton_FilterLogForUser_clicked()
+{
+    FilterLogForUserDialog filterLogUserDialog(this);
+    filterLogUserDialog.exec();
 }
 

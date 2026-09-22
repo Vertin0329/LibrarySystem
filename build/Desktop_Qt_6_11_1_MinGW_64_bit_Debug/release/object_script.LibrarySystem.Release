@@ -158,6 +158,7 @@ release/bookwindow_student.o
 release/deletebookdialog.o
 release/filterbookforlibrariandialog.o
 release/filterdialog.o
+release/filterlogforuserdialog.o
 release/filteruserforlibrariandialog.o
 release/logoutconfirmdialog.o
 release/main.o
@@ -176,6 +177,7 @@ release/moc_bookwindow_student.o
 release/moc_deletebookdialog.o
 release/moc_filterbookforlibrariandialog.o
 release/moc_filterdialog.o
+release/moc_filterlogforuserdialog.o
 release/moc_filteruserforlibrariandialog.o
 release/moc_loginwindow.o
 release/moc_logoutconfirmdialog.o

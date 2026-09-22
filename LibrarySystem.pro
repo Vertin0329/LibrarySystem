@@ -19,6 +19,7 @@ SOURCES += \
     deletebookdialog.cpp \
     filterbookforlibrariandialog.cpp \
     filterdialog.cpp \
+    filterlogforuserdialog.cpp \
     filteruserforlibrariandialog.cpp \
     logoutconfirmdialog.cpp \
     main.cpp \
@@ -36,6 +37,7 @@ HEADERS += \
     deletebookdialog.h \
     filterbookforlibrariandialog.h \
     filterdialog.h \
+    filterlogforuserdialog.h \
     filteruserforlibrariandialog.h \
     loginwindow.h \
     logoutconfirmdialog.h \
@@ -52,6 +54,7 @@ FORMS += \
     deletebookdialog.ui \
     filterbookforlibrariandialog.ui \
     filterdialog.ui \
+    filterlogforuserdialog.ui \
     filteruserforlibrariandialog.ui \
     loginwindow.ui \
     logoutconfirmdialog.ui

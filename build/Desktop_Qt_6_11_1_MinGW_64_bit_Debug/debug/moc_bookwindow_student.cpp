@@ -69,7 +69,8 @@ template <> constexpr inline auto BookWindow_Student::qt_create_metaobjectdata<q
         "on_pushButton_ShowHidePW2_released",
         "on_pushButton_ShowHidePW3_pressed",
         "on_pushButton_ShowHidePW3_released",
-        "on_tableWidget_SelfBorrowLog_cellClicked"
+        "on_tableWidget_SelfBorrowLog_cellClicked",
+        "on_pushButton_FilterLogForUser_clicked"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -135,6 +136,8 @@ template <> constexpr inline auto BookWindow_Student::qt_create_metaobjectdata<q
         QtMocHelpers::SlotData<void(int)>(30, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Int, 6 },
         }}),
+        // Slot 'on_pushButton_FilterLogForUser_clicked'
+        QtMocHelpers::SlotData<void()>(31, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -185,6 +188,7 @@ void BookWindow_Student::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         case 24: _t->on_pushButton_ShowHidePW3_pressed(); break;
         case 25: _t->on_pushButton_ShowHidePW3_released(); break;
         case 26: _t->on_tableWidget_SelfBorrowLog_cellClicked((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
+        case 27: _t->on_pushButton_FilterLogForUser_clicked(); break;
         default: ;
         }
     }
@@ -209,14 +213,14 @@ int BookWindow_Student::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 27)
+        if (_id < 28)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 27;
+        _id -= 28;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 27)
+        if (_id < 28)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 27;
+        _id -= 28;
     }
     return _id;
 }

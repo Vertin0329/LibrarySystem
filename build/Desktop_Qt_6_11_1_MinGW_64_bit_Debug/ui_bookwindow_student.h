@@ -83,7 +83,7 @@ public:
     QWidget *page_selfborrowlog;
     QVBoxLayout *verticalLayout_16;
     QHBoxLayout *horizontalLayout_13;
-    QPushButton *pushButton;
+    QPushButton *pushButton_FilterLogForUser;
     QLineEdit *lineEdit;
     QTableWidget *tableWidget_SelfBorrowLog;
     QWidget *page_bookdetails;
@@ -531,10 +531,11 @@ public:
         verticalLayout_16->setObjectName("verticalLayout_16");
         horizontalLayout_13 = new QHBoxLayout();
         horizontalLayout_13->setObjectName("horizontalLayout_13");
-        pushButton = new QPushButton(page_selfborrowlog);
-        pushButton->setObjectName("pushButton");
-        pushButton->setMinimumSize(QSize(110, 0));
-        pushButton->setStyleSheet(QString::fromUtf8("QPushButton{ \n"
+        pushButton_FilterLogForUser = new QPushButton(page_selfborrowlog);
+        pushButton_FilterLogForUser->setObjectName("pushButton_FilterLogForUser");
+        pushButton_FilterLogForUser->setEnabled(true);
+        pushButton_FilterLogForUser->setMinimumSize(QSize(110, 0));
+        pushButton_FilterLogForUser->setStyleSheet(QString::fromUtf8("QPushButton{ \n"
 "border:2px solid #ca5cdd;\n"
 " border-radius:8px;\n"
 " padding:5px;\n"
@@ -543,7 +544,7 @@ public:
 " color:white;\n"
 "}"));
 
-        horizontalLayout_13->addWidget(pushButton);
+        horizontalLayout_13->addWidget(pushButton_FilterLogForUser);
 
         lineEdit = new QLineEdit(page_selfborrowlog);
         lineEdit->setObjectName("lineEdit");
@@ -888,7 +889,8 @@ public:
         lineEdit_searchinput->setText(QString());
         lineEdit_searchinput->setPlaceholderText(QCoreApplication::translate("BookWindow_Student", "Search by entering book name", nullptr));
         label_BookBorrowedCount->setText(QCoreApplication::translate("BookWindow_Student", "Book Borrowed: ", nullptr));
-        pushButton->setText(QCoreApplication::translate("BookWindow_Student", "filter", nullptr));
+        pushButton_FilterLogForUser->setText(QCoreApplication::translate("BookWindow_Student", "filter", nullptr));
+        lineEdit->setPlaceholderText(QCoreApplication::translate("BookWindow_Student", "Search by entering book code", nullptr));
         groupBox->setTitle(QString());
         label_bookImage->setText(QCoreApplication::translate("BookWindow_Student", "No Image", nullptr));
         label_discription->setText(QString());

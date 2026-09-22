@@ -122,6 +122,8 @@ private slots:
     void on_pushButton_ShowHidePW3_released();
 
     void on_tableWidget_SelfBorrowLog_cellClicked(int row);
+
+    void on_pushButton_FilterLogForUser_clicked();
 };
 
 inline int bookRow;
@@ -131,5 +133,7 @@ inline QString selectedBookCode;
 inline int currentBkBorrowed;
 
 inline QString f_sql_user_data = "SELECT * FROM metadata WHERE bookcode IS NOT NULL AND bookcode != ''";
+
+inline QString filterLogQuery = "SELECT * FROM borrow_log WHERE userid = :id";
 
 #endif // BOOKWINDOW_STUDENT_H

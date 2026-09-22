@@ -158,6 +158,7 @@ debug/bookwindow_student.o
 debug/deletebookdialog.o
 debug/filterbookforlibrariandialog.o
 debug/filterdialog.o
+debug/filterlogforuserdialog.o
 debug/filteruserforlibrariandialog.o
 debug/logoutconfirmdialog.o
 debug/main.o
@@ -176,6 +177,7 @@ debug/moc_bookwindow_student.o
 debug/moc_deletebookdialog.o
 debug/moc_filterbookforlibrariandialog.o
 debug/moc_filterdialog.o
+debug/moc_filterlogforuserdialog.o
 debug/moc_filteruserforlibrariandialog.o
 debug/moc_loginwindow.o
 debug/moc_logoutconfirmdialog.o

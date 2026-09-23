@@ -1,15 +1,20 @@
 ﻿# Library System
+## Introduction
+### Background of the project
+This is a library system aims to improve the user experience of Hong Kong Public Libraries (HKPL). This project will have two account types, admin and user. The project have two parts, this git repository contains code files and executable file. This system uses CPP + QT, uses sqlite for database.
 
-This is a library system aims to improve the user experience of Hong Kong Public Libraries (HKPL). The project have two parts, this git repository contains code files and executable file. This system uses CPP + QT, uses sqlite for database.
-
-The key functions include:
+### The key functions include:
   1. Seperate user and admin window, showing different list for didferent purpose and user.
   2. Create, Read, Update, and Delete. (For delete, only book deletion is released. User deletion will be include in future release.)
   3. Book borrowing and returning, logging borrow and return transactions
 
-(Book and patron management will be include in future release.)
+> [!NOTE]
+> Book and patron management will be include in future release.
 
-# Recommand Enviroment
+> [!WARNING]
+> Name of user window will be StudentWindow, as it is a development bug which is not significantly affecting execution of the system.
+
+## Recommand Enviroment
 
 - Required 64-bit processor and system
 - System: Window 10 - 64-bit
@@ -17,3 +22,34 @@ The key functions include:
 - Memory: 2 GB memory
 - Graphics Card: Any
 - Storage: 900 MB free space
+
+(900 Space requirement is for whole file. If you want app only, please refer to the read me in LibrarySystem_AppOnly.)
+
+## Windows Setup
+
+Some notes on Windows setup:
+
+SQLite setup
+  - Open this link to download [DBbroswer for SQLite](https://sqlitebrowser.org/dl/)
+  - Select the DB Browser for SQLite - Standard installer for 64-bit Windows
+  - Double click the installer and let it do it's work
+
+## Programming Language Used
+
+For this project, I have choosen CPP + QT as the programming language. CPP provides high preformance and deep system-level control when it combines with Qt framework, while Qt provides a drag-and-drop method to create an app and also clear signal and slot communiaction between UI elements and logics. Although CPP is not a mainstream programming language for app design, I still use it as it is easy to learn and debug with Qt creator.
+
+## Program Specification
+### Specification for Login Procedure
+App testers can login refering the accounts in [database](build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/debug/data.sqlite) for this project. If app testers want to test new account, you will have to login to admin window by using `admin`, `123` as username and password respectively.
+
+> [!NOTE]
+> For user login, user and user2 is given accounts for tesing the borrow or other functions that need to use normal user account, with password 123.
+
+### Specification for Recovering Account Procedure
+This procedure requires account id and username. After providing these two informations, password will be show to user if the account id and username matches.
+
+### Specification for Search Book Procedure
+`QString` is used for prepareing SQL query in this procedure. In this way the criteria of searching the book will be accurate enough for user. For example, if user select `radioButton_Available`, the `QString` of the SQL query will be change from `SELECT * FROM metadata WHERE bookcode IS NOT NULL AND bookcode != ''` --> `SELECT * FROM metadata WHERE bookcode IS NOT NULL AND bookcode != '' AND status = 'in display'`.
+
+### Specification for Borrow, Return, Renew and Reserve Procedures
+In these procedures, users or admin (will be mentioned as users in this paragraph) have to input into typebox based on item of `QComboBox` selected by user. Users can input only few characters to search the book, for example users can input `The Declaration` for searching `The Declaration of Independence of the United States of America`.

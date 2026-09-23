@@ -241,7 +241,7 @@ QPushButton:hover {
        <string notr="true">color:rgb(255, 255, 255);</string>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="page_home">
        <layout class="QVBoxLayout" name="verticalLayout">
@@ -254,7 +254,7 @@ QPushButton:hover {
            <item>
             <layout class="QVBoxLayout" name="verticalLayout_10" stretch="2,1">
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="2,6">
+              <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="2,5">
                <item>
                 <layout class="QVBoxLayout" name="verticalLayout_9" stretch="1,5">
                  <item>
@@ -281,9 +281,21 @@ font: 700 28pt &quot;Microsoft JhengHei UI&quot;;</string>
                 </layout>
                </item>
                <item>
-                <widget class="QTableWidget" name="tableWidget_Status">
-                 <property name="styleSheet">
-                  <string notr="true">QTableWidget{
+                <layout class="QVBoxLayout" name="verticalLayout_18">
+                 <item>
+                  <widget class="QLabel" name="label_BooksBorrowing">
+                   <property name="text">
+                    <string>Books Borrowing</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QTableWidget" name="tableWidget_Status">
+                   <property name="styleSheet">
+                    <string notr="true">QTableWidget{
 color:rgb(255, 255, 255);
 alternate-background-color: #606060;
 selection-background-color: rgb(63, 63, 63);
@@ -292,20 +304,22 @@ border:2px solid #ca5cdd;
 border-radius: 8px;
 padding:1px;
 }</string>
-                 </property>
-                 <property name="editTriggers">
-                  <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
-                 </property>
-                 <property name="alternatingRowColors">
-                  <bool>true</bool>
-                 </property>
-                 <property name="selectionMode">
-                  <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
-                 </property>
-                 <property name="selectionBehavior">
-                  <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
-                 </property>
-                </widget>
+                   </property>
+                   <property name="editTriggers">
+                    <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                   </property>
+                   <property name="alternatingRowColors">
+                    <bool>true</bool>
+                   </property>
+                   <property name="selectionMode">
+                    <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
+                   </property>
+                   <property name="selectionBehavior">
+                    <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </item>
               </layout>
              </item>
@@ -795,7 +809,7 @@ padding:1px;
                  <item>
                   <widget class="QPushButton" name="pushButton_ShowHidePW">
                    <property name="text">
-                    <string>PushButton</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
@@ -822,7 +836,7 @@ padding:1px;
                  <item>
                   <widget class="QPushButton" name="pushButton_ShowHidePW2">
                    <property name="text">
-                    <string>PushButton</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
@@ -849,7 +863,7 @@ padding:1px;
                  <item>
                   <widget class="QPushButton" name="pushButton_ShowHidePW3">
                    <property name="text">
-                    <string>PushButton</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>

@@ -210,6 +210,7 @@ SOURCES       = ../../QZXing/CameraImageWrapper.cpp \
 		../../deletebookdialog.cpp \
 		../../filterbookforlibrariandialog.cpp \
 		../../filterdialog.cpp \
+		../../filterlogforuserdialog.cpp \
 		../../filteruserforlibrariandialog.cpp \
 		../../logoutconfirmdialog.cpp \
 		../../main.cpp \
@@ -227,6 +228,7 @@ SOURCES       = ../../QZXing/CameraImageWrapper.cpp \
 		debug/moc_deletebookdialog.cpp \
 		debug/moc_filterbookforlibrariandialog.cpp \
 		debug/moc_filterdialog.cpp \
+		debug/moc_filterlogforuserdialog.cpp \
 		debug/moc_filteruserforlibrariandialog.cpp \
 		debug/moc_loginwindow.cpp \
 		debug/moc_logoutconfirmdialog.cpp
@@ -390,6 +392,7 @@ OBJECTS       = debug/CameraImageWrapper.o \
 		debug/deletebookdialog.o \
 		debug/filterbookforlibrariandialog.o \
 		debug/filterdialog.o \
+		debug/filterlogforuserdialog.o \
 		debug/filteruserforlibrariandialog.o \
 		debug/logoutconfirmdialog.o \
 		debug/main.o \
@@ -408,6 +411,7 @@ OBJECTS       = debug/CameraImageWrapper.o \
 		debug/moc_deletebookdialog.o \
 		debug/moc_filterbookforlibrariandialog.o \
 		debug/moc_filterdialog.o \
+		debug/moc_filterlogforuserdialog.o \
 		debug/moc_filteruserforlibrariandialog.o \
 		debug/moc_loginwindow.o \
 		debug/moc_logoutconfirmdialog.o
@@ -580,6 +584,7 @@ DIST          =  ../../QZXing/QZXing_global.h \
 		../../deletebookdialog.h \
 		../../filterbookforlibrariandialog.h \
 		../../filterdialog.h \
+		../../filterlogforuserdialog.h \
 		../../filteruserforlibrariandialog.h \
 		../../loginwindow.h \
 		../../logoutconfirmdialog.h \
@@ -743,6 +748,7 @@ DIST          =  ../../QZXing/QZXing_global.h \
 		../../deletebookdialog.cpp \
 		../../filterbookforlibrariandialog.cpp \
 		../../filterdialog.cpp \
+		../../filterlogforuserdialog.cpp \
 		../../filteruserforlibrariandialog.cpp \
 		../../logoutconfirmdialog.cpp \
 		../../main.cpp \
@@ -758,7 +764,7 @@ DESTDIR_TARGET = debug/LibrarySystem.exe
 first: all
 all: Makefile.Debug  debug/LibrarySystem.exe
 
-debug/LibrarySystem.exe: C:/Qt/6.11.1/mingw_64/lib/libQt6Widgets.a C:/Qt/6.11.1/mingw_64/lib/libQt6Gui.a C:/Qt/6.11.1/mingw_64/lib/libQt6Sql.a C:/Qt/6.11.1/mingw_64/lib/libQt6Network.a C:/Qt/6.11.1/mingw_64/lib/libQt6Core.a C:/Qt/6.11.1/mingw_64/lib/libQt6EntryPoint.a ui_accountverifydialog.h ui_addnewdialog.h ui_bookborrowconfirmdialog.h ui_bookrenewdialog.h ui_bookreturndialog.h ui_bookwindow_librarian.h ui_bookwindow_student.h ui_deletebookdialog.h ui_filterbookforlibrariandialog.h ui_filterdialog.h ui_filteruserforlibrariandialog.h ui_loginwindow.h ui_logoutconfirmdialog.h $(OBJECTS) 
+debug/LibrarySystem.exe: C:/Qt/6.11.1/mingw_64/lib/libQt6Widgets.a C:/Qt/6.11.1/mingw_64/lib/libQt6Gui.a C:/Qt/6.11.1/mingw_64/lib/libQt6Sql.a C:/Qt/6.11.1/mingw_64/lib/libQt6Network.a C:/Qt/6.11.1/mingw_64/lib/libQt6Core.a C:/Qt/6.11.1/mingw_64/lib/libQt6EntryPoint.a ui_accountverifydialog.h ui_addnewdialog.h ui_bookborrowconfirmdialog.h ui_bookrenewdialog.h ui_bookreturndialog.h ui_bookwindow_librarian.h ui_bookwindow_student.h ui_deletebookdialog.h ui_filterbookforlibrariandialog.h ui_filterdialog.h ui_filterlogforuserdialog.h ui_filteruserforlibrariandialog.h ui_loginwindow.h ui_logoutconfirmdialog.h $(OBJECTS) 
 	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) @debug/object_script.LibrarySystem.Debug $(LIBS)
 
 qmake: FORCE
@@ -767,12 +773,12 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) LibrarySystem.zip $(SOURCES) $(DIST) ../../../../LibrarySystem.pro ../../../../6.11.1/mingw_64/mkspecs/features/spec_pre.prf ../../../../6.11.1/mingw_64/mkspecs/features/device_config.prf ../../../../6.11.1/mingw_64/mkspecs/common/sanitize.conf ../../../../6.11.1/mingw_64/mkspecs/common/gcc-base.conf ../../../../6.11.1/mingw_64/mkspecs/common/g++-base.conf ../../../../6.11.1/mingw_64/mkspecs/features/win32/windows_vulkan_sdk.prf ../../../../6.11.1/mingw_64/mkspecs/common/windows-vulkan.conf ../../../../6.11.1/mingw_64/mkspecs/common/g++-win32.conf ../../../../6.11.1/mingw_64/mkspecs/common/windows-desktop.conf ../../../../6.11.1/mingw_64/mkspecs/qconfig.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_ext_freetype.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_ext_libjpeg.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_ext_libpng.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_ext_openxr_loader.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3danimation.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3danimation_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dcore.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dcore_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dextras.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dextras_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dinput.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dinput_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dlogic.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dlogic_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquick.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquick_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquickanimation.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquickanimation_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquickextras.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquickextras_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquickinput.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquickinput_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquicklogic.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquicklogic_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquickrender.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquickrender_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquickscene2d.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquickscene2d_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquickscene3d.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquickscene3d_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3drender.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3drender_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_activeqt.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_activeqt_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_axbase_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_axcontainer.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_axcontainer_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_axserver.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_axserver_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_bluetooth.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_bluetooth_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_canvaspainter.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_canvaspainter_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_charts.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_charts_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_chartsqml.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_chartsqml_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_concurrent.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_connectivity_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_core.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_core5compat.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_core5compat_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_core_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_datavisualization.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_datavisualization_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_datavisualizationqml.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_datavisualizationqml_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_dbus.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_dbus_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_designer.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_designer_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_designercomponents_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_devicediscovery_support_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_entrypoint_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_fb_support_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_ffmpegmediapluginimpl_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_freetype_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_graphs.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_graphs_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_graphswidgets.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_graphswidgets_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_grpc.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_grpc_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_grpcquick.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_grpcquick_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_gui.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_gui_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_harfbuzz_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_help.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_help_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_httpserver.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_httpserver_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_insighttracker.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_insighttracker_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_insighttrackerqml.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_insighttrackerqml_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_jpeg_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_jsonrpc_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labsanimation.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labsanimation_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labsfolderlistmodel.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labsfolderlistmodel_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labsplatform.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labsplatform_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labsqmlmodels.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labsqmlmodels_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labssettings.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labssettings_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labssharedimage.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labssharedimage_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labsstylekit.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labsstylekit_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labsstylekitimpl.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labsstylekitimpl_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labssynchronizer.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labssynchronizer_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labswavefrontmesh.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labswavefrontmesh_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_languageserver_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_linguist.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_location.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_location_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_lottie.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_lottie_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_lottievectorimagegenerator_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_lottievectorimagehelpers.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_lottievectorimagehelpers_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_multimedia.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_multimedia_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_multimediaquick_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_multimediatestlibprivate_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_multimediawidgets.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_network.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_network_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_networkauth.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_networkauth_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_nfc.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_nfc_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_opengl.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_opengl_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_openglwidgets.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_packetprotocol_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_pdf.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_pdf_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_pdfquick.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_pdfquick_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_pdfwidgets.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_pdfwidgets_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_png_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_positioning.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_positioning_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_positioningquick.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_positioningquick_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_printsupport.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_printsupport_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_protobuf.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_protobuf_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_protobufqtcoretypes.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_protobufqtcoretypes_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_protobufqtguitypes.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_protobufqtguitypes_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_protobufquick.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_protobufquick_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_protobufwellknowntypes.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_protobufwellknowntypes_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qdoccatch_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qdoccatchconversions_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qdoccatchgenerators_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qml.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qml_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlassetdownloader_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlcompiler.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlcompiler_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlcore.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlcore_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmldebug_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmldom_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlformat_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlintegration.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmllocalstorage.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmllocalstorage_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlls_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlmeta.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlmeta_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlmodels.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlmodels_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlnetwork.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlnetwork_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmltest.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmltest_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmltoolingsettings_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmltyperegistrar_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlworkerscript.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlworkerscript_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlxmllistmodel.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlxmllistmodel_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3d.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3d_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dassetimport.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dassetimport_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dassetutils.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dassetutils_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3deffects.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dglslparser_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dhelpers.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dhelpers_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dhelpersimpl.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dhelpersimpl_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3diblbaker.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3diblbaker_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dparticleeffects.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dparticles.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dparticles_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dphysics.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dphysics_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dphysicshelpers.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dphysicshelpers_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3druntimerender.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3druntimerender_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dspatialaudio_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dutils.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dutils_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dxr.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dxr_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2basic.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2basic_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2basicstyleimpl.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2basicstyleimpl_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2fluentwinui3styleimpl.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2fluentwinui3styleimpl_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2fusion.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2fusion_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2fusionstyleimpl.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2fusionstyleimpl_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2imagine.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2imagine_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2imaginestyleimpl.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2impl.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2impl_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2material.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2material_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2materialstyleimpl.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2materialstyleimpl_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2universal.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2universal_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2universalstyleimpl.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2universalstyleimpl_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2windowsstyleimpl.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrolstestutilsprivate_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickdialogs2.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickdialogs2_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickdialogs2quickimpl.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickdialogs2quickimpl_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickdialogs2utils.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickdialogs2utils_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickeffects.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickeffects_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quicklayouts.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quicklayouts_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickparticles_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickshapes.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickshapes_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickshapesdesignhelpers_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quicktemplates2.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quicktestutilsprivate_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quicktimeline.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quicktimeline_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quicktimelineblendtrees.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quicktimelineblendtrees_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickvectorimage.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickvectorimage_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickvectorimagegenerator_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickvectorimagehelpers.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickvectorimagehelpers_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickwidgets.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickwidgets_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_remoteobjects.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_remoteobjects_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_remoteobjectsqml.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_remoteobjectsqml_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_repparser.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_scxml.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_scxml_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_scxmlglobal_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_scxmlqml.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_scxmlqml_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_sensors.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_sensors_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_sensorsquick.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_sensorsquick_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_serialbus.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_serialbus_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_serialport.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_serialport_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_shadertools.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_shadertools_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_spatialaudio.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_spatialaudio_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_sql.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_sql_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_statemachine.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_statemachine_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_statemachineqml.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_statemachineqml_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_svg.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_svg_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_svgwidgets.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_tasktree.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_testinternals_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_testlib.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_testlib_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_texttospeech.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_texttospeech_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_tools_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_uiplugin.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_uitools.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_uitools_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_virtualkeyboard.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_virtualkeyboard_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_virtualkeyboardqml.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_virtualkeyboardqml_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_virtualkeyboardsettings.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_virtualkeyboardsettings_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_webchannel.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_webchannel_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_webchannelquick.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_webchannelquick_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_websockets.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_websockets_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_webview.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_webview_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_webviewquick.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_webviewquick_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_widgets.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_widgets_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_xml.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_xml_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_zlib_private.pri ../../../../6.11.1/mingw_64/mkspecs/features/qt_functions.prf ../../../../6.11.1/mingw_64/mkspecs/features/qt_config.prf ../../../../6.11.1/mingw_64/mkspecs/win32-g++/qmake.conf ../../../../6.11.1/mingw_64/mkspecs/features/spec_post.prf .qmake.stash ../../../../6.11.1/mingw_64/mkspecs/features/exclusive_builds.prf ../../../../6.11.1/mingw_64/mkspecs/features/toolchain.prf ../../../../6.11.1/mingw_64/mkspecs/features/default_pre.prf ../../../../6.11.1/mingw_64/mkspecs/features/win32/default_pre.prf ../../QZXing/QZXing-components.pri ../../QZXing/QZXing.pri ../../../../6.11.1/mingw_64/mkspecs/features/resolve_config.prf ../../../../6.11.1/mingw_64/mkspecs/features/exclusive_builds_post.prf ../../../../6.11.1/mingw_64/mkspecs/features/default_post.prf ../../../../6.11.1/mingw_64/mkspecs/features/build_pass.prf ../../../../6.11.1/mingw_64/mkspecs/features/warn_on.prf ../../../../6.11.1/mingw_64/mkspecs/features/permissions.prf ../../../../6.11.1/mingw_64/mkspecs/features/qt.prf ../../../../6.11.1/mingw_64/mkspecs/features/resources_functions.prf ../../../../6.11.1/mingw_64/mkspecs/features/resources.prf ../../../../6.11.1/mingw_64/mkspecs/features/moc.prf ../../../../6.11.1/mingw_64/mkspecs/features/win32/opengl.prf ../../../../6.11.1/mingw_64/mkspecs/features/uic.prf ../../../../6.11.1/mingw_64/mkspecs/features/qtquickcompiler.prf ../../../../6.11.1/mingw_64/mkspecs/features/precompile_header.prf ../../../../6.11.1/mingw_64/mkspecs/features/qmake_use.prf ../../../../6.11.1/mingw_64/mkspecs/features/file_copies.prf ../../../../6.11.1/mingw_64/mkspecs/features/win32/windows.prf ../../../../6.11.1/mingw_64/mkspecs/features/testcase_targets.prf ../../../../6.11.1/mingw_64/mkspecs/features/exceptions.prf ../../../../6.11.1/mingw_64/mkspecs/features/yacc.prf ../../../../6.11.1/mingw_64/mkspecs/features/lex.prf ../../LibrarySystem.pro ../../resource.qrc ../../../../6.11.1/mingw_64/lib/Qt6Widgets.prl ../../../../6.11.1/mingw_64/lib/Qt6Gui.prl ../../../../6.11.1/mingw_64/lib/Qt6Sql.prl ../../../../6.11.1/mingw_64/lib/Qt6Network.prl ../../../../6.11.1/mingw_64/lib/Qt6Core.prl ../../../../6.11.1/mingw_64/lib/Qt6EntryPoint.prl  ../../resource.qrc ../../../../6.11.1/mingw_64/mkspecs/features/data/dummy.cpp ../../QZXing/QZXing_global.h ../../QZXing/CameraImageWrapper.h ../../QZXing/ImageHandler.h ../../QZXing/QZXing.h ../../QZXing/zxing/zxing/ZXing.h ../../QZXing/zxing/zxing/IllegalStateException.h ../../QZXing/zxing/zxing/InvertedLuminanceSource.h ../../QZXing/zxing/zxing/ChecksumException.h ../../QZXing/zxing/zxing/ResultPointCallback.h ../../QZXing/zxing/zxing/ResultPoint.h ../../QZXing/zxing/zxing/Result.h ../../QZXing/zxing/zxing/ResultMetadata.h ../../QZXing/zxing/zxing/ReaderException.h ../../QZXing/zxing/zxing/Reader.h ../../QZXing/zxing/zxing/NotFoundException.h ../../QZXing/zxing/zxing/MultiFormatReader.h ../../QZXing/zxing/zxing/LuminanceSource.h ../../QZXing/zxing/zxing/FormatException.h ../../QZXing/zxing/zxing/Exception.h ../../QZXing/zxing/zxing/DecodeHints.h ../../QZXing/zxing/zxing/BinaryBitmap.h ../../QZXing/zxing/zxing/Binarizer.h ../../QZXing/zxing/zxing/BarcodeFormat.h ../../QZXing/zxing/zxing/common/StringUtils.h ../../QZXing/zxing/zxing/common/Str.h ../../QZXing/zxing/zxing/common/Point.h ../../QZXing/zxing/zxing/common/PerspectiveTransform.h ../../QZXing/zxing/zxing/common/IllegalArgumentException.h ../../QZXing/zxing/zxing/common/HybridBinarizer.h ../../QZXing/zxing/zxing/common/GridSampler.h ../../QZXing/zxing/zxing/common/GreyscaleRotatedLuminanceSource.h ../../QZXing/zxing/zxing/common/GreyscaleLuminanceSource.h ../../QZXing/zxing/zxing/common/GlobalHistogramBinarizer.h ../../QZXing/zxing/zxing/common/DetectorResult.h ../../QZXing/zxing/zxing/common/DecoderResult.h ../../QZXing/zxing/zxing/common/CharacterSetECI.h ../../QZXing/zxing/zxing/common/BitSource.h ../../QZXing/zxing/zxing/common/BitMatrix.h ../../QZXing/zxing/zxing/common/BitArray.h ../../QZXing/zxing/zxing/common/detector/MathUtils.h ../../QZXing/zxing/zxing/common/detector/JavaMath.h ../../QZXing/zxing/zxing/common/detector/WhiteRectangleDetector.h ../../QZXing/zxing/zxing/common/detector/MonochromeRectangleDetector.h ../../QZXing/zxing/zxing/common/reedsolomon/ReedSolomonException.h ../../QZXing/zxing/zxing/common/reedsolomon/ReedSolomonDecoder.h ../../QZXing/zxing/zxing/common/reedsolomon/GenericGFPoly.h ../../QZXing/zxing/zxing/common/reedsolomon/GenericGF.h ../../QZXing/zxing/zxing/common/ByteArray.h ../../QZXing/zxing/zxing/multi/MultipleBarcodeReader.h ../../QZXing/zxing/zxing/multi/GenericMultipleBarcodeReader.h ../../QZXing/zxing/zxing/multi/ByQuadrantReader.h ../../QZXing/zxing/bigint/NumberlikeArray.hh ../../QZXing/zxing/bigint/BigUnsignedInABase.hh ../../QZXing/zxing/bigint/BigUnsigned.hh ../../QZXing/zxing/bigint/BigIntegerUtils.hh ../../QZXing/zxing/bigint/BigIntegerLibrary.hh ../../QZXing/zxing/bigint/BigIntegerAlgorithms.hh ../../QZXing/zxing/bigint/BigInteger.hh ../../QZXing/zxing/zxing/WriterException.h ../../QZXing/zxing/zxing/common/Types.h ../../QZXing/zxing/zxing/oned/UPCEReader.h ../../QZXing/zxing/zxing/oned/UPCEANReader.h ../../QZXing/zxing/zxing/oned/UPCEANExtensionSupport.h ../../QZXing/zxing/zxing/oned/UPCEANExtension2Support.h ../../QZXing/zxing/zxing/oned/UPCEANExtension5Support.h ../../QZXing/zxing/zxing/oned/UPCAReader.h ../../QZXing/zxing/zxing/oned/OneDResultPoint.h ../../QZXing/zxing/zxing/oned/OneDReader.h ../../QZXing/zxing/zxing/oned/MultiFormatUPCEANReader.h ../../QZXing/zxing/zxing/oned/MultiFormatOneDReader.h ../../QZXing/zxing/zxing/oned/ITFReader.h ../../QZXing/zxing/zxing/oned/EAN13Reader.h ../../QZXing/zxing/zxing/oned/EAN8Reader.h ../../QZXing/zxing/zxing/oned/EANManufacturerOrgSupport.h ../../QZXing/zxing/zxing/oned/Code128Reader.h ../../QZXing/zxing/zxing/oned/Code39Reader.h ../../QZXing/zxing/zxing/oned/CodaBarReader.h ../../QZXing/zxing/zxing/oned/Code93Reader.h ../../QZXing/zxing/zxing/oned/rss/AbstractRSSReader.h ../../QZXing/zxing/zxing/oned/rss/DataCharacter.h ../../QZXing/zxing/zxing/oned/rss/FinderPattern.h ../../QZXing/zxing/zxing/oned/rss/Pair.h ../../QZXing/zxing/zxing/oned/rss/RSS14Reader.h ../../QZXing/zxing/zxing/oned/rss/RSSUtils.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI013103decoder.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI01320xDecoder.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI01392xDecoder.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI01393xDecoder.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI013x0xDecoder.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI01AndOtherAIs.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI01decoder.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI01weightDecoder.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AnyAIDecoder.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/BlockParsedResult.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/CurrentParsingState.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/DecodedChar.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/DecodedInformation.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/DecodedNumeric.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/DecodedObject.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/FieldParser.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder.h ../../QZXing/zxing/zxing/oned/rss/expanded/BitArrayBuilder.h ../../QZXing/zxing/zxing/oned/rss/expanded/ExpandedPair.h ../../QZXing/zxing/zxing/oned/rss/expanded/ExpandedRow.h ../../QZXing/zxing/zxing/oned/rss/expanded/RSSExpandedReader.h ../../QZXing/zxing/zxing/qrcode/decoder/Decoder.h ../../QZXing/zxing/zxing/qrcode/decoder/DecodedBitStreamParser.h ../../QZXing/zxing/zxing/qrcode/decoder/DataMask.h ../../QZXing/zxing/zxing/qrcode/decoder/DataBlock.h ../../QZXing/zxing/zxing/qrcode/decoder/BitMatrixParser.h ../../QZXing/zxing/zxing/qrcode/detector/FinderPatternInfo.h ../../QZXing/zxing/zxing/qrcode/detector/FinderPatternFinder.h ../../QZXing/zxing/zxing/qrcode/detector/FinderPattern.h ../../QZXing/zxing/zxing/qrcode/detector/Detector.h ../../QZXing/zxing/zxing/qrcode/detector/AlignmentPatternFinder.h ../../QZXing/zxing/zxing/qrcode/detector/AlignmentPattern.h ../../QZXing/zxing/zxing/multi/qrcode/QRCodeMultiReader.h ../../QZXing/zxing/zxing/multi/qrcode/detector/MultiFinderPatternFinder.h ../../QZXing/zxing/zxing/multi/qrcode/detector/MultiDetector.h ../../QZXing/zxing/zxing/qrcode/encoder/BlockPair.h ../../QZXing/zxing/zxing/qrcode/encoder/ByteMatrix.h ../../QZXing/zxing/zxing/qrcode/encoder/Encoder.h ../../QZXing/zxing/zxing/qrcode/encoder/MaskUtil.h ../../QZXing/zxing/zxing/qrcode/encoder/MatrixUtil.h ../../QZXing/zxing/zxing/qrcode/encoder/QRCode.h ../../QZXing/zxing/zxing/datamatrix/Version.h ../../QZXing/zxing/zxing/datamatrix/DataMatrixReader.h ../../QZXing/zxing/zxing/datamatrix/decoder/Decoder.h ../../QZXing/zxing/zxing/datamatrix/decoder/DecodedBitStreamParser.h ../../QZXing/zxing/zxing/datamatrix/decoder/DataBlock.h ../../QZXing/zxing/zxing/datamatrix/decoder/BitMatrixParser.h ../../QZXing/zxing/zxing/datamatrix/detector/DetectorException.h ../../QZXing/zxing/zxing/datamatrix/detector/Detector.h ../../QZXing/zxing/zxing/datamatrix/detector/CornerPoint.h ../../QZXing/zxing/zxing/aztec/AztecReader.h ../../QZXing/zxing/zxing/aztec/AztecDetectorResult.h ../../QZXing/zxing/zxing/aztec/decoder/Decoder.h ../../QZXing/zxing/zxing/aztec/detector/Detector.h ../../QZXing/zxing/zxing/pdf417/decoder/ec/ErrorCorrection.h ../../QZXing/zxing/zxing/pdf417/decoder/ec/ModulusGF.h ../../QZXing/zxing/zxing/pdf417/decoder/ec/ModulusPoly.h ../../QZXing/zxing/zxing/pdf417/decoder/BitMatrixParser.h ../../QZXing/zxing/zxing/pdf417/decoder/DecodedBitStreamParser.h ../../QZXing/zxing/zxing/pdf417/decoder/Decoder.h ../../QZXing/zxing/zxing/pdf417/detector/Detector.h ../../QZXing/zxing/zxing/pdf417/detector/LinesSampler.h ../../QZXing/zxing/zxing/pdf417/PDF417Reader.h ../../QZXing/zxing/zxing/qrcode/Version.h ../../QZXing/zxing/zxing/qrcode/QRCodeReader.h ../../QZXing/zxing/zxing/qrcode/FormatInformation.h ../../QZXing/zxing/zxing/qrcode/ErrorCorrectionLevel.h ../../QZXing/zxing/zxing/qrcode/decoder/Mode.h ../../QZXing/zxing/zxing/EncodeHint.h ../../QZXing/zxing/zxing/UnsupportedEncodingException.h ../../QZXing/zxing/zxing/common/reedsolomon/ReedSolomonEncoder.h ../../QZXing/zxing/win32/zxing/iconv.h ../../accountverifydialog.h ../../addnewdialog.h ../../bookborrowconfirmdialog.h ../../bookrenewdialog.h ../../bookreturndialog.h ../../bookwindow_librarian.h ../../bookwindow_student.h ../../deletebookdialog.h ../../filterbookforlibrariandialog.h ../../filterdialog.h ../../filteruserforlibrariandialog.h ../../loginwindow.h ../../logoutconfirmdialog.h ../../qrcodegenerator.h  ../../QZXing/CameraImageWrapper.cpp ../../QZXing/QZXing.cpp ../../QZXing/ImageHandler.cpp ../../QZXing/zxing/zxing/ResultIO.cpp ../../QZXing/zxing/zxing/InvertedLuminanceSource.cpp ../../QZXing/zxing/zxing/ChecksumException.cpp ../../QZXing/zxing/zxing/ResultPointCallback.cpp ../../QZXing/zxing/zxing/ResultPoint.cpp ../../QZXing/zxing/zxing/Result.cpp ../../QZXing/zxing/zxing/ResultMetadata.cpp ../../QZXing/zxing/zxing/Reader.cpp ../../QZXing/zxing/zxing/MultiFormatReader.cpp ../../QZXing/zxing/zxing/LuminanceSource.cpp ../../QZXing/zxing/zxing/FormatException.cpp ../../QZXing/zxing/zxing/Exception.cpp ../../QZXing/zxing/zxing/DecodeHints.cpp ../../QZXing/zxing/zxing/BinaryBitmap.cpp ../../QZXing/zxing/zxing/Binarizer.cpp ../../QZXing/zxing/zxing/BarcodeFormat.cpp ../../QZXing/zxing/zxing/ReaderException.cpp ../../QZXing/zxing/zxing/IllegalStateException.cpp ../../QZXing/zxing/zxing/NotFoundException.cpp ../../QZXing/zxing/zxing/WriterException.cpp ../../QZXing/zxing/zxing/common/StringUtils.cpp ../../QZXing/zxing/zxing/common/Str.cpp ../../QZXing/zxing/zxing/common/PerspectiveTransform.cpp ../../QZXing/zxing/zxing/common/IllegalArgumentException.cpp ../../QZXing/zxing/zxing/common/HybridBinarizer.cpp ../../QZXing/zxing/zxing/common/GridSampler.cpp ../../QZXing/zxing/zxing/common/GreyscaleRotatedLuminanceSource.cpp ../../QZXing/zxing/zxing/common/GreyscaleLuminanceSource.cpp ../../QZXing/zxing/zxing/common/GlobalHistogramBinarizer.cpp ../../QZXing/zxing/zxing/common/DetectorResult.cpp ../../QZXing/zxing/zxing/common/DecoderResult.cpp ../../QZXing/zxing/zxing/common/CharacterSetECI.cpp ../../QZXing/zxing/zxing/common/BitSource.cpp ../../QZXing/zxing/zxing/common/BitMatrix.cpp ../../QZXing/zxing/zxing/common/BitArray.cpp ../../QZXing/zxing/zxing/common/BitArrayIO.cpp ../../QZXing/zxing/zxing/common/detector/WhiteRectangleDetector.cpp ../../QZXing/zxing/zxing/common/detector/MonochromeRectangleDetector.cpp ../../QZXing/zxing/zxing/common/reedsolomon/ReedSolomonException.cpp ../../QZXing/zxing/zxing/common/reedsolomon/ReedSolomonDecoder.cpp ../../QZXing/zxing/zxing/common/reedsolomon/GenericGFPoly.cpp ../../QZXing/zxing/zxing/common/reedsolomon/GenericGF.cpp ../../QZXing/zxing/zxing/multi/MultipleBarcodeReader.cpp ../../QZXing/zxing/zxing/multi/GenericMultipleBarcodeReader.cpp ../../QZXing/zxing/zxing/multi/ByQuadrantReader.cpp ../../QZXing/zxing/bigint/BigUnsignedInABase.cc ../../QZXing/zxing/bigint/BigUnsigned.cc ../../QZXing/zxing/bigint/BigIntegerUtils.cc ../../QZXing/zxing/bigint/BigIntegerAlgorithms.cc ../../QZXing/zxing/bigint/BigInteger.cc ../../QZXing/zxing/zxing/oned/UPCEReader.cpp ../../QZXing/zxing/zxing/oned/UPCEANReader.cpp ../../QZXing/zxing/zxing/oned/UPCEANExtensionSupport.cpp ../../QZXing/zxing/zxing/oned/UPCEANExtension2Support.cpp ../../QZXing/zxing/zxing/oned/UPCEANExtension5Support.cpp ../../QZXing/zxing/zxing/oned/UPCAReader.cpp ../../QZXing/zxing/zxing/oned/OneDResultPoint.cpp ../../QZXing/zxing/zxing/oned/OneDReader.cpp ../../QZXing/zxing/zxing/oned/MultiFormatUPCEANReader.cpp ../../QZXing/zxing/zxing/oned/MultiFormatOneDReader.cpp ../../QZXing/zxing/zxing/oned/ITFReader.cpp ../../QZXing/zxing/zxing/oned/EAN13Reader.cpp ../../QZXing/zxing/zxing/oned/EAN8Reader.cpp ../../QZXing/zxing/zxing/oned/EANManufacturerOrgSupport.cpp ../../QZXing/zxing/zxing/oned/Code128Reader.cpp ../../QZXing/zxing/zxing/oned/Code39Reader.cpp ../../QZXing/zxing/zxing/oned/CodaBarReader.cpp ../../QZXing/zxing/zxing/oned/Code93Reader.cpp ../../QZXing/zxing/zxing/oned/rss/AbstractRSSReader.cpp ../../QZXing/zxing/zxing/oned/rss/DataCharacter.cpp ../../QZXing/zxing/zxing/oned/rss/FinderPattern.cpp ../../QZXing/zxing/zxing/oned/rss/Pair.cpp ../../QZXing/zxing/zxing/oned/rss/RSS14Reader.cpp ../../QZXing/zxing/zxing/oned/rss/RSSUtils.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/BitArrayBuilder.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/ExpandedPair.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/ExpandedRow.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/RSSExpandedReader.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI01AndOtherAIs.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI01decoder.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI01weightDecoder.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI013x0xDecoder.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI01320xDecoder.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI01392xDecoder.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI01393xDecoder.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI013103decoder.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AnyAIDecoder.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/BlockParsedResult.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/CurrentParsingState.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/DecodedChar.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/DecodedInformation.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/DecodedNumeric.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/DecodedObject.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/FieldParser.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder.cpp ../../QZXing/zxing/zxing/qrcode/decoder/QRBitMatrixParser.cpp ../../QZXing/zxing/zxing/qrcode/decoder/QRDataBlock.cpp ../../QZXing/zxing/zxing/qrcode/decoder/QRDataMask.cpp ../../QZXing/zxing/zxing/qrcode/decoder/QRDecodedBitStreamParser.cpp ../../QZXing/zxing/zxing/qrcode/decoder/QRDecoder.cpp ../../QZXing/zxing/zxing/qrcode/detector/QRAlignmentPattern.cpp ../../QZXing/zxing/zxing/qrcode/detector/QRAlignmentPatternFinder.cpp ../../QZXing/zxing/zxing/qrcode/detector/QRDetector.cpp ../../QZXing/zxing/zxing/qrcode/detector/QRFinderPattern.cpp ../../QZXing/zxing/zxing/qrcode/detector/QRFinderPatternFinder.cpp ../../QZXing/zxing/zxing/qrcode/detector/QRFinderPatternInfo.cpp ../../QZXing/zxing/zxing/qrcode/QRCodeReader.cpp ../../QZXing/zxing/zxing/multi/qrcode/QRCodeMultiReader.cpp ../../QZXing/zxing/zxing/multi/qrcode/detector/MultiFinderPatternFinder.cpp ../../QZXing/zxing/zxing/multi/qrcode/detector/MultiDetector.cpp ../../QZXing/zxing/zxing/qrcode/encoder/ByteMatrix.cpp ../../QZXing/zxing/zxing/qrcode/encoder/QREncoder.cpp ../../QZXing/zxing/zxing/qrcode/encoder/MaskUtil.cpp ../../QZXing/zxing/zxing/qrcode/encoder/MatrixUtil.cpp ../../QZXing/zxing/zxing/qrcode/encoder/QRCode.cpp ../../QZXing/zxing/zxing/datamatrix/DataMatrixReader.cpp ../../QZXing/zxing/zxing/datamatrix/DataMatrixVersion.cpp ../../QZXing/zxing/zxing/datamatrix/decoder/DataMatrixDecoder.cpp ../../QZXing/zxing/zxing/datamatrix/decoder/DataMatrixBitMatrixParser.cpp ../../QZXing/zxing/zxing/datamatrix/decoder/DataMatrixDataBlock.cpp ../../QZXing/zxing/zxing/datamatrix/decoder/DataMatrixDecodedBitStreamParser.cpp ../../QZXing/zxing/zxing/datamatrix/detector/DataMatrixCornerPoint.cpp ../../QZXing/zxing/zxing/datamatrix/detector/DataMatrixDetector.cpp ../../QZXing/zxing/zxing/datamatrix/detector/DataMatrixDetectorException.cpp ../../QZXing/zxing/zxing/aztec/AztecReader.cpp ../../QZXing/zxing/zxing/aztec/AztecDetectorResult.cpp ../../QZXing/zxing/zxing/aztec/decoder/AztecDecoder.cpp ../../QZXing/zxing/zxing/aztec/detector/AztecDetector.cpp ../../QZXing/zxing/zxing/pdf417/decoder/ec/ErrorCorrection.cpp ../../QZXing/zxing/zxing/pdf417/decoder/ec/ModulusGF.cpp ../../QZXing/zxing/zxing/pdf417/decoder/ec/ModulusPoly.cpp ../../QZXing/zxing/zxing/pdf417/decoder/PDF417BitMatrixParser.cpp ../../QZXing/zxing/zxing/pdf417/decoder/PDF417DecodedBitStreamParser.cpp ../../QZXing/zxing/zxing/pdf417/decoder/PDF417Decoder.cpp ../../QZXing/zxing/zxing/pdf417/detector/PDF417Detector.cpp ../../QZXing/zxing/zxing/pdf417/detector/LinesSampler.cpp ../../QZXing/zxing/zxing/pdf417/PDF417Reader.cpp ../../QZXing/zxing/zxing/qrcode/QRVersion.cpp ../../QZXing/zxing/zxing/qrcode/QRFormatInformation.cpp ../../QZXing/zxing/zxing/qrcode/QRErrorCorrectionLevel.cpp ../../QZXing/zxing/zxing/qrcode/decoder/QRMode.cpp ../../QZXing/zxing/zxing/EncodeHint.cpp ../../QZXing/zxing/zxing/UnsupportedEncodingException.cpp ../../QZXing/zxing/zxing/common/reedsolomon/ReedSolomonEncoder.cpp ../../QZXing/zxing/win32/zxing/win_iconv.c ../../accountverifydialog.cpp ../../addnewdialog.cpp ../../bookborrowconfirmdialog.cpp ../../bookrenewdialog.cpp ../../bookreturndialog.cpp ../../bookwindow_librarian.cpp ../../bookwindow_student.cpp ../../deletebookdialog.cpp ../../filterbookforlibrariandialog.cpp ../../filterdialog.cpp ../../filteruserforlibrariandialog.cpp ../../logoutconfirmdialog.cpp ../../main.cpp ../../loginwindow.cpp ../../qrcodegenerator.cpp ../../accountverifydialog.ui ../../addnewdialog.ui ../../bookborrowconfirmdialog.ui ../../bookrenewdialog.ui ../../bookreturndialog.ui ../../bookwindow_librarian.ui ../../bookwindow_student.ui ../../deletebookdialog.ui ../../filterbookforlibrariandialog.ui ../../filterdialog.ui ../../filteruserforlibrariandialog.ui ../../loginwindow.ui ../../logoutconfirmdialog.ui     
+	$(ZIP) LibrarySystem.zip $(SOURCES) $(DIST) ../../../../LibrarySystem.pro ../../../../6.11.1/mingw_64/mkspecs/features/spec_pre.prf ../../../../6.11.1/mingw_64/mkspecs/features/device_config.prf ../../../../6.11.1/mingw_64/mkspecs/common/sanitize.conf ../../../../6.11.1/mingw_64/mkspecs/common/gcc-base.conf ../../../../6.11.1/mingw_64/mkspecs/common/g++-base.conf ../../../../6.11.1/mingw_64/mkspecs/features/win32/windows_vulkan_sdk.prf ../../../../6.11.1/mingw_64/mkspecs/common/windows-vulkan.conf ../../../../6.11.1/mingw_64/mkspecs/common/g++-win32.conf ../../../../6.11.1/mingw_64/mkspecs/common/windows-desktop.conf ../../../../6.11.1/mingw_64/mkspecs/qconfig.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_ext_freetype.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_ext_libjpeg.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_ext_libpng.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_ext_openxr_loader.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3danimation.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3danimation_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dcore.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dcore_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dextras.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dextras_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dinput.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dinput_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dlogic.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dlogic_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquick.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquick_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquickanimation.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquickanimation_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquickextras.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquickextras_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquickinput.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquickinput_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquicklogic.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquicklogic_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquickrender.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquickrender_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquickscene2d.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquickscene2d_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquickscene3d.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3dquickscene3d_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3drender.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_3drender_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_activeqt.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_activeqt_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_axbase_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_axcontainer.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_axcontainer_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_axserver.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_axserver_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_bluetooth.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_bluetooth_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_canvaspainter.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_canvaspainter_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_charts.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_charts_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_chartsqml.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_chartsqml_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_concurrent.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_connectivity_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_core.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_core5compat.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_core5compat_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_core_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_datavisualization.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_datavisualization_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_datavisualizationqml.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_datavisualizationqml_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_dbus.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_dbus_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_designer.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_designer_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_designercomponents_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_devicediscovery_support_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_entrypoint_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_fb_support_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_ffmpegmediapluginimpl_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_freetype_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_graphs.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_graphs_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_graphswidgets.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_graphswidgets_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_grpc.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_grpc_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_grpcquick.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_grpcquick_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_gui.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_gui_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_harfbuzz_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_help.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_help_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_httpserver.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_httpserver_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_insighttracker.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_insighttracker_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_insighttrackerqml.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_insighttrackerqml_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_jpeg_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_jsonrpc_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labsanimation.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labsanimation_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labsfolderlistmodel.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labsfolderlistmodel_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labsplatform.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labsplatform_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labsqmlmodels.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labsqmlmodels_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labssettings.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labssettings_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labssharedimage.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labssharedimage_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labsstylekit.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labsstylekit_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labsstylekitimpl.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labsstylekitimpl_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labssynchronizer.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labssynchronizer_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labswavefrontmesh.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_labswavefrontmesh_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_languageserver_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_linguist.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_location.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_location_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_lottie.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_lottie_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_lottievectorimagegenerator_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_lottievectorimagehelpers.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_lottievectorimagehelpers_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_multimedia.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_multimedia_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_multimediaquick_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_multimediatestlibprivate_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_multimediawidgets.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_network.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_network_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_networkauth.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_networkauth_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_nfc.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_nfc_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_opengl.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_opengl_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_openglwidgets.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_packetprotocol_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_pdf.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_pdf_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_pdfquick.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_pdfquick_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_pdfwidgets.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_pdfwidgets_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_png_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_positioning.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_positioning_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_positioningquick.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_positioningquick_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_printsupport.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_printsupport_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_protobuf.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_protobuf_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_protobufqtcoretypes.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_protobufqtcoretypes_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_protobufqtguitypes.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_protobufqtguitypes_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_protobufquick.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_protobufquick_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_protobufwellknowntypes.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_protobufwellknowntypes_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qdoccatch_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qdoccatchconversions_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qdoccatchgenerators_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qml.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qml_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlassetdownloader_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlcompiler.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlcompiler_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlcore.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlcore_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmldebug_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmldom_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlformat_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlintegration.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmllocalstorage.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmllocalstorage_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlls_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlmeta.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlmeta_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlmodels.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlmodels_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlnetwork.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlnetwork_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmltest.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmltest_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmltoolingsettings_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmltyperegistrar_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlworkerscript.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlworkerscript_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlxmllistmodel.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_qmlxmllistmodel_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3d.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3d_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dassetimport.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dassetimport_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dassetutils.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dassetutils_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3deffects.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dglslparser_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dhelpers.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dhelpers_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dhelpersimpl.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dhelpersimpl_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3diblbaker.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3diblbaker_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dparticleeffects.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dparticles.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dparticles_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dphysics.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dphysics_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dphysicshelpers.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dphysicshelpers_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3druntimerender.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3druntimerender_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dspatialaudio_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dutils.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dutils_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dxr.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick3dxr_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quick_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2basic.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2basic_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2basicstyleimpl.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2basicstyleimpl_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2fluentwinui3styleimpl.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2fluentwinui3styleimpl_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2fusion.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2fusion_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2fusionstyleimpl.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2fusionstyleimpl_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2imagine.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2imagine_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2imaginestyleimpl.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2impl.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2impl_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2material.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2material_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2materialstyleimpl.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2materialstyleimpl_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2universal.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2universal_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2universalstyleimpl.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2universalstyleimpl_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrols2windowsstyleimpl.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickcontrolstestutilsprivate_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickdialogs2.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickdialogs2_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickdialogs2quickimpl.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickdialogs2quickimpl_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickdialogs2utils.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickdialogs2utils_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickeffects.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickeffects_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quicklayouts.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quicklayouts_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickparticles_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickshapes.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickshapes_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickshapesdesignhelpers_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quicktemplates2.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quicktestutilsprivate_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quicktimeline.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quicktimeline_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quicktimelineblendtrees.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quicktimelineblendtrees_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickvectorimage.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickvectorimage_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickvectorimagegenerator_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickvectorimagehelpers.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickvectorimagehelpers_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickwidgets.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_quickwidgets_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_remoteobjects.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_remoteobjects_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_remoteobjectsqml.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_remoteobjectsqml_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_repparser.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_scxml.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_scxml_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_scxmlglobal_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_scxmlqml.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_scxmlqml_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_sensors.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_sensors_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_sensorsquick.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_sensorsquick_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_serialbus.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_serialbus_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_serialport.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_serialport_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_shadertools.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_shadertools_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_spatialaudio.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_spatialaudio_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_sql.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_sql_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_statemachine.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_statemachine_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_statemachineqml.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_statemachineqml_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_svg.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_svg_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_svgwidgets.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_tasktree.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_testinternals_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_testlib.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_testlib_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_texttospeech.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_texttospeech_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_tools_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_uiplugin.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_uitools.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_uitools_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_virtualkeyboard.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_virtualkeyboard_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_virtualkeyboardqml.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_virtualkeyboardqml_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_virtualkeyboardsettings.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_virtualkeyboardsettings_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_webchannel.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_webchannel_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_webchannelquick.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_webchannelquick_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_websockets.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_websockets_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_webview.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_webview_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_webviewquick.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_webviewquick_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_widgets.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_widgets_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_xml.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_xml_private.pri ../../../../6.11.1/mingw_64/mkspecs/modules/qt_lib_zlib_private.pri ../../../../6.11.1/mingw_64/mkspecs/features/qt_functions.prf ../../../../6.11.1/mingw_64/mkspecs/features/qt_config.prf ../../../../6.11.1/mingw_64/mkspecs/win32-g++/qmake.conf ../../../../6.11.1/mingw_64/mkspecs/features/spec_post.prf .qmake.stash ../../../../6.11.1/mingw_64/mkspecs/features/exclusive_builds.prf ../../../../6.11.1/mingw_64/mkspecs/features/toolchain.prf ../../../../6.11.1/mingw_64/mkspecs/features/default_pre.prf ../../../../6.11.1/mingw_64/mkspecs/features/win32/default_pre.prf ../../QZXing/QZXing-components.pri ../../QZXing/QZXing.pri ../../../../6.11.1/mingw_64/mkspecs/features/resolve_config.prf ../../../../6.11.1/mingw_64/mkspecs/features/exclusive_builds_post.prf ../../../../6.11.1/mingw_64/mkspecs/features/default_post.prf ../../../../6.11.1/mingw_64/mkspecs/features/build_pass.prf ../../../../6.11.1/mingw_64/mkspecs/features/warn_on.prf ../../../../6.11.1/mingw_64/mkspecs/features/permissions.prf ../../../../6.11.1/mingw_64/mkspecs/features/qt.prf ../../../../6.11.1/mingw_64/mkspecs/features/resources_functions.prf ../../../../6.11.1/mingw_64/mkspecs/features/resources.prf ../../../../6.11.1/mingw_64/mkspecs/features/moc.prf ../../../../6.11.1/mingw_64/mkspecs/features/win32/opengl.prf ../../../../6.11.1/mingw_64/mkspecs/features/uic.prf ../../../../6.11.1/mingw_64/mkspecs/features/qtquickcompiler.prf ../../../../6.11.1/mingw_64/mkspecs/features/precompile_header.prf ../../../../6.11.1/mingw_64/mkspecs/features/qmake_use.prf ../../../../6.11.1/mingw_64/mkspecs/features/file_copies.prf ../../../../6.11.1/mingw_64/mkspecs/features/win32/windows.prf ../../../../6.11.1/mingw_64/mkspecs/features/testcase_targets.prf ../../../../6.11.1/mingw_64/mkspecs/features/exceptions.prf ../../../../6.11.1/mingw_64/mkspecs/features/yacc.prf ../../../../6.11.1/mingw_64/mkspecs/features/lex.prf ../../LibrarySystem.pro ../../resource.qrc ../../../../6.11.1/mingw_64/lib/Qt6Widgets.prl ../../../../6.11.1/mingw_64/lib/Qt6Gui.prl ../../../../6.11.1/mingw_64/lib/Qt6Sql.prl ../../../../6.11.1/mingw_64/lib/Qt6Network.prl ../../../../6.11.1/mingw_64/lib/Qt6Core.prl ../../../../6.11.1/mingw_64/lib/Qt6EntryPoint.prl  ../../resource.qrc ../../../../6.11.1/mingw_64/mkspecs/features/data/dummy.cpp ../../QZXing/QZXing_global.h ../../QZXing/CameraImageWrapper.h ../../QZXing/ImageHandler.h ../../QZXing/QZXing.h ../../QZXing/zxing/zxing/ZXing.h ../../QZXing/zxing/zxing/IllegalStateException.h ../../QZXing/zxing/zxing/InvertedLuminanceSource.h ../../QZXing/zxing/zxing/ChecksumException.h ../../QZXing/zxing/zxing/ResultPointCallback.h ../../QZXing/zxing/zxing/ResultPoint.h ../../QZXing/zxing/zxing/Result.h ../../QZXing/zxing/zxing/ResultMetadata.h ../../QZXing/zxing/zxing/ReaderException.h ../../QZXing/zxing/zxing/Reader.h ../../QZXing/zxing/zxing/NotFoundException.h ../../QZXing/zxing/zxing/MultiFormatReader.h ../../QZXing/zxing/zxing/LuminanceSource.h ../../QZXing/zxing/zxing/FormatException.h ../../QZXing/zxing/zxing/Exception.h ../../QZXing/zxing/zxing/DecodeHints.h ../../QZXing/zxing/zxing/BinaryBitmap.h ../../QZXing/zxing/zxing/Binarizer.h ../../QZXing/zxing/zxing/BarcodeFormat.h ../../QZXing/zxing/zxing/common/StringUtils.h ../../QZXing/zxing/zxing/common/Str.h ../../QZXing/zxing/zxing/common/Point.h ../../QZXing/zxing/zxing/common/PerspectiveTransform.h ../../QZXing/zxing/zxing/common/IllegalArgumentException.h ../../QZXing/zxing/zxing/common/HybridBinarizer.h ../../QZXing/zxing/zxing/common/GridSampler.h ../../QZXing/zxing/zxing/common/GreyscaleRotatedLuminanceSource.h ../../QZXing/zxing/zxing/common/GreyscaleLuminanceSource.h ../../QZXing/zxing/zxing/common/GlobalHistogramBinarizer.h ../../QZXing/zxing/zxing/common/DetectorResult.h ../../QZXing/zxing/zxing/common/DecoderResult.h ../../QZXing/zxing/zxing/common/CharacterSetECI.h ../../QZXing/zxing/zxing/common/BitSource.h ../../QZXing/zxing/zxing/common/BitMatrix.h ../../QZXing/zxing/zxing/common/BitArray.h ../../QZXing/zxing/zxing/common/detector/MathUtils.h ../../QZXing/zxing/zxing/common/detector/JavaMath.h ../../QZXing/zxing/zxing/common/detector/WhiteRectangleDetector.h ../../QZXing/zxing/zxing/common/detector/MonochromeRectangleDetector.h ../../QZXing/zxing/zxing/common/reedsolomon/ReedSolomonException.h ../../QZXing/zxing/zxing/common/reedsolomon/ReedSolomonDecoder.h ../../QZXing/zxing/zxing/common/reedsolomon/GenericGFPoly.h ../../QZXing/zxing/zxing/common/reedsolomon/GenericGF.h ../../QZXing/zxing/zxing/common/ByteArray.h ../../QZXing/zxing/zxing/multi/MultipleBarcodeReader.h ../../QZXing/zxing/zxing/multi/GenericMultipleBarcodeReader.h ../../QZXing/zxing/zxing/multi/ByQuadrantReader.h ../../QZXing/zxing/bigint/NumberlikeArray.hh ../../QZXing/zxing/bigint/BigUnsignedInABase.hh ../../QZXing/zxing/bigint/BigUnsigned.hh ../../QZXing/zxing/bigint/BigIntegerUtils.hh ../../QZXing/zxing/bigint/BigIntegerLibrary.hh ../../QZXing/zxing/bigint/BigIntegerAlgorithms.hh ../../QZXing/zxing/bigint/BigInteger.hh ../../QZXing/zxing/zxing/WriterException.h ../../QZXing/zxing/zxing/common/Types.h ../../QZXing/zxing/zxing/oned/UPCEReader.h ../../QZXing/zxing/zxing/oned/UPCEANReader.h ../../QZXing/zxing/zxing/oned/UPCEANExtensionSupport.h ../../QZXing/zxing/zxing/oned/UPCEANExtension2Support.h ../../QZXing/zxing/zxing/oned/UPCEANExtension5Support.h ../../QZXing/zxing/zxing/oned/UPCAReader.h ../../QZXing/zxing/zxing/oned/OneDResultPoint.h ../../QZXing/zxing/zxing/oned/OneDReader.h ../../QZXing/zxing/zxing/oned/MultiFormatUPCEANReader.h ../../QZXing/zxing/zxing/oned/MultiFormatOneDReader.h ../../QZXing/zxing/zxing/oned/ITFReader.h ../../QZXing/zxing/zxing/oned/EAN13Reader.h ../../QZXing/zxing/zxing/oned/EAN8Reader.h ../../QZXing/zxing/zxing/oned/EANManufacturerOrgSupport.h ../../QZXing/zxing/zxing/oned/Code128Reader.h ../../QZXing/zxing/zxing/oned/Code39Reader.h ../../QZXing/zxing/zxing/oned/CodaBarReader.h ../../QZXing/zxing/zxing/oned/Code93Reader.h ../../QZXing/zxing/zxing/oned/rss/AbstractRSSReader.h ../../QZXing/zxing/zxing/oned/rss/DataCharacter.h ../../QZXing/zxing/zxing/oned/rss/FinderPattern.h ../../QZXing/zxing/zxing/oned/rss/Pair.h ../../QZXing/zxing/zxing/oned/rss/RSS14Reader.h ../../QZXing/zxing/zxing/oned/rss/RSSUtils.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI013103decoder.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI01320xDecoder.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI01392xDecoder.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI01393xDecoder.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI013x0xDecoder.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI01AndOtherAIs.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI01decoder.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI01weightDecoder.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AnyAIDecoder.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/BlockParsedResult.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/CurrentParsingState.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/DecodedChar.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/DecodedInformation.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/DecodedNumeric.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/DecodedObject.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/FieldParser.h ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder.h ../../QZXing/zxing/zxing/oned/rss/expanded/BitArrayBuilder.h ../../QZXing/zxing/zxing/oned/rss/expanded/ExpandedPair.h ../../QZXing/zxing/zxing/oned/rss/expanded/ExpandedRow.h ../../QZXing/zxing/zxing/oned/rss/expanded/RSSExpandedReader.h ../../QZXing/zxing/zxing/qrcode/decoder/Decoder.h ../../QZXing/zxing/zxing/qrcode/decoder/DecodedBitStreamParser.h ../../QZXing/zxing/zxing/qrcode/decoder/DataMask.h ../../QZXing/zxing/zxing/qrcode/decoder/DataBlock.h ../../QZXing/zxing/zxing/qrcode/decoder/BitMatrixParser.h ../../QZXing/zxing/zxing/qrcode/detector/FinderPatternInfo.h ../../QZXing/zxing/zxing/qrcode/detector/FinderPatternFinder.h ../../QZXing/zxing/zxing/qrcode/detector/FinderPattern.h ../../QZXing/zxing/zxing/qrcode/detector/Detector.h ../../QZXing/zxing/zxing/qrcode/detector/AlignmentPatternFinder.h ../../QZXing/zxing/zxing/qrcode/detector/AlignmentPattern.h ../../QZXing/zxing/zxing/multi/qrcode/QRCodeMultiReader.h ../../QZXing/zxing/zxing/multi/qrcode/detector/MultiFinderPatternFinder.h ../../QZXing/zxing/zxing/multi/qrcode/detector/MultiDetector.h ../../QZXing/zxing/zxing/qrcode/encoder/BlockPair.h ../../QZXing/zxing/zxing/qrcode/encoder/ByteMatrix.h ../../QZXing/zxing/zxing/qrcode/encoder/Encoder.h ../../QZXing/zxing/zxing/qrcode/encoder/MaskUtil.h ../../QZXing/zxing/zxing/qrcode/encoder/MatrixUtil.h ../../QZXing/zxing/zxing/qrcode/encoder/QRCode.h ../../QZXing/zxing/zxing/datamatrix/Version.h ../../QZXing/zxing/zxing/datamatrix/DataMatrixReader.h ../../QZXing/zxing/zxing/datamatrix/decoder/Decoder.h ../../QZXing/zxing/zxing/datamatrix/decoder/DecodedBitStreamParser.h ../../QZXing/zxing/zxing/datamatrix/decoder/DataBlock.h ../../QZXing/zxing/zxing/datamatrix/decoder/BitMatrixParser.h ../../QZXing/zxing/zxing/datamatrix/detector/DetectorException.h ../../QZXing/zxing/zxing/datamatrix/detector/Detector.h ../../QZXing/zxing/zxing/datamatrix/detector/CornerPoint.h ../../QZXing/zxing/zxing/aztec/AztecReader.h ../../QZXing/zxing/zxing/aztec/AztecDetectorResult.h ../../QZXing/zxing/zxing/aztec/decoder/Decoder.h ../../QZXing/zxing/zxing/aztec/detector/Detector.h ../../QZXing/zxing/zxing/pdf417/decoder/ec/ErrorCorrection.h ../../QZXing/zxing/zxing/pdf417/decoder/ec/ModulusGF.h ../../QZXing/zxing/zxing/pdf417/decoder/ec/ModulusPoly.h ../../QZXing/zxing/zxing/pdf417/decoder/BitMatrixParser.h ../../QZXing/zxing/zxing/pdf417/decoder/DecodedBitStreamParser.h ../../QZXing/zxing/zxing/pdf417/decoder/Decoder.h ../../QZXing/zxing/zxing/pdf417/detector/Detector.h ../../QZXing/zxing/zxing/pdf417/detector/LinesSampler.h ../../QZXing/zxing/zxing/pdf417/PDF417Reader.h ../../QZXing/zxing/zxing/qrcode/Version.h ../../QZXing/zxing/zxing/qrcode/QRCodeReader.h ../../QZXing/zxing/zxing/qrcode/FormatInformation.h ../../QZXing/zxing/zxing/qrcode/ErrorCorrectionLevel.h ../../QZXing/zxing/zxing/qrcode/decoder/Mode.h ../../QZXing/zxing/zxing/EncodeHint.h ../../QZXing/zxing/zxing/UnsupportedEncodingException.h ../../QZXing/zxing/zxing/common/reedsolomon/ReedSolomonEncoder.h ../../QZXing/zxing/win32/zxing/iconv.h ../../accountverifydialog.h ../../addnewdialog.h ../../bookborrowconfirmdialog.h ../../bookrenewdialog.h ../../bookreturndialog.h ../../bookwindow_librarian.h ../../bookwindow_student.h ../../deletebookdialog.h ../../filterbookforlibrariandialog.h ../../filterdialog.h ../../filterlogforuserdialog.h ../../filteruserforlibrariandialog.h ../../loginwindow.h ../../logoutconfirmdialog.h ../../qrcodegenerator.h  ../../QZXing/CameraImageWrapper.cpp ../../QZXing/QZXing.cpp ../../QZXing/ImageHandler.cpp ../../QZXing/zxing/zxing/ResultIO.cpp ../../QZXing/zxing/zxing/InvertedLuminanceSource.cpp ../../QZXing/zxing/zxing/ChecksumException.cpp ../../QZXing/zxing/zxing/ResultPointCallback.cpp ../../QZXing/zxing/zxing/ResultPoint.cpp ../../QZXing/zxing/zxing/Result.cpp ../../QZXing/zxing/zxing/ResultMetadata.cpp ../../QZXing/zxing/zxing/Reader.cpp ../../QZXing/zxing/zxing/MultiFormatReader.cpp ../../QZXing/zxing/zxing/LuminanceSource.cpp ../../QZXing/zxing/zxing/FormatException.cpp ../../QZXing/zxing/zxing/Exception.cpp ../../QZXing/zxing/zxing/DecodeHints.cpp ../../QZXing/zxing/zxing/BinaryBitmap.cpp ../../QZXing/zxing/zxing/Binarizer.cpp ../../QZXing/zxing/zxing/BarcodeFormat.cpp ../../QZXing/zxing/zxing/ReaderException.cpp ../../QZXing/zxing/zxing/IllegalStateException.cpp ../../QZXing/zxing/zxing/NotFoundException.cpp ../../QZXing/zxing/zxing/WriterException.cpp ../../QZXing/zxing/zxing/common/StringUtils.cpp ../../QZXing/zxing/zxing/common/Str.cpp ../../QZXing/zxing/zxing/common/PerspectiveTransform.cpp ../../QZXing/zxing/zxing/common/IllegalArgumentException.cpp ../../QZXing/zxing/zxing/common/HybridBinarizer.cpp ../../QZXing/zxing/zxing/common/GridSampler.cpp ../../QZXing/zxing/zxing/common/GreyscaleRotatedLuminanceSource.cpp ../../QZXing/zxing/zxing/common/GreyscaleLuminanceSource.cpp ../../QZXing/zxing/zxing/common/GlobalHistogramBinarizer.cpp ../../QZXing/zxing/zxing/common/DetectorResult.cpp ../../QZXing/zxing/zxing/common/DecoderResult.cpp ../../QZXing/zxing/zxing/common/CharacterSetECI.cpp ../../QZXing/zxing/zxing/common/BitSource.cpp ../../QZXing/zxing/zxing/common/BitMatrix.cpp ../../QZXing/zxing/zxing/common/BitArray.cpp ../../QZXing/zxing/zxing/common/BitArrayIO.cpp ../../QZXing/zxing/zxing/common/detector/WhiteRectangleDetector.cpp ../../QZXing/zxing/zxing/common/detector/MonochromeRectangleDetector.cpp ../../QZXing/zxing/zxing/common/reedsolomon/ReedSolomonException.cpp ../../QZXing/zxing/zxing/common/reedsolomon/ReedSolomonDecoder.cpp ../../QZXing/zxing/zxing/common/reedsolomon/GenericGFPoly.cpp ../../QZXing/zxing/zxing/common/reedsolomon/GenericGF.cpp ../../QZXing/zxing/zxing/multi/MultipleBarcodeReader.cpp ../../QZXing/zxing/zxing/multi/GenericMultipleBarcodeReader.cpp ../../QZXing/zxing/zxing/multi/ByQuadrantReader.cpp ../../QZXing/zxing/bigint/BigUnsignedInABase.cc ../../QZXing/zxing/bigint/BigUnsigned.cc ../../QZXing/zxing/bigint/BigIntegerUtils.cc ../../QZXing/zxing/bigint/BigIntegerAlgorithms.cc ../../QZXing/zxing/bigint/BigInteger.cc ../../QZXing/zxing/zxing/oned/UPCEReader.cpp ../../QZXing/zxing/zxing/oned/UPCEANReader.cpp ../../QZXing/zxing/zxing/oned/UPCEANExtensionSupport.cpp ../../QZXing/zxing/zxing/oned/UPCEANExtension2Support.cpp ../../QZXing/zxing/zxing/oned/UPCEANExtension5Support.cpp ../../QZXing/zxing/zxing/oned/UPCAReader.cpp ../../QZXing/zxing/zxing/oned/OneDResultPoint.cpp ../../QZXing/zxing/zxing/oned/OneDReader.cpp ../../QZXing/zxing/zxing/oned/MultiFormatUPCEANReader.cpp ../../QZXing/zxing/zxing/oned/MultiFormatOneDReader.cpp ../../QZXing/zxing/zxing/oned/ITFReader.cpp ../../QZXing/zxing/zxing/oned/EAN13Reader.cpp ../../QZXing/zxing/zxing/oned/EAN8Reader.cpp ../../QZXing/zxing/zxing/oned/EANManufacturerOrgSupport.cpp ../../QZXing/zxing/zxing/oned/Code128Reader.cpp ../../QZXing/zxing/zxing/oned/Code39Reader.cpp ../../QZXing/zxing/zxing/oned/CodaBarReader.cpp ../../QZXing/zxing/zxing/oned/Code93Reader.cpp ../../QZXing/zxing/zxing/oned/rss/AbstractRSSReader.cpp ../../QZXing/zxing/zxing/oned/rss/DataCharacter.cpp ../../QZXing/zxing/zxing/oned/rss/FinderPattern.cpp ../../QZXing/zxing/zxing/oned/rss/Pair.cpp ../../QZXing/zxing/zxing/oned/rss/RSS14Reader.cpp ../../QZXing/zxing/zxing/oned/rss/RSSUtils.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/BitArrayBuilder.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/ExpandedPair.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/ExpandedRow.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/RSSExpandedReader.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI01AndOtherAIs.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI01decoder.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI01weightDecoder.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI013x0xDecoder.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI01320xDecoder.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI01392xDecoder.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI01393xDecoder.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AI013103decoder.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/AnyAIDecoder.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/BlockParsedResult.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/CurrentParsingState.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/DecodedChar.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/DecodedInformation.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/DecodedNumeric.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/DecodedObject.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/FieldParser.cpp ../../QZXing/zxing/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder.cpp ../../QZXing/zxing/zxing/qrcode/decoder/QRBitMatrixParser.cpp ../../QZXing/zxing/zxing/qrcode/decoder/QRDataBlock.cpp ../../QZXing/zxing/zxing/qrcode/decoder/QRDataMask.cpp ../../QZXing/zxing/zxing/qrcode/decoder/QRDecodedBitStreamParser.cpp ../../QZXing/zxing/zxing/qrcode/decoder/QRDecoder.cpp ../../QZXing/zxing/zxing/qrcode/detector/QRAlignmentPattern.cpp ../../QZXing/zxing/zxing/qrcode/detector/QRAlignmentPatternFinder.cpp ../../QZXing/zxing/zxing/qrcode/detector/QRDetector.cpp ../../QZXing/zxing/zxing/qrcode/detector/QRFinderPattern.cpp ../../QZXing/zxing/zxing/qrcode/detector/QRFinderPatternFinder.cpp ../../QZXing/zxing/zxing/qrcode/detector/QRFinderPatternInfo.cpp ../../QZXing/zxing/zxing/qrcode/QRCodeReader.cpp ../../QZXing/zxing/zxing/multi/qrcode/QRCodeMultiReader.cpp ../../QZXing/zxing/zxing/multi/qrcode/detector/MultiFinderPatternFinder.cpp ../../QZXing/zxing/zxing/multi/qrcode/detector/MultiDetector.cpp ../../QZXing/zxing/zxing/qrcode/encoder/ByteMatrix.cpp ../../QZXing/zxing/zxing/qrcode/encoder/QREncoder.cpp ../../QZXing/zxing/zxing/qrcode/encoder/MaskUtil.cpp ../../QZXing/zxing/zxing/qrcode/encoder/MatrixUtil.cpp ../../QZXing/zxing/zxing/qrcode/encoder/QRCode.cpp ../../QZXing/zxing/zxing/datamatrix/DataMatrixReader.cpp ../../QZXing/zxing/zxing/datamatrix/DataMatrixVersion.cpp ../../QZXing/zxing/zxing/datamatrix/decoder/DataMatrixDecoder.cpp ../../QZXing/zxing/zxing/datamatrix/decoder/DataMatrixBitMatrixParser.cpp ../../QZXing/zxing/zxing/datamatrix/decoder/DataMatrixDataBlock.cpp ../../QZXing/zxing/zxing/datamatrix/decoder/DataMatrixDecodedBitStreamParser.cpp ../../QZXing/zxing/zxing/datamatrix/detector/DataMatrixCornerPoint.cpp ../../QZXing/zxing/zxing/datamatrix/detector/DataMatrixDetector.cpp ../../QZXing/zxing/zxing/datamatrix/detector/DataMatrixDetectorException.cpp ../../QZXing/zxing/zxing/aztec/AztecReader.cpp ../../QZXing/zxing/zxing/aztec/AztecDetectorResult.cpp ../../QZXing/zxing/zxing/aztec/decoder/AztecDecoder.cpp ../../QZXing/zxing/zxing/aztec/detector/AztecDetector.cpp ../../QZXing/zxing/zxing/pdf417/decoder/ec/ErrorCorrection.cpp ../../QZXing/zxing/zxing/pdf417/decoder/ec/ModulusGF.cpp ../../QZXing/zxing/zxing/pdf417/decoder/ec/ModulusPoly.cpp ../../QZXing/zxing/zxing/pdf417/decoder/PDF417BitMatrixParser.cpp ../../QZXing/zxing/zxing/pdf417/decoder/PDF417DecodedBitStreamParser.cpp ../../QZXing/zxing/zxing/pdf417/decoder/PDF417Decoder.cpp ../../QZXing/zxing/zxing/pdf417/detector/PDF417Detector.cpp ../../QZXing/zxing/zxing/pdf417/detector/LinesSampler.cpp ../../QZXing/zxing/zxing/pdf417/PDF417Reader.cpp ../../QZXing/zxing/zxing/qrcode/QRVersion.cpp ../../QZXing/zxing/zxing/qrcode/QRFormatInformation.cpp ../../QZXing/zxing/zxing/qrcode/QRErrorCorrectionLevel.cpp ../../QZXing/zxing/zxing/qrcode/decoder/QRMode.cpp ../../QZXing/zxing/zxing/EncodeHint.cpp ../../QZXing/zxing/zxing/UnsupportedEncodingException.cpp ../../QZXing/zxing/zxing/common/reedsolomon/ReedSolomonEncoder.cpp ../../QZXing/zxing/win32/zxing/win_iconv.c ../../accountverifydialog.cpp ../../addnewdialog.cpp ../../bookborrowconfirmdialog.cpp ../../bookrenewdialog.cpp ../../bookreturndialog.cpp ../../bookwindow_librarian.cpp ../../bookwindow_student.cpp ../../deletebookdialog.cpp ../../filterbookforlibrariandialog.cpp ../../filterdialog.cpp ../../filterlogforuserdialog.cpp ../../filteruserforlibrariandialog.cpp ../../logoutconfirmdialog.cpp ../../main.cpp ../../loginwindow.cpp ../../qrcodegenerator.cpp ../../accountverifydialog.ui ../../addnewdialog.ui ../../bookborrowconfirmdialog.ui ../../bookrenewdialog.ui ../../bookreturndialog.ui ../../bookwindow_librarian.ui ../../bookwindow_student.ui ../../deletebookdialog.ui ../../filterbookforlibrariandialog.ui ../../filterdialog.ui ../../filterlogforuserdialog.ui ../../filteruserforlibrariandialog.ui ../../loginwindow.ui ../../logoutconfirmdialog.ui     
 
 clean: compiler_clean 
 	-$(DEL_FILE) debug/CameraImageWrapper.o debug/QZXing.o debug/ImageHandler.o debug/ResultIO.o debug/InvertedLuminanceSource.o debug/ChecksumException.o debug/ResultPointCallback.o debug/ResultPoint.o debug/Result.o debug/ResultMetadata.o debug/Reader.o debug/MultiFormatReader.o debug/LuminanceSource.o debug/FormatException.o debug/Exception.o debug/DecodeHints.o debug/BinaryBitmap.o debug/Binarizer.o debug/BarcodeFormat.o debug/ReaderException.o debug/IllegalStateException.o debug/NotFoundException.o debug/WriterException.o debug/StringUtils.o debug/Str.o debug/PerspectiveTransform.o debug/IllegalArgumentException.o debug/HybridBinarizer.o debug/GridSampler.o debug/GreyscaleRotatedLuminanceSource.o debug/GreyscaleLuminanceSource.o debug/GlobalHistogramBinarizer.o debug/DetectorResult.o debug/DecoderResult.o debug/CharacterSetECI.o debug/BitSource.o debug/BitMatrix.o debug/BitArray.o debug/BitArrayIO.o debug/WhiteRectangleDetector.o debug/MonochromeRectangleDetector.o debug/ReedSolomonException.o debug/ReedSolomonDecoder.o debug/GenericGFPoly.o debug/GenericGF.o debug/MultipleBarcodeReader.o debug/GenericMultipleBarcodeReader.o debug/ByQuadrantReader.o debug/BigUnsignedInABase.o debug/BigUnsigned.o debug/BigIntegerUtils.o debug/BigIntegerAlgorithms.o debug/BigInteger.o debug/UPCEReader.o debug/UPCEANReader.o debug/UPCEANExtensionSupport.o debug/UPCEANExtension2Support.o debug/UPCEANExtension5Support.o debug/UPCAReader.o debug/OneDResultPoint.o debug/OneDReader.o debug/MultiFormatUPCEANReader.o debug/MultiFormatOneDReader.o debug/ITFReader.o debug/EAN13Reader.o debug/EAN8Reader.o debug/EANManufacturerOrgSupport.o debug/Code128Reader.o debug/Code39Reader.o debug/CodaBarReader.o debug/Code93Reader.o debug/AbstractRSSReader.o debug/DataCharacter.o debug/FinderPattern.o debug/Pair.o debug/RSS14Reader.o debug/RSSUtils.o debug/BitArrayBuilder.o debug/ExpandedPair.o debug/ExpandedRow.o debug/RSSExpandedReader.o debug/AbstractExpandedDecoder.o debug/AI01AndOtherAIs.o debug/AI01decoder.o debug/AI01weightDecoder.o
-	-$(DEL_FILE) debug/AI013x0x1xDecoder.o debug/AI013x0xDecoder.o debug/AI01320xDecoder.o debug/AI01392xDecoder.o debug/AI01393xDecoder.o debug/AI013103decoder.o debug/AnyAIDecoder.o debug/BlockParsedResult.o debug/CurrentParsingState.o debug/DecodedChar.o debug/DecodedInformation.o debug/DecodedNumeric.o debug/DecodedObject.o debug/FieldParser.o debug/GeneralAppIdDecoder.o debug/QRBitMatrixParser.o debug/QRDataBlock.o debug/QRDataMask.o debug/QRDecodedBitStreamParser.o debug/QRDecoder.o debug/QRAlignmentPattern.o debug/QRAlignmentPatternFinder.o debug/QRDetector.o debug/QRFinderPattern.o debug/QRFinderPatternFinder.o debug/QRFinderPatternInfo.o debug/QRCodeReader.o debug/QRCodeMultiReader.o debug/MultiFinderPatternFinder.o debug/MultiDetector.o debug/ByteMatrix.o debug/QREncoder.o debug/MaskUtil.o debug/MatrixUtil.o debug/QRCode.o debug/DataMatrixReader.o debug/DataMatrixVersion.o debug/DataMatrixDecoder.o debug/DataMatrixBitMatrixParser.o debug/DataMatrixDataBlock.o debug/DataMatrixDecodedBitStreamParser.o debug/DataMatrixCornerPoint.o debug/DataMatrixDetector.o debug/DataMatrixDetectorException.o debug/AztecReader.o debug/AztecDetectorResult.o debug/AztecDecoder.o debug/AztecDetector.o debug/ErrorCorrection.o debug/ModulusGF.o debug/ModulusPoly.o debug/PDF417BitMatrixParser.o debug/PDF417DecodedBitStreamParser.o debug/PDF417Decoder.o debug/PDF417Detector.o debug/LinesSampler.o debug/PDF417Reader.o debug/QRVersion.o debug/QRFormatInformation.o debug/QRErrorCorrectionLevel.o debug/QRMode.o debug/EncodeHint.o debug/UnsupportedEncodingException.o debug/ReedSolomonEncoder.o debug/win_iconv.o debug/accountverifydialog.o debug/addnewdialog.o debug/bookborrowconfirmdialog.o debug/bookrenewdialog.o debug/bookreturndialog.o debug/bookwindow_librarian.o debug/bookwindow_student.o debug/deletebookdialog.o debug/filterbookforlibrariandialog.o debug/filterdialog.o debug/filteruserforlibrariandialog.o debug/logoutconfirmdialog.o debug/main.o debug/loginwindow.o debug/qrcodegenerator.o debug/qrc_resource.o
-	-$(DEL_FILE) debug/moc_ImageHandler.o debug/moc_QZXing.o debug/moc_accountverifydialog.o debug/moc_addnewdialog.o debug/moc_bookborrowconfirmdialog.o debug/moc_bookrenewdialog.o debug/moc_bookreturndialog.o debug/moc_bookwindow_librarian.o debug/moc_bookwindow_student.o debug/moc_deletebookdialog.o debug/moc_filterbookforlibrariandialog.o debug/moc_filterdialog.o debug/moc_filteruserforlibrariandialog.o debug/moc_loginwindow.o debug/moc_logoutconfirmdialog.o
+	-$(DEL_FILE) debug/AI013x0x1xDecoder.o debug/AI013x0xDecoder.o debug/AI01320xDecoder.o debug/AI01392xDecoder.o debug/AI01393xDecoder.o debug/AI013103decoder.o debug/AnyAIDecoder.o debug/BlockParsedResult.o debug/CurrentParsingState.o debug/DecodedChar.o debug/DecodedInformation.o debug/DecodedNumeric.o debug/DecodedObject.o debug/FieldParser.o debug/GeneralAppIdDecoder.o debug/QRBitMatrixParser.o debug/QRDataBlock.o debug/QRDataMask.o debug/QRDecodedBitStreamParser.o debug/QRDecoder.o debug/QRAlignmentPattern.o debug/QRAlignmentPatternFinder.o debug/QRDetector.o debug/QRFinderPattern.o debug/QRFinderPatternFinder.o debug/QRFinderPatternInfo.o debug/QRCodeReader.o debug/QRCodeMultiReader.o debug/MultiFinderPatternFinder.o debug/MultiDetector.o debug/ByteMatrix.o debug/QREncoder.o debug/MaskUtil.o debug/MatrixUtil.o debug/QRCode.o debug/DataMatrixReader.o debug/DataMatrixVersion.o debug/DataMatrixDecoder.o debug/DataMatrixBitMatrixParser.o debug/DataMatrixDataBlock.o debug/DataMatrixDecodedBitStreamParser.o debug/DataMatrixCornerPoint.o debug/DataMatrixDetector.o debug/DataMatrixDetectorException.o debug/AztecReader.o debug/AztecDetectorResult.o debug/AztecDecoder.o debug/AztecDetector.o debug/ErrorCorrection.o debug/ModulusGF.o debug/ModulusPoly.o debug/PDF417BitMatrixParser.o debug/PDF417DecodedBitStreamParser.o debug/PDF417Decoder.o debug/PDF417Detector.o debug/LinesSampler.o debug/PDF417Reader.o debug/QRVersion.o debug/QRFormatInformation.o debug/QRErrorCorrectionLevel.o debug/QRMode.o debug/EncodeHint.o debug/UnsupportedEncodingException.o debug/ReedSolomonEncoder.o debug/win_iconv.o debug/accountverifydialog.o debug/addnewdialog.o debug/bookborrowconfirmdialog.o debug/bookrenewdialog.o debug/bookreturndialog.o debug/bookwindow_librarian.o debug/bookwindow_student.o debug/deletebookdialog.o debug/filterbookforlibrariandialog.o debug/filterdialog.o debug/filterlogforuserdialog.o debug/filteruserforlibrariandialog.o debug/logoutconfirmdialog.o debug/main.o debug/loginwindow.o debug/qrcodegenerator.o
+	-$(DEL_FILE) debug/qrc_resource.o debug/moc_ImageHandler.o debug/moc_QZXing.o debug/moc_accountverifydialog.o debug/moc_addnewdialog.o debug/moc_bookborrowconfirmdialog.o debug/moc_bookrenewdialog.o debug/moc_bookreturndialog.o debug/moc_bookwindow_librarian.o debug/moc_bookwindow_student.o debug/moc_deletebookdialog.o debug/moc_filterbookforlibrariandialog.o debug/moc_filterdialog.o debug/moc_filterlogforuserdialog.o debug/moc_filteruserforlibrariandialog.o debug/moc_loginwindow.o debug/moc_logoutconfirmdialog.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -805,9 +811,9 @@ compiler_moc_predefs_clean:
 debug/moc_predefs.h: ../../../../6.11.1/mingw_64/mkspecs/features/data/dummy.cpp
 	g++ -fno-keep-inline-dllexport -g -std=gnu++2a -Wall -Wextra -Wextra -dM -E -o debug/moc_predefs.h ../../../../6.11.1/mingw_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: debug/moc_ImageHandler.cpp debug/moc_QZXing.cpp debug/moc_accountverifydialog.cpp debug/moc_addnewdialog.cpp debug/moc_bookborrowconfirmdialog.cpp debug/moc_bookrenewdialog.cpp debug/moc_bookreturndialog.cpp debug/moc_bookwindow_librarian.cpp debug/moc_bookwindow_student.cpp debug/moc_deletebookdialog.cpp debug/moc_filterbookforlibrariandialog.cpp debug/moc_filterdialog.cpp debug/moc_filteruserforlibrariandialog.cpp debug/moc_loginwindow.cpp debug/moc_logoutconfirmdialog.cpp
+compiler_moc_header_make_all: debug/moc_ImageHandler.cpp debug/moc_QZXing.cpp debug/moc_accountverifydialog.cpp debug/moc_addnewdialog.cpp debug/moc_bookborrowconfirmdialog.cpp debug/moc_bookrenewdialog.cpp debug/moc_bookreturndialog.cpp debug/moc_bookwindow_librarian.cpp debug/moc_bookwindow_student.cpp debug/moc_deletebookdialog.cpp debug/moc_filterbookforlibrariandialog.cpp debug/moc_filterdialog.cpp debug/moc_filterlogforuserdialog.cpp debug/moc_filteruserforlibrariandialog.cpp debug/moc_loginwindow.cpp debug/moc_logoutconfirmdialog.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) debug/moc_ImageHandler.cpp debug/moc_QZXing.cpp debug/moc_accountverifydialog.cpp debug/moc_addnewdialog.cpp debug/moc_bookborrowconfirmdialog.cpp debug/moc_bookrenewdialog.cpp debug/moc_bookreturndialog.cpp debug/moc_bookwindow_librarian.cpp debug/moc_bookwindow_student.cpp debug/moc_deletebookdialog.cpp debug/moc_filterbookforlibrariandialog.cpp debug/moc_filterdialog.cpp debug/moc_filteruserforlibrariandialog.cpp debug/moc_loginwindow.cpp debug/moc_logoutconfirmdialog.cpp
+	-$(DEL_FILE) debug/moc_ImageHandler.cpp debug/moc_QZXing.cpp debug/moc_accountverifydialog.cpp debug/moc_addnewdialog.cpp debug/moc_bookborrowconfirmdialog.cpp debug/moc_bookrenewdialog.cpp debug/moc_bookreturndialog.cpp debug/moc_bookwindow_librarian.cpp debug/moc_bookwindow_student.cpp debug/moc_deletebookdialog.cpp debug/moc_filterbookforlibrariandialog.cpp debug/moc_filterdialog.cpp debug/moc_filterlogforuserdialog.cpp debug/moc_filteruserforlibrariandialog.cpp debug/moc_loginwindow.cpp debug/moc_logoutconfirmdialog.cpp
 debug/moc_ImageHandler.cpp: ../../QZXing/ImageHandler.h \
 		../../../../6.11.1/mingw_64/include/QtCore/QObject \
 		../../../../6.11.1/mingw_64/include/QtCore/qobject.h \
@@ -3406,6 +3412,212 @@ debug/moc_filterdialog.cpp: ../../filterdialog.h \
 		../../../../6.11.1/mingw_64/bin/moc.exe
 	'C:\Qt\6.11.1\mingw_64\bin\moc.exe' $(DEFINES) --include C:/Qt/Projects/LibrarySystem/build/Desktop_Qt_6_11_1_MinGW_64_bit_Release/debug/moc_predefs.h -IC:/Qt/6.11.1/mingw_64/mkspecs/win32-g++ -IC:/Qt/Projects/LibrarySystem -IC:/Qt/Projects/LibrarySystem/QZXing -IC:/Qt/Projects/LibrarySystem/QZXing/zxing -IC:/Qt/Projects/LibrarySystem/QZXing/zxing/win32/zxing -IC:/Qt/6.11.1/mingw_64/include -IC:/Qt/6.11.1/mingw_64/include/QtWidgets -IC:/Qt/6.11.1/mingw_64/include/QtGui -IC:/Qt/6.11.1/mingw_64/include/QtSql -IC:/Qt/6.11.1/mingw_64/include/QtNetwork -IC:/Qt/6.11.1/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ../../filterdialog.h -o debug/moc_filterdialog.cpp
 
+debug/moc_filterlogforuserdialog.cpp: ../../filterlogforuserdialog.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/QDialog \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qdialog.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qtguiglobal.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qglobal.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtcoreglobal.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtversionchecks.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtconfiginclude.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qconfig.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtcore-config.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtconfigmacros.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtdeprecationdefinitions.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcompilerdetection.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qprocessordetection.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qsystemdetection.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtcoreexports.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtdeprecationmarkers.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtclasshelpermacros.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtpreprocessorsupport.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qassert.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtnoop.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtypes.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtversion.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtypeinfo.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcontainerfwd.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qsysinfo.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qlogging.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qflags.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcompare_impl.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qatomic.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qbasicatomic.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qatomic_cxx11.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qgenericatomic.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qyieldcpu.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qconstructormacros.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qdarwinhelpers.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qexceptionhandling.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qforeach.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qttypetraits.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qfunctionpointer.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qglobalstatic.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qmalloc.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qminmax.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qnumeric.h \
+		../../../../6.11.1/mingw_64/include/QtCore/q20type_traits.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qoverload.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qswap.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtenvironmentvariables.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtresource.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qttranslation.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qversiontagging.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qtgui-config.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qtguiexports.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qtwidgets-config.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qtwidgetsexports.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qwidget.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qwindowdefs.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qobjectdefs.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qnamespace.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcompare.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qstdlibdetection.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcomparehelpers.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtmetamacros.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qobjectdefs_impl.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qfunctionaltools_impl.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qwindowdefs_win.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qobject.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qstring.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qchar.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qstringview.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qbytearray.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qrefcount.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qarraydata.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qpair.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qarraydatapointer.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qarraydataops.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcontainertools_impl.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qxptype_traits.h \
+		../../../../6.11.1/mingw_64/include/QtCore/q23type_traits.h \
+		../../../../6.11.1/mingw_64/include/QtCore/q20functional.h \
+		../../../../6.11.1/mingw_64/include/QtCore/q20memory.h \
+		../../../../6.11.1/mingw_64/include/QtCore/q17memory.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qbytearrayalgorithms.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qbytearrayview.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qstringfwd.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qstringalgorithms.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qlatin1stringview.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qanystringview.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qutf8stringview.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qstringtokenizer.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qstringbuilder.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qstringconverter.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qstringconverter_base.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qlist.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qhashfunctions.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qiterator.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qbytearraylist.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qstringlist.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qalgorithms.h \
+		../../../../6.11.1/mingw_64/include/QtCore/q20bit.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qsimd.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qstringmatcher.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcoreevent.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qbasictimer.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qabstracteventdispatcher.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qeventloop.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qmetatype.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qdatastream.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qiodevicebase.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qscopedpointer.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qfloat16.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qmath.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtformat_impl.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qiterable.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtaggedpointer.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qmetacontainer.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcontainerinfo.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qscopeguard.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qobject_impl.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qbindingstorage.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qmargins.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcheckedint_impl.h \
+		../../../../6.11.1/mingw_64/include/QtCore/q23utility.h \
+		../../../../6.11.1/mingw_64/include/QtCore/q20utility.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qaction.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qkeysequence.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qicon.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qsize.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qpixmap.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qpaintdevice.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qrect.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qpoint.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qcolor.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qrgb.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qrgba64.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qshareddata.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qimage.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qpixelformat.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qtransform.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qpolygon.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qregion.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qspan.h \
+		../../../../6.11.1/mingw_64/include/QtCore/q20iterator.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qline.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qvariant.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qdebug.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtextstream.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcontiguouscache.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qsharedpointer.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qsharedpointer_impl.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qmap.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qshareddata_impl.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qset.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qhash.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qvarlengtharray.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qalloc.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qpalette.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qbrush.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qfont.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qendian.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qfontmetrics.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qfontinfo.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qfontvariableaxis.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qsizepolicy.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qcursor.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qbitmap.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qevent.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qiodevice.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qurl.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qeventpoint.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qvector2d.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qvectornd.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qpointingdevice.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qinputdevice.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qscreen.h \
+		../../../../6.11.1/mingw_64/include/QtCore/QList \
+		../../../../6.11.1/mingw_64/include/QtCore/QObject \
+		../../../../6.11.1/mingw_64/include/QtCore/QRect \
+		../../../../6.11.1/mingw_64/include/QtCore/QSize \
+		../../../../6.11.1/mingw_64/include/QtCore/QSizeF \
+		../../../../6.11.1/mingw_64/include/QtGui/QTransform \
+		../../../../6.11.1/mingw_64/include/QtCore/qnativeinterface.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qscreen_platform.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qguiapplication.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qfuture.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qmutex.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtsan_impl.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qresultstore.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qthreadpool.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qthread.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qrunnable.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qexception.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qpromise.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qinputmethod.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qlocale.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qguiapplication_platform.h \
+		debug/moc_predefs.h \
+		../../../../6.11.1/mingw_64/bin/moc.exe
+	'C:\Qt\6.11.1\mingw_64\bin\moc.exe' $(DEFINES) --include C:/Qt/Projects/LibrarySystem/build/Desktop_Qt_6_11_1_MinGW_64_bit_Release/debug/moc_predefs.h -IC:/Qt/6.11.1/mingw_64/mkspecs/win32-g++ -IC:/Qt/Projects/LibrarySystem -IC:/Qt/Projects/LibrarySystem/QZXing -IC:/Qt/Projects/LibrarySystem/QZXing/zxing -IC:/Qt/Projects/LibrarySystem/QZXing/zxing/win32/zxing -IC:/Qt/6.11.1/mingw_64/include -IC:/Qt/6.11.1/mingw_64/include/QtWidgets -IC:/Qt/6.11.1/mingw_64/include/QtGui -IC:/Qt/6.11.1/mingw_64/include/QtSql -IC:/Qt/6.11.1/mingw_64/include/QtNetwork -IC:/Qt/6.11.1/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ../../filterlogforuserdialog.h -o debug/moc_filterlogforuserdialog.cpp
+
 debug/moc_filteruserforlibrariandialog.cpp: ../../filteruserforlibrariandialog.h \
 		../../../../6.11.1/mingw_64/include/QtWidgets/QDialog \
 		../../../../6.11.1/mingw_64/include/QtWidgets/qdialog.h \
@@ -4119,9 +4331,9 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_accountverifydialog.h ui_addnewdialog.h ui_bookborrowconfirmdialog.h ui_bookrenewdialog.h ui_bookreturndialog.h ui_bookwindow_librarian.h ui_bookwindow_student.h ui_deletebookdialog.h ui_filterbookforlibrariandialog.h ui_filterdialog.h ui_filteruserforlibrariandialog.h ui_loginwindow.h ui_logoutconfirmdialog.h
+compiler_uic_make_all: ui_accountverifydialog.h ui_addnewdialog.h ui_bookborrowconfirmdialog.h ui_bookrenewdialog.h ui_bookreturndialog.h ui_bookwindow_librarian.h ui_bookwindow_student.h ui_deletebookdialog.h ui_filterbookforlibrariandialog.h ui_filterdialog.h ui_filterlogforuserdialog.h ui_filteruserforlibrariandialog.h ui_loginwindow.h ui_logoutconfirmdialog.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_accountverifydialog.h ui_addnewdialog.h ui_bookborrowconfirmdialog.h ui_bookrenewdialog.h ui_bookreturndialog.h ui_bookwindow_librarian.h ui_bookwindow_student.h ui_deletebookdialog.h ui_filterbookforlibrariandialog.h ui_filterdialog.h ui_filteruserforlibrariandialog.h ui_loginwindow.h ui_logoutconfirmdialog.h
+	-$(DEL_FILE) ui_accountverifydialog.h ui_addnewdialog.h ui_bookborrowconfirmdialog.h ui_bookrenewdialog.h ui_bookreturndialog.h ui_bookwindow_librarian.h ui_bookwindow_student.h ui_deletebookdialog.h ui_filterbookforlibrariandialog.h ui_filterdialog.h ui_filterlogforuserdialog.h ui_filteruserforlibrariandialog.h ui_loginwindow.h ui_logoutconfirmdialog.h
 ui_accountverifydialog.h: ../../accountverifydialog.ui \
 		../../../../6.11.1/mingw_64/bin/uic.exe
 	'C:\Qt\6.11.1\mingw_64\bin\uic.exe' ../../accountverifydialog.ui -o ui_accountverifydialog.h
@@ -4161,6 +4373,10 @@ ui_filterbookforlibrariandialog.h: ../../filterbookforlibrariandialog.ui \
 ui_filterdialog.h: ../../filterdialog.ui \
 		../../../../6.11.1/mingw_64/bin/uic.exe
 	'C:\Qt\6.11.1\mingw_64\bin\uic.exe' ../../filterdialog.ui -o ui_filterdialog.h
+
+ui_filterlogforuserdialog.h: ../../filterlogforuserdialog.ui \
+		../../../../6.11.1/mingw_64/bin/uic.exe
+	'C:\Qt\6.11.1\mingw_64\bin\uic.exe' ../../filterlogforuserdialog.ui -o ui_filterlogforuserdialog.h
 
 ui_filteruserforlibrariandialog.h: ../../filteruserforlibrariandialog.ui \
 		../../../../6.11.1/mingw_64/bin/uic.exe
@@ -20969,7 +21185,30 @@ debug/accountverifydialog.o: ../../accountverifydialog.cpp ../../accountverifydi
 		ui_accountverifydialog.h \
 		../../../../6.11.1/mingw_64/include/QtCore/QVariant \
 		../../../../6.11.1/mingw_64/include/QtWidgets/QApplication \
-		../../../../6.11.1/mingw_64/include/QtWidgets/qapplication.h
+		../../../../6.11.1/mingw_64/include/QtWidgets/qapplication.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/QHBoxLayout \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qlayout.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qgridlayout.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/QLabel \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qlabel.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qframe.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qpicture.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qtextdocument.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/QLineEdit \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qlineedit.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qtextcursor.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qtextformat.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qpen.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qtextoption.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/QPushButton \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/QStackedWidget \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qstackedwidget.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/QVBoxLayout \
+		../../../../6.11.1/mingw_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug/accountverifydialog.o ../../accountverifydialog.cpp
 
 debug/addnewdialog.o: ../../addnewdialog.cpp ../../addnewdialog.h \
@@ -22907,7 +23146,8 @@ debug/bookwindow_student.o: ../../bookwindow_student.cpp ../../bookwindow_studen
 		../../bookreturndialog.h \
 		../../../../6.11.1/mingw_64/include/QtGui/QImage \
 		../../bookrenewdialog.h \
-		../../logoutconfirmdialog.h
+		../../logoutconfirmdialog.h \
+		../../filterlogforuserdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug/bookwindow_student.o ../../bookwindow_student.cpp
 
 debug/deletebookdialog.o: ../../deletebookdialog.cpp ../../deletebookdialog.h \
@@ -23139,6 +23379,8 @@ debug/deletebookdialog.o: ../../deletebookdialog.cpp ../../deletebookdialog.h \
 		../../../../6.11.1/mingw_64/include/QtWidgets/qframe.h \
 		../../../../6.11.1/mingw_64/include/QtGui/qpicture.h \
 		../../../../6.11.1/mingw_64/include/QtGui/qtextdocument.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/QPushButton \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qpushbutton.h \
 		../../../../6.11.1/mingw_64/include/QtWidgets/QStackedWidget \
 		../../../../6.11.1/mingw_64/include/QtWidgets/qstackedwidget.h \
 		../../../../6.11.1/mingw_64/include/QtWidgets/QVBoxLayout \
@@ -23210,8 +23452,6 @@ debug/deletebookdialog.o: ../../deletebookdialog.cpp ../../deletebookdialog.h \
 		../../../../6.11.1/mingw_64/include/QtGui/QPixmap \
 		../../../../6.11.1/mingw_64/include/QtGui/QDesktopServices \
 		../../../../6.11.1/mingw_64/include/QtGui/qdesktopservices.h \
-		../../../../6.11.1/mingw_64/include/QtWidgets/QPushButton \
-		../../../../6.11.1/mingw_64/include/QtWidgets/qpushbutton.h \
 		../../../../6.11.1/mingw_64/include/QtCore/QDateTime \
 		../../../../6.11.1/mingw_64/include/QtCore/QStack \
 		../../../../6.11.1/mingw_64/include/QtCore/qstack.h \
@@ -23848,6 +24088,300 @@ debug/filterdialog.o: ../../filterdialog.cpp ../../filterdialog.h \
 		../../../../6.11.1/mingw_64/include/QtCore/qstack.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug/filterdialog.o ../../filterdialog.cpp
 
+debug/filterlogforuserdialog.o: ../../filterlogforuserdialog.cpp ../../filterlogforuserdialog.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/QDialog \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qdialog.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qtguiglobal.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qglobal.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtcoreglobal.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtversionchecks.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtconfiginclude.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qconfig.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtcore-config.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtconfigmacros.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtdeprecationdefinitions.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcompilerdetection.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qprocessordetection.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qsystemdetection.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtcoreexports.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtdeprecationmarkers.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtclasshelpermacros.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtpreprocessorsupport.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qassert.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtnoop.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtypes.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtversion.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtypeinfo.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcontainerfwd.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qsysinfo.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qlogging.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qflags.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcompare_impl.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qatomic.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qbasicatomic.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qatomic_cxx11.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qgenericatomic.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qyieldcpu.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qconstructormacros.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qdarwinhelpers.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qexceptionhandling.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qforeach.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qttypetraits.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qfunctionpointer.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qglobalstatic.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qmalloc.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qminmax.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qnumeric.h \
+		../../../../6.11.1/mingw_64/include/QtCore/q20type_traits.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qoverload.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qswap.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtenvironmentvariables.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtresource.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qttranslation.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qversiontagging.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qtgui-config.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qtguiexports.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qtwidgets-config.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qtwidgetsexports.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qwidget.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qwindowdefs.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qobjectdefs.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qnamespace.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcompare.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qstdlibdetection.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcomparehelpers.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtmetamacros.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qobjectdefs_impl.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qfunctionaltools_impl.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qwindowdefs_win.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qobject.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qstring.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qchar.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qstringview.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qbytearray.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qrefcount.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qarraydata.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qpair.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qarraydatapointer.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qarraydataops.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcontainertools_impl.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qxptype_traits.h \
+		../../../../6.11.1/mingw_64/include/QtCore/q23type_traits.h \
+		../../../../6.11.1/mingw_64/include/QtCore/q20functional.h \
+		../../../../6.11.1/mingw_64/include/QtCore/q20memory.h \
+		../../../../6.11.1/mingw_64/include/QtCore/q17memory.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qbytearrayalgorithms.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qbytearrayview.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qstringfwd.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qstringalgorithms.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qlatin1stringview.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qanystringview.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qutf8stringview.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qstringtokenizer.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qstringbuilder.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qstringconverter.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qstringconverter_base.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qlist.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qhashfunctions.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qiterator.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qbytearraylist.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qstringlist.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qalgorithms.h \
+		../../../../6.11.1/mingw_64/include/QtCore/q20bit.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qsimd.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qstringmatcher.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcoreevent.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qbasictimer.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qabstracteventdispatcher.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qeventloop.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qmetatype.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qdatastream.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qiodevicebase.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qscopedpointer.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qfloat16.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qmath.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtformat_impl.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qiterable.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtaggedpointer.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qmetacontainer.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcontainerinfo.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qscopeguard.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qobject_impl.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qbindingstorage.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qmargins.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcheckedint_impl.h \
+		../../../../6.11.1/mingw_64/include/QtCore/q23utility.h \
+		../../../../6.11.1/mingw_64/include/QtCore/q20utility.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qaction.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qkeysequence.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qicon.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qsize.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qpixmap.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qpaintdevice.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qrect.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qpoint.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qcolor.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qrgb.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qrgba64.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qshareddata.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qimage.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qpixelformat.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qtransform.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qpolygon.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qregion.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qspan.h \
+		../../../../6.11.1/mingw_64/include/QtCore/q20iterator.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qline.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qvariant.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qdebug.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtextstream.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcontiguouscache.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qsharedpointer.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qsharedpointer_impl.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qmap.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qshareddata_impl.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qset.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qhash.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qvarlengtharray.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qalloc.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qpalette.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qbrush.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qfont.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qendian.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qfontmetrics.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qfontinfo.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qfontvariableaxis.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qsizepolicy.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qcursor.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qbitmap.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qevent.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qiodevice.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qurl.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qeventpoint.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qvector2d.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qvectornd.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qpointingdevice.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qinputdevice.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qscreen.h \
+		../../../../6.11.1/mingw_64/include/QtCore/QList \
+		../../../../6.11.1/mingw_64/include/QtCore/QObject \
+		../../../../6.11.1/mingw_64/include/QtCore/QRect \
+		../../../../6.11.1/mingw_64/include/QtCore/QSize \
+		../../../../6.11.1/mingw_64/include/QtCore/QSizeF \
+		../../../../6.11.1/mingw_64/include/QtGui/QTransform \
+		../../../../6.11.1/mingw_64/include/QtCore/qnativeinterface.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qscreen_platform.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qguiapplication.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qfuture.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qmutex.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtsan_impl.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qresultstore.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qthreadpool.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qthread.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qrunnable.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qexception.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qpromise.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qinputmethod.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qlocale.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qguiapplication_platform.h \
+		ui_filterlogforuserdialog.h \
+		../../bookwindow_student.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/QMainWindow \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qmainwindow.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qtabwidget.h \
+		../../../../6.11.1/mingw_64/include/QtCore/QTimer \
+		../../../../6.11.1/mingw_64/include/QtCore/qtimer.h \
+		../../../../6.11.1/mingw_64/include/QtSql/QSqlDatabase \
+		../../../../6.11.1/mingw_64/include/QtSql/qsqldatabase.h \
+		../../../../6.11.1/mingw_64/include/QtSql/qtsqlglobal.h \
+		../../../../6.11.1/mingw_64/include/QtSql/qtsql-config.h \
+		../../../../6.11.1/mingw_64/include/QtSql/qtsqlexports.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qmetaobject.h \
+		../../../../6.11.1/mingw_64/include/QtSql/QSqlError \
+		../../../../6.11.1/mingw_64/include/QtSql/qsqlerror.h \
+		../../../../6.11.1/mingw_64/include/QtSql/QSqlquery \
+		../../../../6.11.1/mingw_64/include/QtSql/qsqlquery.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/QTableWidget \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qtablewidget.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qtableview.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qabstractitemview.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qframe.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qabstractitemmodel.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qitemselectionmodel.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qstyleoption.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qvalidator.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qregularexpression.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qslider.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qabstractslider.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qstyle.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qtabbar.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qrubberband.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/QTableWidgetItem \
+		../../../../6.11.1/mingw_64/include/QtCore/QFile \
+		../../../../6.11.1/mingw_64/include/QtCore/qfile.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qfiledevice.h \
+		../../../../6.11.1/mingw_64/include/QtCore/QDebug \
+		../../../../6.11.1/mingw_64/include/QtCore/QTextStream \
+		../../../../6.11.1/mingw_64/include/QtCore/QStringList \
+		../../../../6.11.1/mingw_64/include/QtCore/QString \
+		../../../../6.11.1/mingw_64/include/QtNetwork/QNetworkAccessManager \
+		../../../../6.11.1/mingw_64/include/QtNetwork/qnetworkaccessmanager.h \
+		../../../../6.11.1/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+		../../../../6.11.1/mingw_64/include/QtNetwork/qtnetwork-config.h \
+		../../../../6.11.1/mingw_64/include/QtNetwork/qtnetworkexports.h \
+		../../../../6.11.1/mingw_64/include/QtNetwork/qnetworkrequest.h \
+		../../../../6.11.1/mingw_64/include/QtNetwork/qhttpheaders.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qdatetime.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcalendar.h \
+		../../../../6.11.1/mingw_64/include/QtCore/QSharedDataPointer \
+		../../../../6.11.1/mingw_64/include/QtCore/QUrl \
+		../../../../6.11.1/mingw_64/include/QtCore/QVariant \
+		../../../../6.11.1/mingw_64/include/QtCore/q26numeric.h \
+		../../../../6.11.1/mingw_64/include/QtNetwork/QSslConfiguration \
+		../../../../6.11.1/mingw_64/include/QtNetwork/qsslconfiguration.h \
+		../../../../6.11.1/mingw_64/include/QtNetwork/qsslsocket.h \
+		../../../../6.11.1/mingw_64/include/QtNetwork/qtcpsocket.h \
+		../../../../6.11.1/mingw_64/include/QtNetwork/qabstractsocket.h \
+		../../../../6.11.1/mingw_64/include/QtNetwork/qhostaddress.h \
+		../../../../6.11.1/mingw_64/include/QtNetwork/qsslerror.h \
+		../../../../6.11.1/mingw_64/include/QtNetwork/qsslcertificate.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qcryptographichash.h \
+		../../../../6.11.1/mingw_64/include/QtNetwork/qssl.h \
+		../../../../6.11.1/mingw_64/include/QtCore/QFlags \
+		../../../../6.11.1/mingw_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		../../../../6.11.1/mingw_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		../../../../6.11.1/mingw_64/include/QtCore/QMetaType \
+		../../../../6.11.1/mingw_64/include/QtNetwork/QNetworkReply \
+		../../../../6.11.1/mingw_64/include/QtNetwork/qnetworkreply.h \
+		../../../../6.11.1/mingw_64/include/QtCore/QIODevice \
+		../../../../6.11.1/mingw_64/include/QtNetwork/QNetworkRequest \
+		../../../../6.11.1/mingw_64/include/QtGui/QPixmap \
+		../../../../6.11.1/mingw_64/include/QtGui/QDesktopServices \
+		../../../../6.11.1/mingw_64/include/QtGui/qdesktopservices.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/QPushButton \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../../../../6.11.1/mingw_64/include/QtCore/QDateTime \
+		../../../../6.11.1/mingw_64/include/QtCore/QStandardPaths \
+		../../../../6.11.1/mingw_64/include/QtCore/qstandardpaths.h \
+		../../../../6.11.1/mingw_64/include/QtCore/QDir \
+		../../../../6.11.1/mingw_64/include/QtCore/qdir.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qdirlisting.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qfileinfo.h \
+		../../../../6.11.1/mingw_64/include/QtCore/qtimezone.h \
+		../../../../6.11.1/mingw_64/include/QtCore/QStack \
+		../../../../6.11.1/mingw_64/include/QtCore/qstack.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug/filterlogforuserdialog.o ../../filterlogforuserdialog.cpp
+
 debug/filteruserforlibrariandialog.o: ../../filteruserforlibrariandialog.cpp ../../filteruserforlibrariandialog.h \
 		../../../../6.11.1/mingw_64/include/QtWidgets/QDialog \
 		../../../../6.11.1/mingw_64/include/QtWidgets/qdialog.h \
@@ -24357,6 +24891,25 @@ debug/logoutconfirmdialog.o: ../../logoutconfirmdialog.cpp ../../logoutconfirmdi
 		../../../../6.11.1/mingw_64/include/QtCore/qlocale.h \
 		../../../../6.11.1/mingw_64/include/QtGui/qguiapplication_platform.h \
 		ui_logoutconfirmdialog.h \
+		../../../../6.11.1/mingw_64/include/QtCore/QVariant \
+		../../../../6.11.1/mingw_64/include/QtGui/QIcon \
+		../../../../6.11.1/mingw_64/include/QtWidgets/QAbstractButton \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/QApplication \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qapplication.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/QDialogButtonBox \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/QHBoxLayout \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qlayout.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qgridlayout.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/QLabel \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qlabel.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/qframe.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qpicture.h \
+		../../../../6.11.1/mingw_64/include/QtGui/qtextdocument.h \
+		../../../../6.11.1/mingw_64/include/QtWidgets/QVBoxLayout \
 		../../bookwindow_librarian.h \
 		../../../../6.11.1/mingw_64/include/QtWidgets/QMainWindow \
 		../../../../6.11.1/mingw_64/include/QtWidgets/qmainwindow.h \
@@ -24378,7 +24931,6 @@ debug/logoutconfirmdialog.o: ../../logoutconfirmdialog.cpp ../../logoutconfirmdi
 		../../../../6.11.1/mingw_64/include/QtWidgets/qtableview.h \
 		../../../../6.11.1/mingw_64/include/QtWidgets/qabstractitemview.h \
 		../../../../6.11.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
-		../../../../6.11.1/mingw_64/include/QtWidgets/qframe.h \
 		../../../../6.11.1/mingw_64/include/QtCore/qabstractitemmodel.h \
 		../../../../6.11.1/mingw_64/include/QtCore/qitemselectionmodel.h \
 		../../../../6.11.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
@@ -24410,7 +24962,6 @@ debug/logoutconfirmdialog.o: ../../logoutconfirmdialog.cpp ../../logoutconfirmdi
 		../../../../6.11.1/mingw_64/include/QtCore/qcalendar.h \
 		../../../../6.11.1/mingw_64/include/QtCore/QSharedDataPointer \
 		../../../../6.11.1/mingw_64/include/QtCore/QUrl \
-		../../../../6.11.1/mingw_64/include/QtCore/QVariant \
 		../../../../6.11.1/mingw_64/include/QtCore/q26numeric.h \
 		../../../../6.11.1/mingw_64/include/QtNetwork/QSslConfiguration \
 		../../../../6.11.1/mingw_64/include/QtNetwork/qsslconfiguration.h \
@@ -24435,7 +24986,6 @@ debug/logoutconfirmdialog.o: ../../logoutconfirmdialog.cpp ../../logoutconfirmdi
 		../../../../6.11.1/mingw_64/include/QtGui/qdesktopservices.h \
 		../../../../6.11.1/mingw_64/include/QtWidgets/QPushButton \
 		../../../../6.11.1/mingw_64/include/QtWidgets/qpushbutton.h \
-		../../../../6.11.1/mingw_64/include/QtWidgets/qabstractbutton.h \
 		../../../../6.11.1/mingw_64/include/QtCore/QDateTime \
 		../../../../6.11.1/mingw_64/include/QtCore/QStack \
 		../../../../6.11.1/mingw_64/include/QtCore/qstack.h \
@@ -25268,6 +25818,9 @@ debug/moc_filterbookforlibrariandialog.o: debug/moc_filterbookforlibrariandialog
 
 debug/moc_filterdialog.o: debug/moc_filterdialog.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug/moc_filterdialog.o debug/moc_filterdialog.cpp
+
+debug/moc_filterlogforuserdialog.o: debug/moc_filterlogforuserdialog.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug/moc_filterlogforuserdialog.o debug/moc_filterlogforuserdialog.cpp
 
 debug/moc_filteruserforlibrariandialog.o: debug/moc_filteruserforlibrariandialog.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug/moc_filteruserforlibrariandialog.o debug/moc_filteruserforlibrariandialog.cpp

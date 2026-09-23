@@ -55,7 +55,7 @@ public:
     QLabel *label_time;
     QPushButton *pushButton_navtomain;
     QPushButton *pushButton_navtosearch;
-    QPushButton *pushButton_navtoaboutus;
+    QPushButton *pushButton_navtoselfborrowlog;
     QPushButton *pushButton_EditProfile;
     QStackedWidget *stackedWidget;
     QWidget *page_home;
@@ -67,6 +67,8 @@ public:
     QVBoxLayout *verticalLayout_9;
     QLabel *label_greeting;
     QLabel *label_profiePic;
+    QVBoxLayout *verticalLayout_18;
+    QLabel *label_BooksBorrowing;
     QTableWidget *tableWidget_Status;
     QTableWidget *tableWidget_RankBoard;
     QWidget *page_search;
@@ -80,7 +82,12 @@ public:
     QLabel *label_BookBorrowedCount;
     QVBoxLayout *verticalLayout_7;
     QTableWidget *tableWidget;
-    QWidget *page_aboutus;
+    QWidget *page_selfborrowlog;
+    QVBoxLayout *verticalLayout_16;
+    QHBoxLayout *horizontalLayout_13;
+    QPushButton *pushButton_FilterLogForUser;
+    QLineEdit *lineEdit;
+    QTableWidget *tableWidget_SelfBorrowLog;
     QWidget *page_bookdetails;
     QVBoxLayout *verticalLayout_5;
     QGroupBox *groupBox;
@@ -291,9 +298,9 @@ public:
 
         horizontalLayout->addWidget(pushButton_navtosearch);
 
-        pushButton_navtoaboutus = new QPushButton(groupBox_navigationbar);
-        pushButton_navtoaboutus->setObjectName("pushButton_navtoaboutus");
-        pushButton_navtoaboutus->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        pushButton_navtoselfborrowlog = new QPushButton(groupBox_navigationbar);
+        pushButton_navtoselfborrowlog->setObjectName("pushButton_navtoselfborrowlog");
+        pushButton_navtoselfborrowlog->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "	color: rgb(255, 255, 255);\n"
 "    text-decoration: none;\n"
 "}\n"
@@ -301,7 +308,7 @@ public:
 "    text-decoration: underline;\n"
 "}"));
 
-        horizontalLayout->addWidget(pushButton_navtoaboutus);
+        horizontalLayout->addWidget(pushButton_navtoselfborrowlog);
 
         pushButton_EditProfile = new QPushButton(groupBox_navigationbar);
         pushButton_EditProfile->setObjectName("pushButton_EditProfile");
@@ -362,6 +369,14 @@ public:
 
         horizontalLayout_3->addLayout(verticalLayout_9);
 
+        verticalLayout_18 = new QVBoxLayout();
+        verticalLayout_18->setObjectName("verticalLayout_18");
+        label_BooksBorrowing = new QLabel(groupBox_2);
+        label_BooksBorrowing->setObjectName("label_BooksBorrowing");
+        label_BooksBorrowing->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        verticalLayout_18->addWidget(label_BooksBorrowing);
+
         tableWidget_Status = new QTableWidget(groupBox_2);
         tableWidget_Status->setObjectName("tableWidget_Status");
         tableWidget_Status->setStyleSheet(QString::fromUtf8("QTableWidget{\n"
@@ -378,10 +393,13 @@ public:
         tableWidget_Status->setSelectionMode(QAbstractItemView::SelectionMode::SingleSelection);
         tableWidget_Status->setSelectionBehavior(QAbstractItemView::SelectionBehavior::SelectRows);
 
-        horizontalLayout_3->addWidget(tableWidget_Status);
+        verticalLayout_18->addWidget(tableWidget_Status);
+
+
+        horizontalLayout_3->addLayout(verticalLayout_18);
 
         horizontalLayout_3->setStretch(0, 2);
-        horizontalLayout_3->setStretch(1, 6);
+        horizontalLayout_3->setStretch(1, 5);
 
         verticalLayout_10->addLayout(horizontalLayout_3);
 
@@ -520,9 +538,60 @@ public:
         verticalLayout_2->addWidget(groupBox_searchpage);
 
         stackedWidget->addWidget(page_search);
-        page_aboutus = new QWidget();
-        page_aboutus->setObjectName("page_aboutus");
-        stackedWidget->addWidget(page_aboutus);
+        page_selfborrowlog = new QWidget();
+        page_selfborrowlog->setObjectName("page_selfborrowlog");
+        verticalLayout_16 = new QVBoxLayout(page_selfborrowlog);
+        verticalLayout_16->setObjectName("verticalLayout_16");
+        horizontalLayout_13 = new QHBoxLayout();
+        horizontalLayout_13->setObjectName("horizontalLayout_13");
+        pushButton_FilterLogForUser = new QPushButton(page_selfborrowlog);
+        pushButton_FilterLogForUser->setObjectName("pushButton_FilterLogForUser");
+        pushButton_FilterLogForUser->setEnabled(true);
+        pushButton_FilterLogForUser->setMinimumSize(QSize(110, 0));
+        pushButton_FilterLogForUser->setStyleSheet(QString::fromUtf8("QPushButton{ \n"
+"border:2px solid #ca5cdd;\n"
+" border-radius:8px;\n"
+" padding:5px;\n"
+" background-color:#2c3e50;\n"
+" border-radius:8px;\n"
+" color:white;\n"
+"}"));
+
+        horizontalLayout_13->addWidget(pushButton_FilterLogForUser);
+
+        lineEdit = new QLineEdit(page_selfborrowlog);
+        lineEdit->setObjectName("lineEdit");
+        lineEdit->setStyleSheet(QString::fromUtf8(" QLineEdit\n"
+"{\n"
+"border:2px solid #ca5cdd;\n"
+"border-radius:8px;\n"
+"padding:5px;\n"
+"}"));
+
+        horizontalLayout_13->addWidget(lineEdit);
+
+
+        verticalLayout_16->addLayout(horizontalLayout_13);
+
+        tableWidget_SelfBorrowLog = new QTableWidget(page_selfborrowlog);
+        tableWidget_SelfBorrowLog->setObjectName("tableWidget_SelfBorrowLog");
+        tableWidget_SelfBorrowLog->setStyleSheet(QString::fromUtf8("QTableWidget{\n"
+"color:rgb(255, 255, 255);\n"
+"alternate-background-color: #606060;\n"
+"selection-background-color: rgb(63, 63, 63);\n"
+"selection-color: rgb(255, 255, 255);\n"
+"border:2px solid #ca5cdd;\n"
+"border-radius: 8px;\n"
+"padding:1px;\n"
+"}"));
+        tableWidget_SelfBorrowLog->setEditTriggers(QAbstractItemView::EditTrigger::NoEditTriggers);
+        tableWidget_SelfBorrowLog->setAlternatingRowColors(true);
+        tableWidget_SelfBorrowLog->setSelectionMode(QAbstractItemView::SelectionMode::SingleSelection);
+        tableWidget_SelfBorrowLog->setSelectionBehavior(QAbstractItemView::SelectionBehavior::SelectRows);
+
+        verticalLayout_16->addWidget(tableWidget_SelfBorrowLog);
+
+        stackedWidget->addWidget(page_selfborrowlog);
         page_bookdetails = new QWidget();
         page_bookdetails->setObjectName("page_bookdetails");
         verticalLayout_5 = new QVBoxLayout(page_bookdetails);
@@ -777,7 +846,7 @@ public:
 
         retranslateUi(BookWindow_Student);
 
-        stackedWidget->setCurrentIndex(2);
+        stackedWidget->setCurrentIndex(4);
         comboBox_searchby->setCurrentIndex(0);
 
 
@@ -817,11 +886,12 @@ public:
         label_time->setText(QString());
         pushButton_navtomain->setText(QCoreApplication::translate("BookWindow_Student", "Home", nullptr));
         pushButton_navtosearch->setText(QCoreApplication::translate("BookWindow_Student", "Search", nullptr));
-        pushButton_navtoaboutus->setText(QCoreApplication::translate("BookWindow_Student", "About Us", nullptr));
+        pushButton_navtoselfborrowlog->setText(QCoreApplication::translate("BookWindow_Student", "Self Borrow Log", nullptr));
         pushButton_EditProfile->setText(QCoreApplication::translate("BookWindow_Student", "Edit Profile", nullptr));
         groupBox_2->setTitle(QString());
         label_greeting->setText(QCoreApplication::translate("BookWindow_Student", "TextLabel", nullptr));
         label_profiePic->setText(QCoreApplication::translate("BookWindow_Student", "No Image", nullptr));
+        label_BooksBorrowing->setText(QCoreApplication::translate("BookWindow_Student", "Books Borrowing", nullptr));
         groupBox_searchpage->setTitle(QString());
         pushButton_filter->setText(QCoreApplication::translate("BookWindow_Student", "Filter", nullptr));
         comboBox_searchby->setItemText(0, QCoreApplication::translate("BookWindow_Student", "Search by", nullptr));
@@ -833,6 +903,8 @@ public:
         lineEdit_searchinput->setText(QString());
         lineEdit_searchinput->setPlaceholderText(QCoreApplication::translate("BookWindow_Student", "Search by entering book name", nullptr));
         label_BookBorrowedCount->setText(QCoreApplication::translate("BookWindow_Student", "Book Borrowed: ", nullptr));
+        pushButton_FilterLogForUser->setText(QCoreApplication::translate("BookWindow_Student", "filter", nullptr));
+        lineEdit->setPlaceholderText(QCoreApplication::translate("BookWindow_Student", "Search by entering book code", nullptr));
         groupBox->setTitle(QString());
         label_bookImage->setText(QCoreApplication::translate("BookWindow_Student", "No Image", nullptr));
         label_discription->setText(QString());
@@ -849,11 +921,11 @@ public:
         label_ConfirmPW->setText(QCoreApplication::translate("BookWindow_Student", "Confirm Password:", nullptr));
         label_StatusUserID->setText(QString());
         label_StatusUserName->setText(QString());
-        pushButton_ShowHidePW->setText(QCoreApplication::translate("BookWindow_Student", "PushButton", nullptr));
+        pushButton_ShowHidePW->setText(QString());
         label_StatusCurrentPW->setText(QString());
-        pushButton_ShowHidePW2->setText(QCoreApplication::translate("BookWindow_Student", "PushButton", nullptr));
+        pushButton_ShowHidePW2->setText(QString());
         label_StatusNewAndConfirmPW->setText(QString());
-        pushButton_ShowHidePW3->setText(QCoreApplication::translate("BookWindow_Student", "PushButton", nullptr));
+        pushButton_ShowHidePW3->setText(QString());
         pushButton_ReturnMain->setText(QCoreApplication::translate("BookWindow_Student", "Return To Main", nullptr));
         label_Warning->setText(QString());
         pushButton_ChangeConfig->setText(QCoreApplication::translate("BookWindow_Student", "Confirm Change", nullptr));

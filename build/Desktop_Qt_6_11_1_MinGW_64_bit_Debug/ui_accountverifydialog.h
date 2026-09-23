@@ -73,12 +73,14 @@ public:
         sizePolicy1.setHeightForWidth(label_UserID->sizePolicy().hasHeightForWidth());
         label_UserID->setSizePolicy(sizePolicy1);
         label_UserID->setStyleSheet(QString::fromUtf8("color:rgb(255, 255, 255)"));
+        label_UserID->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         horizontalLayout->addWidget(label_UserID);
 
         lineEdit_UserID = new QLineEdit(page);
         lineEdit_UserID->setObjectName("lineEdit_UserID");
-        lineEdit_UserID->setStyleSheet(QString::fromUtf8("background-color: rgb(31, 31, 31); \n"
+        lineEdit_UserID->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"background-color: rgb(31, 31, 31); \n"
 "border:2px solid #ca5cdd;\n"
 " border-radius:8px;\n"
 " padding:5px;"));
@@ -95,12 +97,14 @@ public:
         sizePolicy1.setHeightForWidth(label_Name->sizePolicy().hasHeightForWidth());
         label_Name->setSizePolicy(sizePolicy1);
         label_Name->setStyleSheet(QString::fromUtf8("color:rgb(255, 255, 255)"));
+        label_Name->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         horizontalLayout_3->addWidget(label_Name);
 
         lineEdit_Name = new QLineEdit(page);
         lineEdit_Name->setObjectName("lineEdit_Name");
-        lineEdit_Name->setStyleSheet(QString::fromUtf8("background-color: rgb(31, 31, 31); \n"
+        lineEdit_Name->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"background-color: rgb(31, 31, 31); \n"
 "border:2px solid #ca5cdd;\n"
 " border-radius:8px;\n"
 " padding:5px;"));
@@ -160,8 +164,8 @@ public:
 
     void retranslateUi(QDialog *AccountVerifyDialog)
     {
-        AccountVerifyDialog->setWindowTitle(QCoreApplication::translate("AccountVerifyDialog", "Reset Password Window", nullptr));
-        label_UserID->setText(QCoreApplication::translate("AccountVerifyDialog", "Username", nullptr));
+        AccountVerifyDialog->setWindowTitle(QCoreApplication::translate("AccountVerifyDialog", "Account Recovery Window", nullptr));
+        label_UserID->setText(QCoreApplication::translate("AccountVerifyDialog", "UsernID    ", nullptr));
         label_Name->setText(QCoreApplication::translate("AccountVerifyDialog", "Name       ", nullptr));
         pushButton_Verify->setText(QCoreApplication::translate("AccountVerifyDialog", "Verify", nullptr));
         label_Warning->setText(QString());

@@ -67,6 +67,8 @@ public:
     QVBoxLayout *verticalLayout_9;
     QLabel *label_greeting;
     QLabel *label_profiePic;
+    QVBoxLayout *verticalLayout_18;
+    QLabel *label_BooksBorrowing;
     QTableWidget *tableWidget_Status;
     QTableWidget *tableWidget_RankBoard;
     QWidget *page_search;
@@ -367,6 +369,14 @@ public:
 
         horizontalLayout_3->addLayout(verticalLayout_9);
 
+        verticalLayout_18 = new QVBoxLayout();
+        verticalLayout_18->setObjectName("verticalLayout_18");
+        label_BooksBorrowing = new QLabel(groupBox_2);
+        label_BooksBorrowing->setObjectName("label_BooksBorrowing");
+        label_BooksBorrowing->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        verticalLayout_18->addWidget(label_BooksBorrowing);
+
         tableWidget_Status = new QTableWidget(groupBox_2);
         tableWidget_Status->setObjectName("tableWidget_Status");
         tableWidget_Status->setStyleSheet(QString::fromUtf8("QTableWidget{\n"
@@ -383,10 +393,13 @@ public:
         tableWidget_Status->setSelectionMode(QAbstractItemView::SelectionMode::SingleSelection);
         tableWidget_Status->setSelectionBehavior(QAbstractItemView::SelectionBehavior::SelectRows);
 
-        horizontalLayout_3->addWidget(tableWidget_Status);
+        verticalLayout_18->addWidget(tableWidget_Status);
+
+
+        horizontalLayout_3->addLayout(verticalLayout_18);
 
         horizontalLayout_3->setStretch(0, 2);
-        horizontalLayout_3->setStretch(1, 6);
+        horizontalLayout_3->setStretch(1, 5);
 
         verticalLayout_10->addLayout(horizontalLayout_3);
 
@@ -833,7 +846,7 @@ public:
 
         retranslateUi(BookWindow_Student);
 
-        stackedWidget->setCurrentIndex(2);
+        stackedWidget->setCurrentIndex(4);
         comboBox_searchby->setCurrentIndex(0);
 
 
@@ -878,6 +891,7 @@ public:
         groupBox_2->setTitle(QString());
         label_greeting->setText(QCoreApplication::translate("BookWindow_Student", "TextLabel", nullptr));
         label_profiePic->setText(QCoreApplication::translate("BookWindow_Student", "No Image", nullptr));
+        label_BooksBorrowing->setText(QCoreApplication::translate("BookWindow_Student", "Books Borrowing", nullptr));
         groupBox_searchpage->setTitle(QString());
         pushButton_filter->setText(QCoreApplication::translate("BookWindow_Student", "Filter", nullptr));
         comboBox_searchby->setItemText(0, QCoreApplication::translate("BookWindow_Student", "Search by", nullptr));
@@ -907,11 +921,11 @@ public:
         label_ConfirmPW->setText(QCoreApplication::translate("BookWindow_Student", "Confirm Password:", nullptr));
         label_StatusUserID->setText(QString());
         label_StatusUserName->setText(QString());
-        pushButton_ShowHidePW->setText(QCoreApplication::translate("BookWindow_Student", "PushButton", nullptr));
+        pushButton_ShowHidePW->setText(QString());
         label_StatusCurrentPW->setText(QString());
-        pushButton_ShowHidePW2->setText(QCoreApplication::translate("BookWindow_Student", "PushButton", nullptr));
+        pushButton_ShowHidePW2->setText(QString());
         label_StatusNewAndConfirmPW->setText(QString());
-        pushButton_ShowHidePW3->setText(QCoreApplication::translate("BookWindow_Student", "PushButton", nullptr));
+        pushButton_ShowHidePW3->setText(QString());
         pushButton_ReturnMain->setText(QCoreApplication::translate("BookWindow_Student", "Return To Main", nullptr));
         label_Warning->setText(QString());
         pushButton_ChangeConfig->setText(QCoreApplication::translate("BookWindow_Student", "Confirm Change", nullptr));

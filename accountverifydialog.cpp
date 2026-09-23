@@ -29,7 +29,7 @@ void AccountVerifyDialog::on_pushButton_Verify_clicked()
         ui->label_Warning->setText("Warning: Please enter your name and account ID");
     } else {
         QSqlQuery queryUser(dataBase);
-        queryUser.prepare("SELECT userid, password, username "
+        queryUser.prepare("SELECT userid, password, name "
                           "FROM users "
                           "WHERE userid = :id LIMIT 1");
         queryUser.bindValue(":id", ui->lineEdit_UserID->text());

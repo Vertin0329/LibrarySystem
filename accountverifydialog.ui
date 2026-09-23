@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>Reset Password Window</string>
+   <string>Account Recovery Window</string>
   </property>
   <property name="styleSheet">
    <string notr="true">color:rgb(31, 31, 31)</string>
@@ -46,14 +46,18 @@
               <string notr="true">color:rgb(255, 255, 255)</string>
              </property>
              <property name="text">
-              <string>Username</string>
+              <string>UsernID    </string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QLineEdit" name="lineEdit_UserID">
              <property name="styleSheet">
-              <string notr="true">background-color: rgb(31, 31, 31); 
+              <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(31, 31, 31); 
 border:2px solid #ca5cdd;
  border-radius:8px;
  padding:5px;</string>
@@ -78,12 +82,16 @@ border:2px solid #ca5cdd;
              <property name="text">
               <string>Name       </string>
              </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
             </widget>
            </item>
            <item>
             <widget class="QLineEdit" name="lineEdit_Name">
              <property name="styleSheet">
-              <string notr="true">background-color: rgb(31, 31, 31); 
+              <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(31, 31, 31); 
 border:2px solid #ca5cdd;
  border-radius:8px;
  padding:5px;</string>

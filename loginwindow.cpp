@@ -25,6 +25,15 @@ LoginWindow::LoginWindow(QWidget *parent)
                                          "border:2px solid #ca5cdd; "
                                          "border-radius:8px; "
                                          "padding:5px;");
+
+    QString dbPath = QCoreApplication::applicationDirPath() + "/data.sqlite";
+    QSqlDatabase dataBase;
+    if (QSqlDatabase::contains("DBConnection")) {
+        return;
+    } else {
+        dataBase = QSqlDatabase::addDatabase("QSQLITE", "DBConnection");
+        dataBase.setDatabaseName(dbPath);
+    }
 }
 
 LoginWindow::~LoginWindow()
@@ -45,15 +54,8 @@ void LoginWindow::on_pushButton_Login_clicked()
     QString q_password = ui->lineEdit_Password->text();
     std::string password = q_password.toStdString();
 
-    QString dbPath = QCoreApplication::applicationDirPath() + "/data.sqlite";
-
     QSqlDatabase dataBase;
-    if (QSqlDatabase::contains("DBConnection")) {
-        dataBase = QSqlDatabase::database("DBConnection");
-    } else {
-        dataBase = QSqlDatabase::addDatabase("QSQLITE", "DBConnection");
-        dataBase.setDatabaseName(dbPath);
-    }
+    dataBase = QSqlDatabase::database("DBConnection");
     dataBase.open();
 
     // check if empty or not

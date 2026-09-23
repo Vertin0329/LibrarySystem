@@ -65,3 +65,13 @@ For this project, I have choosen CPP + QT as the programming language. CPP provi
 ### <ins>Renew Procedure</ins>
 - Before assigned return date, user can renew the book for a **MAXIMUM 3 TIMES**. If the book have been renewed for 3 times, `pushbutton_renew` will be set to disabled, forcing user to return the book for other users. If user wants to renew the book after assigned return date (renew time < 3), payment code will be shown before renew success.
 
+## Screen Design
+### <ins>Login Menu</ins>
+<img width="798" height="535" alt="image" src="https://github.com/user-attachments/assets/9e58f9c4-c6fb-4eaf-acea-372b6bdfc454" />
+
+### <ins>Authentication System</ins>
+
+### <ins>Account Recovery Menu</ins>
+<img width="566" height="312" alt="Screenshot 2026-09-23 215025" src="https://github.com/user-attachments/assets/cbf020b7-2152-4d9c-a1b2-f47cd63310e8" />
+<img width="571" height="315" alt="Screenshot 2026-09-23 220542" src="https://github.com/user-attachments/assets/0701263b-8839-4b0d-827a-76571ee8efba" />
+- After entering correct username and account ID, account password will be shown as above.

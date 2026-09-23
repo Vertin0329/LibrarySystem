@@ -39,17 +39,17 @@ SQLite setup
 For this project, I have choosen CPP + QT as the programming language. CPP provides high preformance and deep system-level control when it combines with Qt framework, while Qt provides a drag-and-drop method to create an app and also clear signal and slot communiaction between UI elements and logics. Although CPP is not a mainstream programming language for app design, I still use it as it is easy to learn and debug with Qt creator.
 
 ## Program Specification
-### Specification for Login Procedure
+### <ins>Specification for Login Procedure</ins>
 App testers can login refering the accounts in [database](build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/debug/data.sqlite) for this project. If app testers want to test new account, you will have to login to admin window by using `admin`, `123` as username and password respectively.
 
 > [!NOTE]
 > For user login, user and user2 is given accounts for tesing the borrow or other functions that need to use normal user account, with password 123.
 
-### Specification for Recovering Account Procedure
+### <ins>Specification for Recovering Account Procedure</ins>
 This procedure requires account id and username. After providing these two informations, password will be show to user if the account id and username matches.
 
-### Specification for Search Book Procedure
+### <ins>Specification for Search Book Procedure</ins>
 `QString` is used for prepareing SQL query in this procedure. In this way the criteria of searching the book will be accurate enough for user. For example, if user select `radioButton_Available`, the `QString` of the SQL query will be change from `SELECT * FROM metadata WHERE bookcode IS NOT NULL AND bookcode != ''` --> `SELECT * FROM metadata WHERE bookcode IS NOT NULL AND bookcode != '' AND status = 'in display'`.
 
-### Specification for Borrow, Return, Renew and Reserve Procedures
+### <ins>Specification for Borrow, Return, Renew and Reserve Procedures</ins>
 In these procedures, users or admin (will be mentioned as users in this paragraph) have to input into typebox based on item of `QComboBox` selected by user. Users can input only few characters to search the book, for example users can input `The Declaration` for searching `The Declaration of Independence of the United States of America`.

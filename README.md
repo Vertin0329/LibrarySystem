@@ -76,4 +76,4 @@ For this project, I have choosen CPP + QT as the programming language. CPP provi
 
 <img width="571" height="315" alt="Screenshot 2026-09-23 220542" src="https://github.com/user-attachments/assets/0701263b-8839-4b0d-827a-76571ee8efba" />
 
-- After entering correct username and account ID, account password will be shown as above.
+- After entering correct username and account ID and active `pushbutton_Verify`, account password will be shown as above.

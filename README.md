@@ -70,6 +70,8 @@ For this project, I have choosen CPP + QT as the programming language. CPP provi
 <img width="798" height="535" alt="image" src="https://github.com/user-attachments/assets/9e58f9c4-c6fb-4eaf-acea-372b6bdfc454" />
 
 ### <ins>Authentication System</ins>
+<img width="798" height="532" alt="image" src="https://github.com/user-attachments/assets/60c88058-c810-448d-ae5a-2515ce0e8235" />
+<img width="800" height="538" alt="image" src="https://github.com/user-attachments/assets/27ecb166-e5aa-4e83-bb25-c9c56c2104b5" />
 
 ### <ins>Account Recovery Menu</ins>
 <img width="565" height="312" alt="image" src="https://github.com/user-attachments/assets/762f4999-fe01-4bdb-8ab7-f5a61e9d5117" />

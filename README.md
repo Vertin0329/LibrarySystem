@@ -23,7 +23,7 @@ This is a library system aims to improve the user experience of Hong Kong Public
 - Graphics Card: Any
 - Storage: 900 MB free space
 
-(900 Space requirement is for whole file. If you want app only, please refer to the [read me in LibrarySystem_AppOnly](LibrarySystem_AppOnly/README.md).)
+(900 Space requirement is for whole file. If you want app only, please refer to the [read me in LibrarySystem_AppOnly](https://github.com/Vertin0329/LibrarySystem_AppOnly/blob/main/README.md).)
 
 ## Windows Setup
 

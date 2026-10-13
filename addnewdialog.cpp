@@ -67,6 +67,12 @@ void AddNewDialog::on_radioButton_AddUser_clicked()
 }
 
 
+void AddNewDialog::on_radioButton_AddBkISBN_clicked()
+{
+    ui->stackedWidget_AddNew->setCurrentIndex(3);
+}
+
+
 void AddNewDialog::on_pushButton_clicked()
 {
     int currentIdx = ui->stackedWidget_AddNew->currentIndex();
@@ -165,7 +171,8 @@ void AddNewDialog::on_pushButton_clicked()
         BookWindow_Librarian *parentWindow = qobject_cast<BookWindow_Librarian*>(parent());
         parentWindow->readFileAndDisplayBookList();
         close();
-    } else {        // Add new account
+
+    } else if (currentIdx == 1){        // Add new account
         int accTypeIdx = ui->comboBox_AccType->currentIndex();
 
         if (accTypeIdx == 0){
@@ -197,6 +204,15 @@ void AddNewDialog::on_pushButton_clicked()
                                            "Account Type: %3").arg(userID)
                                                               .arg(password)
                                                               .arg(newAccType));
+
+    } else if (currentIdx == 3){
+
     }
+}
+
+
+void AddNewDialog::on_pushButton_SearchISBN_clicked()
+{
+
 }
 

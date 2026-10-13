@@ -249,17 +249,51 @@ void BookWindow_Student::on_tableWidget_cellClicked(int row)
     saveCurrentIndex();
     ui->stackedWidget->setCurrentIndex(3);
 
+    QSqlDatabase dataBase = QSqlDatabase::database("DBConnection");
+
     QTableWidgetItem *bk_code_item = ui->tableWidget->item(row, 5);
     selectedBookCode = bk_code_item->text();
     selectedBookRow = row;
+    QString picUrl;
 
-    bookRow = selectedBookCode.right(5).toInt();
-    QString picUrl = QString("https://www.gutenberg.org/cache/epub/%1/pg%1.cover.medium.jpg").arg(QString::number(bookRow));
+    QSqlQuery querySource(dataBase);
+    querySource.prepare("SELECT datasource, ISBN FROM metadata WHERE bookcode = :bkcode LIMIT 1");
+    querySource.bindValue(":bkcode", selectedBookCode);
+    querySource.exec();
+    querySource.next();
+
+    if (querySource.value(0).toString() == "PG"){
+
+        bookRow = selectedBookCode.right(5).toInt();
+        QString picUrl = QString("https://www.gutenberg.org/cache/epub/%1/pg%1.cover.medium.jpg").arg(QString::number(bookRow));
+
+    } else if (querySource.value(0).toString() == "ISBN"){
+
+        QString ISBN = querySource.value(1).toString();
+        QString webLinkUrl = QString("https://openlibrary.org/api/books?bibkeys=ISBN:%1&format=json").arg(ISBN);
+
+        QNetworkAccessManager *picManager = new QNetworkAccessManager(this);
+
+        connect(picManager, &QNetworkAccessManager::finished, this, [=](QNetworkReply *reply) {
+
+            QByteArray data = reply->readAll();
+            QJsonDocument doc = QJsonDocument::fromJson(data);
+            QJsonObject root = doc.object();
+            QString key = "ISBN:" + ISBN;
+            QJsonObject bookObj = root[key].toObject();
+
+            QString previewUrl = bookObj["preview_url"].toString();
+            QString picUrl = previewUrl;
+
+            reply->deleteLater();
+        });
+
+        picManager->get(QNetworkRequest(QUrl(webLinkUrl)));
+    }
 
     QNetworkAccessManager *manager = new QNetworkAccessManager(this);
 
     connect(manager, &QNetworkAccessManager::finished, this, [this](QNetworkReply *reply){
-
         if (reply->error() == QNetworkReply::NoError){
             QByteArray data = reply->readAll();
             QPixmap pix;
@@ -283,7 +317,6 @@ void BookWindow_Student::on_tableWidget_cellClicked(int row)
 
     manager->get(QNetworkRequest(QUrl(picUrl)));
 
-    QSqlDatabase dataBase = QSqlDatabase::database("DBConnection");
     QSqlQuery queryData(dataBase);
     queryData.prepare("SELECT * FROM metadata WHERE bookcode = :bkcode LIMIT 1");
     queryData.bindValue(":bkcode", selectedBookCode);

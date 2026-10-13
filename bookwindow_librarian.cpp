@@ -363,6 +363,17 @@ void BookWindow_Librarian::on_tableWidget_BookList_cellClicked(int row)
                                     .arg(queryData.value(14).toString()) // %13
                                     .arg(queryData.value(15).toString()) // %14
                                     .arg(queryData.value(16).toString())); // %15
+
+    QTableWidgetItem *bk_status_item = ui->tableWidget_BookList->item(row, 2);
+    QString bk_status = bk_status_item->text();
+
+    if (bk_status == "loan"){
+        ui->pushButton_ReturnBook->setEnabled(true);
+        ui->pushButton_ReturnBook->show();
+    } else {
+        ui->pushButton_ReturnBook->setEnabled(false);
+        ui->pushButton_ReturnBook->hide();
+    }
 }
 
 

@@ -30,6 +30,7 @@ public:
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QRadioButton *radioButton_AddBook;
+    QRadioButton *radioButton_AddBkISBN;
     QRadioButton *radioButton_AddUser;
     QStackedWidget *stackedWidget_AddNew;
     QWidget *page_AddBook;
@@ -67,13 +68,29 @@ public:
     QWidget *page_AccData;
     QVBoxLayout *verticalLayout_6;
     QLabel *label_AccData;
+    QWidget *page_AddBkISBN;
+    QVBoxLayout *verticalLayout_7;
+    QVBoxLayout *verticalLayout_8;
+    QHBoxLayout *horizontalLayout_4;
+    QLabel *label_ISBN;
+    QLineEdit *lineEdit_ISBN;
+    QPushButton *pushButton_SearchISBN;
+    QLabel *label_Status;
+    QHBoxLayout *horizontalLayout_5;
+    QLabel *label_BookImage;
+    QLabel *label_BookDetail;
     QPushButton *pushButton;
 
     void setupUi(QDialog *AddNewDialog)
     {
         if (AddNewDialog->objectName().isEmpty())
             AddNewDialog->setObjectName("AddNewDialog");
-        AddNewDialog->resize(857, 566);
+        AddNewDialog->resize(857, 644);
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(AddNewDialog->sizePolicy().hasHeightForWidth());
+        AddNewDialog->setSizePolicy(sizePolicy);
         verticalLayout = new QVBoxLayout(AddNewDialog);
         verticalLayout->setObjectName("verticalLayout");
         horizontalLayout = new QHBoxLayout();
@@ -84,6 +101,11 @@ public:
         radioButton_AddBook->setChecked(true);
 
         horizontalLayout->addWidget(radioButton_AddBook);
+
+        radioButton_AddBkISBN = new QRadioButton(AddNewDialog);
+        radioButton_AddBkISBN->setObjectName("radioButton_AddBkISBN");
+
+        horizontalLayout->addWidget(radioButton_AddBkISBN);
 
         radioButton_AddUser = new QRadioButton(AddNewDialog);
         radioButton_AddUser->setObjectName("radioButton_AddUser");
@@ -335,11 +357,19 @@ public:
         comboBox_AccType->addItem(QString());
         comboBox_AccType->addItem(QString());
         comboBox_AccType->setObjectName("comboBox_AccType");
+        comboBox_AccType->setStyleSheet(QString::fromUtf8("border:2px solid #ca5cdd; \n"
+"border-radius:8px; \n"
+"padding:5px;\n"
+""));
 
         verticalLayout_5->addWidget(comboBox_AccType);
 
         lineEdit_UserName = new QLineEdit(page_AddUser);
         lineEdit_UserName->setObjectName("lineEdit_UserName");
+        lineEdit_UserName->setStyleSheet(QString::fromUtf8("border:2px solid #ca5cdd; \n"
+"border-radius:8px; \n"
+"padding:5px;\n"
+"color: rgb(255, 255, 255);"));
 
         verticalLayout_5->addWidget(lineEdit_UserName);
 
@@ -359,6 +389,74 @@ public:
         verticalLayout_6->addWidget(label_AccData);
 
         stackedWidget_AddNew->addWidget(page_AccData);
+        page_AddBkISBN = new QWidget();
+        page_AddBkISBN->setObjectName("page_AddBkISBN");
+        verticalLayout_7 = new QVBoxLayout(page_AddBkISBN);
+        verticalLayout_7->setObjectName("verticalLayout_7");
+        verticalLayout_8 = new QVBoxLayout();
+        verticalLayout_8->setObjectName("verticalLayout_8");
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setObjectName("horizontalLayout_4");
+        label_ISBN = new QLabel(page_AddBkISBN);
+        label_ISBN->setObjectName("label_ISBN");
+        label_ISBN->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        horizontalLayout_4->addWidget(label_ISBN);
+
+        lineEdit_ISBN = new QLineEdit(page_AddBkISBN);
+        lineEdit_ISBN->setObjectName("lineEdit_ISBN");
+        lineEdit_ISBN->setStyleSheet(QString::fromUtf8("border:2px solid #ca5cdd; \n"
+"border-radius:8px; \n"
+"padding:5px;\n"
+"color: rgb(255, 255, 255);"));
+
+        horizontalLayout_4->addWidget(lineEdit_ISBN);
+
+        pushButton_SearchISBN = new QPushButton(page_AddBkISBN);
+        pushButton_SearchISBN->setObjectName("pushButton_SearchISBN");
+        pushButton_SearchISBN->setStyleSheet(QString::fromUtf8("QPushButton{ \n"
+"border:2px solid #ca5cdd;\n"
+" border-radius:8px;\n"
+" padding:5px;\n"
+" background-color:#2c3e50;\n"
+" border-radius:8px;\n"
+" color:white;\n"
+"}"));
+
+        horizontalLayout_4->addWidget(pushButton_SearchISBN);
+
+        horizontalLayout_4->setStretch(0, 1);
+        horizontalLayout_4->setStretch(1, 9);
+        horizontalLayout_4->setStretch(2, 1);
+
+        verticalLayout_8->addLayout(horizontalLayout_4);
+
+        label_Status = new QLabel(page_AddBkISBN);
+        label_Status->setObjectName("label_Status");
+
+        verticalLayout_8->addWidget(label_Status);
+
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setObjectName("horizontalLayout_5");
+        label_BookImage = new QLabel(page_AddBkISBN);
+        label_BookImage->setObjectName("label_BookImage");
+
+        horizontalLayout_5->addWidget(label_BookImage);
+
+        label_BookDetail = new QLabel(page_AddBkISBN);
+        label_BookDetail->setObjectName("label_BookDetail");
+
+        horizontalLayout_5->addWidget(label_BookDetail);
+
+
+        verticalLayout_8->addLayout(horizontalLayout_5);
+
+        verticalLayout_8->setStretch(0, 1);
+        verticalLayout_8->setStretch(2, 10);
+
+        verticalLayout_7->addLayout(verticalLayout_8);
+
+        stackedWidget_AddNew->addWidget(page_AddBkISBN);
 
         verticalLayout->addWidget(stackedWidget_AddNew);
 
@@ -370,7 +468,7 @@ public:
 
         retranslateUi(AddNewDialog);
 
-        stackedWidget_AddNew->setCurrentIndex(0);
+        stackedWidget_AddNew->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(AddNewDialog);
@@ -379,7 +477,8 @@ public:
     void retranslateUi(QDialog *AddNewDialog)
     {
         AddNewDialog->setWindowTitle(QCoreApplication::translate("AddNewDialog", "Add New", nullptr));
-        radioButton_AddBook->setText(QCoreApplication::translate("AddNewDialog", "Add Book", nullptr));
+        radioButton_AddBook->setText(QCoreApplication::translate("AddNewDialog", "Add Book (Manual)", nullptr));
+        radioButton_AddBkISBN->setText(QCoreApplication::translate("AddNewDialog", "Add Book (ISBN)", nullptr));
         radioButton_AddUser->setText(QCoreApplication::translate("AddNewDialog", "Add User", nullptr));
         label_Title->setText(QCoreApplication::translate("AddNewDialog", "Title:", nullptr));
         label_Author->setText(QCoreApplication::translate("AddNewDialog", "Author:", nullptr));
@@ -458,6 +557,11 @@ public:
         comboBox_AccType->setItemText(1, QCoreApplication::translate("AddNewDialog", "admin", nullptr));
 
         label_AccData->setText(QCoreApplication::translate("AddNewDialog", "TextLabel", nullptr));
+        label_ISBN->setText(QCoreApplication::translate("AddNewDialog", "ISBN:", nullptr));
+        pushButton_SearchISBN->setText(QCoreApplication::translate("AddNewDialog", "Search", nullptr));
+        label_Status->setText(QString());
+        label_BookImage->setText(QCoreApplication::translate("AddNewDialog", "TextLabel", nullptr));
+        label_BookDetail->setText(QString());
         pushButton->setText(QCoreApplication::translate("AddNewDialog", "Confirm", nullptr));
     } // retranslateUi
 

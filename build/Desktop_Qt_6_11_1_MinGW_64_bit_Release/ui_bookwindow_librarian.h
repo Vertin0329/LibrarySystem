@@ -71,6 +71,7 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QPushButton *pushButton_EditBook;
     QPushButton *pushButton_DeleteBook;
+    QPushButton *pushButton_ReturnBook;
     QPushButton *pushButton_toWeb;
     QWidget *page_UserList;
     QVBoxLayout *verticalLayout_3;
@@ -451,6 +452,18 @@ public:
 
         horizontalLayout_2->addWidget(pushButton_DeleteBook);
 
+        pushButton_ReturnBook = new QPushButton(groupBox_2);
+        pushButton_ReturnBook->setObjectName("pushButton_ReturnBook");
+        pushButton_ReturnBook->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"color:rgb(255, 255, 255);\n"
+"    text-decoration: none;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    text-decoration: underline;\n"
+"}"));
+
+        horizontalLayout_2->addWidget(pushButton_ReturnBook);
+
         pushButton_toWeb = new QPushButton(groupBox_2);
         pushButton_toWeb->setObjectName("pushButton_toWeb");
         pushButton_toWeb->setStyleSheet(QString::fromUtf8("QPushButton {\n"
@@ -661,6 +674,7 @@ public:
         label_discription->setText(QString());
         pushButton_EditBook->setText(QCoreApplication::translate("BookWindow_Librarian", "Edit Book", nullptr));
         pushButton_DeleteBook->setText(QCoreApplication::translate("BookWindow_Librarian", "Delete", nullptr));
+        pushButton_ReturnBook->setText(QCoreApplication::translate("BookWindow_Librarian", "Return", nullptr));
         pushButton_toWeb->setText(QCoreApplication::translate("BookWindow_Librarian", "To Website", nullptr));
         groupBox->setTitle(QString());
         pushButton_filter_user->setText(QCoreApplication::translate("BookWindow_Librarian", "Filter", nullptr));

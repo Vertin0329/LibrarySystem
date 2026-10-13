@@ -493,6 +493,22 @@ QPushButton:hover {
               </widget>
              </item>
              <item>
+              <widget class="QPushButton" name="pushButton_ReturnBook">
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+color:rgb(255, 255, 255);
+    text-decoration: none;
+}
+QPushButton:hover {
+    text-decoration: underline;
+}</string>
+               </property>
+               <property name="text">
+                <string>Return</string>
+               </property>
+              </widget>
+             </item>
+             <item>
               <widget class="QPushButton" name="pushButton_toWeb">
                <property name="styleSheet">
                 <string notr="true">QPushButton {

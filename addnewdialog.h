@@ -29,6 +29,10 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_radioButton_AddBkISBN_clicked();
+
+    void on_pushButton_SearchISBN_clicked();
+
 private:
     Ui::AddNewDialog *ui;
 };

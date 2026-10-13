@@ -1,6 +1,8 @@
 ﻿# Library System
 ## Introduction
 ### Background of the project
+Hong Kong Public Library (HKPL) has launched a competition called 'Create New For Your Own' as an increase number of crash report of the current app. HKPL also hope to give an update to the UI in order to increase the user experience. The current app is no longer enough for 
+
 This is a library system aims to improve the user experience of Hong Kong Public Libraries (HKPL). This project will have two account types, admin and user. The project have two parts, this git repository contains code files and executable file. This system uses CPP + QT, uses sqlite for database.
 
 ### The key functions include:
@@ -23,7 +25,7 @@ This is a library system aims to improve the user experience of Hong Kong Public
 - Graphics Card: Any
 - Storage: 900 MB free space
 
-(900 Space requirement is for whole file. If you want app only, please refer to the read me in LibrarySystem_AppOnly.)
+(900 Space requirement is for whole file. If you want app only, please refer to the [README.md in LibrarySystem_AppOnly](https://github.com/Vertin0329/LibrarySystem_AppOnly/blob/main/README.md).)
 
 ## Windows Setup
 
@@ -70,10 +72,18 @@ For this project, I have choosen CPP + QT as the programming language. CPP provi
 <img width="798" height="535" alt="image" src="https://github.com/user-attachments/assets/9e58f9c4-c6fb-4eaf-acea-372b6bdfc454" />
 
 ### <ins>Authentication System</ins>
+<img width="798" height="532" alt="image" src="https://github.com/user-attachments/assets/60c88058-c810-448d-ae5a-2515ce0e8235" />
+<img width="800" height="538" alt="image" src="https://github.com/user-attachments/assets/27ecb166-e5aa-4e83-bb25-c9c56c2104b5" />
+
+- Here is the authentication system. Users have to input the userID and password. The system will first check whether both `QLineEdit` have input, then it will check whether the userID and password are correct by searching the database. If they are valid, the system will directly close the window and show the window refering to account type. Otherwise, the `QLabel` between `pushbutton_Login` and `lineedit_Password` will show 'Warning: User or Password incorrect'.
 
 ### <ins>Account Recovery Menu</ins>
 <img width="565" height="312" alt="image" src="https://github.com/user-attachments/assets/762f4999-fe01-4bdb-8ab7-f5a61e9d5117" />
-
 <img width="571" height="315" alt="Screenshot 2026-09-23 220542" src="https://github.com/user-attachments/assets/0701263b-8839-4b0d-827a-76571ee8efba" />
 
 - After entering correct username and account ID and active `pushbutton_Verify`, account password will be shown as above.
+
+### <ins>User Menu</ins>
+<img width="1875" height="1177" alt="image" src="https://github.com/user-attachments/assets/dd258b16-a5a0-4af4-9b71-c07fa2de2941" />
+
+- Here is the user main menu of the library system. Users can navigate to different page using the buttons on top of the window. There are also `previous page`, `next page` and `refresh page` button on the top left hand corner, a `logout` button on the top right hand corner.

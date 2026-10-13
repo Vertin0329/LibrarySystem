@@ -1,7 +1,7 @@
 ﻿# Library System
 ## Introduction
 ### Background of the project
-Hong Kong Public Library has launched a competition called 'Create New For Your Own'
+Hong Kong Public Library (HKPL) has launched a competition called 'Create New For Your Own' as an increase number of crash report of the current app. HKPL also hope to give an update to the UI in order to increase the user experience. The current app is no longer enough for 
 
 This is a library system aims to improve the user experience of Hong Kong Public Libraries (HKPL). This project will have two account types, admin and user. The project have two parts, this git repository contains code files and executable file. This system uses CPP + QT, uses sqlite for database.
 

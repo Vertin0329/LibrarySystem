@@ -446,10 +446,14 @@ Makefile: ../../LibrarySystem.pro ../../../../6.11.1/mingw_64/mkspecs/features/s
 		../../../../6.11.1/mingw_64/mkspecs/features/yacc.prf \
 		../../../../6.11.1/mingw_64/mkspecs/features/lex.prf \
 		../../LibrarySystem.pro \
+		../../../../6.11.1/mingw_64/lib/Qt6QuickWidgets.prl \
 		../../../../6.11.1/mingw_64/lib/Qt6Widgets.prl \
+		../../../../6.11.1/mingw_64/lib/Qt6Quick.prl \
+		../../../../6.11.1/mingw_64/lib/Qt6OpenGL.prl \
 		../../../../6.11.1/mingw_64/lib/Qt6Gui.prl \
-		../../../../6.11.1/mingw_64/lib/Qt6Sql.prl \
+		../../../../6.11.1/mingw_64/lib/Qt6Qml.prl \
 		../../../../6.11.1/mingw_64/lib/Qt6Network.prl \
+		../../../../6.11.1/mingw_64/lib/Qt6Sql.prl \
 		../../../../6.11.1/mingw_64/lib/Qt6Core.prl \
 		../../../../6.11.1/mingw_64/lib/Qt6EntryPoint.prl \
 		../../../../6.11.1/mingw_64/mkspecs/features/build_pass.prf \
@@ -831,10 +835,14 @@ Makefile: ../../LibrarySystem.pro ../../../../6.11.1/mingw_64/mkspecs/features/s
 ../../../../6.11.1/mingw_64/mkspecs/features/yacc.prf:
 ../../../../6.11.1/mingw_64/mkspecs/features/lex.prf:
 ../../LibrarySystem.pro:
+../../../../6.11.1/mingw_64/lib/Qt6QuickWidgets.prl:
 ../../../../6.11.1/mingw_64/lib/Qt6Widgets.prl:
+../../../../6.11.1/mingw_64/lib/Qt6Quick.prl:
+../../../../6.11.1/mingw_64/lib/Qt6OpenGL.prl:
 ../../../../6.11.1/mingw_64/lib/Qt6Gui.prl:
-../../../../6.11.1/mingw_64/lib/Qt6Sql.prl:
+../../../../6.11.1/mingw_64/lib/Qt6Qml.prl:
 ../../../../6.11.1/mingw_64/lib/Qt6Network.prl:
+../../../../6.11.1/mingw_64/lib/Qt6Sql.prl:
 ../../../../6.11.1/mingw_64/lib/Qt6Core.prl:
 ../../../../6.11.1/mingw_64/lib/Qt6EntryPoint.prl:
 ../../../../6.11.1/mingw_64/mkspecs/features/build_pass.prf:

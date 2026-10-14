@@ -1,4 +1,4 @@
-QT += widgets sql network core gui
+QT += widgets quick qml sql network core gui quickwidgets
 
 CONFIG += c++20
 

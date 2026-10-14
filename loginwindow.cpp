@@ -4,6 +4,8 @@
 
 #include <QFile>
 #include <string>
+#include <QQuickWidget>
+#include <QQuickItem>
 
 LoginWindow::LoginWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -34,6 +36,10 @@ LoginWindow::LoginWindow(QWidget *parent)
         dataBase = QSqlDatabase::addDatabase("QSQLITE", "DBConnection");
         dataBase.setDatabaseName(dbPath);
     }
+
+    ui->quickWidget_LoginStatus->setResizeMode(QQuickWidget::SizeRootObjectToView);
+    ui->quickWidget_LoginStatus->setSource(QUrl("qrc:/LoginStatusLabel.qml"));
+    ui->quickWidget_LoginStatus->setClearColor(QColor("#1f1f1f"));
 }
 
 LoginWindow::~LoginWindow()
@@ -53,6 +59,7 @@ void LoginWindow::on_pushButton_Login_clicked()
     std::string username = q_username.toStdString();    // convert from qstring to std string
     QString q_password = ui->lineEdit_Password->text();
     std::string password = q_password.toStdString();
+    QObject *root = ui->quickWidget_LoginStatus->rootObject();
 
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::database("DBConnection");
@@ -61,23 +68,25 @@ void LoginWindow::on_pushButton_Login_clicked()
     // check if empty or not
 
     if (username == "" && password == ""){
-        ui->label_LoginStatus->setStyleSheet("color: red;");
-        ui->label_LoginStatus->setText("Please enter your username & password");
-        ui->lineEdit_Username->setStyleSheet("background-color: rgb(31, 31, 31); border:2px solid #ff0f0f; border-radius:8px; padding:5px;");
-        ui->lineEdit_Password->setStyleSheet("background-color: rgb(31, 31, 31); border:2px solid #ff0f0f; border-radius:8px; padding:5px;");
+        root->setProperty("message", "");
+        root->setProperty("textColor", QColor("red"));
+        root->setProperty("mode", "error");
+        root->setProperty("message", "Please enter your UserID & Password");
     } else if (password == ""){
-        ui->label_LoginStatus->setStyleSheet("color: red;");
-        ui->label_LoginStatus->setText("Please enter your password");
-        ui->lineEdit_Username->setStyleSheet("background-color: rgb(31, 31, 31); border:2px solid #ca5cdd; border-radius:8px; padding:5px;");
-        ui->lineEdit_Password->setStyleSheet("background-color: rgb(31, 31, 31); border:2px solid #ff0f0f; border-radius:8px; padding:5px;");
+        root->setProperty("message", "");
+        root->setProperty("textColor", QColor("red"));
+        root->setProperty("mode", "error");
+        root->setProperty("message", "Please enter your Password");
     } else if (username == "") {
-        ui->label_LoginStatus->setStyleSheet("color: red;");
-        ui->label_LoginStatus->setText("Please enter your username");
-        ui->lineEdit_Username->setStyleSheet("background-color: rgb(31, 31, 31); border:2px solid #ff0f0f; border-radius:8px; padding:5px;");
-        ui->lineEdit_Password->setStyleSheet("background-color: rgb(31, 31, 31); border:2px solid #ca5cdd; border-radius:8px; padding:5px;");
+        root->setProperty("message", "");
+        root->setProperty("textColor", QColor("red"));
+        root->setProperty("mode", "error");
+        root->setProperty("message", "Please enter your UserID");
     } else if (username == "username" && password == "password"){
-        ui->label_LoginStatus->setStyleSheet("color: red;");
-        ui->label_LoginStatus->setText("Warning: User or Password incorrect");
+        root->setProperty("message", "");
+        root->setProperty("textColor", QColor("red"));
+        root->setProperty("mode", "error");
+        root->setProperty("message", "UserID or Password incorrect");
         return;
     } else {
 
@@ -112,13 +121,17 @@ void LoginWindow::on_pushButton_Login_clicked()
                 this->setAttribute(Qt::WA_DeleteOnClose);
                 this->deleteLater();
             } else {
-                ui->label_LoginStatus->setStyleSheet("color: red;");
-                ui->label_LoginStatus->setText("Warning: User or Password incorrect");
+                root->setProperty("message", "");
+                root->setProperty("textColor", QColor("red"));
+                root->setProperty("mode", "error");
+                root->setProperty("message", "UserID or Password incorrect");
                 return;
             }
         } else {
-            ui->label_LoginStatus->setStyleSheet("color: red;");
-            ui->label_LoginStatus->setText("Warning: User or Password incorrect");
+            root->setProperty("message", "");
+            root->setProperty("textColor", QColor("red"));
+            root->setProperty("mode", "error");
+            root->setProperty("message", "UserID or Password incorrect");
             return;
         }
     }

@@ -49,7 +49,7 @@
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1,0,0,0">
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="4,4,0,0,1">
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
@@ -178,18 +178,12 @@
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_LoginStatus">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
+       <widget class="QQuickWidget" name="quickWidget_LoginStatus">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(31, 31, 31);</string>
         </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignCenter</set>
+        <property name="resizeMode">
+         <enum>QQuickWidget::ResizeMode::SizeRootObjectToView</enum>
         </property>
        </widget>
       </item>
@@ -209,6 +203,13 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QQuickWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">QtQuickWidgets/QQuickWidget</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

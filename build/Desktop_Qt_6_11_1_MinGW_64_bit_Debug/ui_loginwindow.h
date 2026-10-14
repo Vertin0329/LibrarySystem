@@ -10,6 +10,7 @@
 #define UI_LOGINWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtQuickWidgets/QQuickWidget>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
@@ -38,7 +39,7 @@ public:
     QPushButton *pushButton;
     QPushButton *pushButton_Login;
     QPushButton *pushButton_Forgotpw;
-    QLabel *label_LoginStatus;
+    QQuickWidget *quickWidget_LoginStatus;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -143,16 +144,16 @@ public:
 
         verticalLayout->addWidget(pushButton_Forgotpw);
 
-        label_LoginStatus = new QLabel(centralwidget);
-        label_LoginStatus->setObjectName("label_LoginStatus");
-        sizePolicy2.setHeightForWidth(label_LoginStatus->sizePolicy().hasHeightForWidth());
-        label_LoginStatus->setSizePolicy(sizePolicy2);
-        label_LoginStatus->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        quickWidget_LoginStatus = new QQuickWidget(centralwidget);
+        quickWidget_LoginStatus->setObjectName("quickWidget_LoginStatus");
+        quickWidget_LoginStatus->setStyleSheet(QString::fromUtf8("color: rgb(31, 31, 31);"));
+        quickWidget_LoginStatus->setResizeMode(QQuickWidget::ResizeMode::SizeRootObjectToView);
 
-        verticalLayout->addWidget(label_LoginStatus);
+        verticalLayout->addWidget(quickWidget_LoginStatus);
 
-        verticalLayout->setStretch(0, 1);
-        verticalLayout->setStretch(1, 1);
+        verticalLayout->setStretch(0, 4);
+        verticalLayout->setStretch(1, 4);
+        verticalLayout->setStretch(4, 1);
 
         verticalLayout_2->addLayout(verticalLayout);
 
@@ -181,7 +182,6 @@ public:
         pushButton->setText(QString());
         pushButton_Login->setText(QCoreApplication::translate("LoginWindow", "Login", nullptr));
         pushButton_Forgotpw->setText(QCoreApplication::translate("LoginWindow", "Forgot password? Click here", nullptr));
-        label_LoginStatus->setText(QString());
     } // retranslateUi
 
 };

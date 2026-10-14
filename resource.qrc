@@ -6,4 +6,7 @@
         <file>img/samplephoto_personal.png</file>
         <file>img/png-clipart-symbol-computer-icons-unicode-notice-miscellaneous-angle.png</file>
     </qresource>
+    <qresource prefix="/">
+        <file>LoginStatusLabel.qml</file>
+    </qresource>
 </RCC>
